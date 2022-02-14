@@ -7,7 +7,6 @@ import lombok.Data;
 @Entity
 @Data
 public class Actividades extends Locacion{
-
     private TipoActividad tipoDeActividad;
     private Boolean aptoParaNiños;
     private String duracionAprox;

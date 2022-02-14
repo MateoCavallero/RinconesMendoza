@@ -4,6 +4,7 @@ import com.example.RinconesMendoza.utils.RangoDePrecio;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
@@ -22,4 +23,6 @@ public abstract class Locacion {
 //    private <List>Comentario Comentarios;
     @OneToOne
     private Foto foto;
+    @ManyToOne
+    private Zona zona;
 }

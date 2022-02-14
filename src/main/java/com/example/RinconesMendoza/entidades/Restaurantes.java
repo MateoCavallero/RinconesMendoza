@@ -8,7 +8,6 @@ import lombok.Data;
 @Entity
 @Data
 public class Restaurantes extends Locacion{
-
     private TipoComida tipoDeComida;
     private Calidad calidadServicio;
     private Boolean menuCeliaco;
