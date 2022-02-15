@@ -16,11 +16,12 @@ public abstract class Locacion {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+    private String nombre;
     private String domicilio;
     private String telefono;
     private String web;
     private RangoDePrecio rangoDePrecios;
-//    private <List>Comentario Comentarios;
+    private Double estrellas;
     @OneToOne
     private Foto foto;
     @ManyToOne

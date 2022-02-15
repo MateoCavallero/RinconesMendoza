@@ -14,8 +14,7 @@ public class Comentario {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    private String contenido;
-    private Calidad estrellas;
-    private String puntuacion;
-
+    private Locacion locacion;
+    private String opinion;
+    private Calidad puntuacion;
 }
