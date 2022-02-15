@@ -22,6 +22,14 @@ public class RestaurantServicio {
     public List<Restaurantes> listarResto(Restaurantes resto) {
         return restaurantRepo.findAll();
     }
+    
+    public Optional<Restaurantes> listById(String id){
+        return restaurantRepo.findById(id);
+    }
+
+    public List<Restaurantes> listAllByQ(String q) {
+        return restaurantRepo.findAllByQ("%" + q + "%");
+    }
 
     @Transactional
     public void eliminarResto(String id) {
@@ -31,7 +39,5 @@ public class RestaurantServicio {
             Restaurantes resto = optional.get();
             restaurantRepo.delete(resto);
         }
-
     }
-
 }
