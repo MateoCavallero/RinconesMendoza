@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LocacionServis {
+public class LocacionService {
     
     @Autowired
     private LocacionRepositorio locacionRepo;
@@ -26,5 +26,15 @@ public class LocacionServis {
     
     public Optional<Locacion> buscarId(String id){
        return locacionRepo.findById(id);
+    }
+    
+    @Transactional
+    public void eliminarPorId (String id){
+        Optional<Locacion> optional = locacionRepo.findById(id);
+        
+        if (optional.isPresent()) {
+            Locacion locacion = optional.get();
+            locacionRepo.delete(locacion);
+        }
     }
 }
