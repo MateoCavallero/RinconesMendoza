@@ -17,4 +17,7 @@ public class Comentario {
     private Locacion locacion;
     private String opinion;
     private Calidad puntuacion;
+    
+    
+    
 }

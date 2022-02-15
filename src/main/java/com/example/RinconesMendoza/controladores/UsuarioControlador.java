@@ -40,7 +40,7 @@ public class UsuarioControlador {
     public String saveUsuario(RedirectAttributes redirect, @ModelAttribute Usuario usuario) {
         try {
             usuarioService.crearUsuario(usuario);
-            redirect.addFlashAttribute("success", "Persona guardada con exito");
+            redirect.addFlashAttribute("success", "Usuario guardado con exito");
             return "redirect:/usuario/list";
         } catch (WebException e) {
             redirect.addFlashAttribute("error", e.getMessage());
@@ -49,7 +49,7 @@ public class UsuarioControlador {
     }
     
     @GetMapping("/list")
-    public String listAutores(Model model, @RequestParam(required = false) String q) {
+    public String listUsuario(Model model, @RequestParam(required = false) String q) {
         if (q != null) {
             model.addAttribute("usuario", usuarioService.listAllByQ(q));
         }else{
