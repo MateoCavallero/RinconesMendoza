@@ -17,5 +17,4 @@ public class Zona {
     private String nombre;
     @OneToOne
     private Provincia prov;
-//    private Clima clima;
 }

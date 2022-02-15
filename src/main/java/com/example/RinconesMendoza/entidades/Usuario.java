@@ -18,6 +18,7 @@ public class Usuario implements Serializable {
     private String apellido;
     private Integer dni;
     private String email;
+//    private Role role;
     
     
 }
