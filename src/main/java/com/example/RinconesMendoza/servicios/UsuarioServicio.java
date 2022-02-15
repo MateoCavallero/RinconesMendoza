@@ -14,7 +14,7 @@ public class UsuarioServicio {
     private UsuarioRepositorio usuarioRepositorio;
 
     @Transactional
-    public void crearAutor(Usuario usuario) throws WebException {
+    public void crearUsuario(Usuario usuario) throws WebException {
         validacion(usuario);
         usuarioRepositorio.save(usuario);
     }
