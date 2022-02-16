@@ -12,7 +12,6 @@
 [class^="icon-"],
 [class*=" icon-"] {
 	font-family: 'icomoon' !important;
-	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -68,7 +67,6 @@
 .icon-lock-stripes:before {content: "\efd1";}
 .icon-presentation:before {content: "\efd2";}
 .icon-thumb-up:before {content: "\efd3";}
-.icon-trophy-(1):before {content: "\efd4";}
 .icon-trophy:before {content: "\efd5";}
 .icon-icons43:before {content: "\e900";}
 .icon-icons230:before {content: "\e903";}

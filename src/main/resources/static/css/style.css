@@ -1419,7 +1419,7 @@
 	}
 
 	.listar-home .listar-header.cd-auto-hide-header {
-		background: transparent;
+		background: #ffffff;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 	}
@@ -1435,7 +1435,7 @@
 
 	.listar-addnav {
 		float: right;
-		padding: 3px 0;
+		padding: 2%;
 	}
 
 	.listar-addnav ul {
@@ -1621,7 +1621,7 @@
 			Main Navigaion Style				
 ============================================= */
 	.listar-nav {
-		padding: 3px 0;
+		padding: 2%;
 		vertical-align: top;
 		display: inline-block;
 		text-transform: capitalize;
@@ -1665,7 +1665,7 @@
 	}
 
 	body.listar-home .listar-navigation>ul>li>a {
-		color: #fff;
+		color: rgb(0, 0, 0);
 	}
 
 	.menu-item-has-children>a {
@@ -2400,6 +2400,7 @@
 		width: 100%;
 		position: absolute;
 		padding: 20% 20px 20px 20px;
+		background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 	}
 
 	.listar-postcontent {
