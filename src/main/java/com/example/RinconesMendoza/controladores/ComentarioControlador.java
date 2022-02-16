@@ -48,7 +48,7 @@ public class ComentarioControlador {
         }
     }
 
-    @GetMapping("/list")
+    /*@GetMapping("/list")
     public String listComentario(Model model, @RequestParam(required = false) String q) {
         if (q != null) {
             model.addAttribute("comentario", comentarioService.listAllByQ(q));
@@ -56,7 +56,7 @@ public class ComentarioControlador {
             model.addAttribute("comentario", comentarioService.listAll());
         }
         return "comentario-list";
-    }
+    }*/
 
     @GetMapping("/delete")
     public String eliminarComentario(@RequestParam(required = true) String id) {

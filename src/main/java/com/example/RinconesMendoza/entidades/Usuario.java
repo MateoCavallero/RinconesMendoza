@@ -4,11 +4,14 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Data
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario implements Serializable {
     @Id
     @GeneratedValue(generator = "uuid")
@@ -18,7 +21,6 @@ public class Usuario implements Serializable {
     private String apellido;
     private Integer dni;
     private String email;
-//    private Role role;
     
     
 }

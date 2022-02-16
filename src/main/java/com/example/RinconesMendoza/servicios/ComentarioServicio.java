@@ -29,9 +29,9 @@ public class ComentarioServicio {
         return comentarioRepositorio.findById(id);
     }
 
-    public List<Comentario> listAllByQ(String q) {
+    /*public List<Comentario> listAllByQ(String q) {
         return comentarioRepositorio.findAllByQ("%" + q + "%");
-    }
+    }*/
 
     @Transactional
     public void delete(Comentario comentario) {
