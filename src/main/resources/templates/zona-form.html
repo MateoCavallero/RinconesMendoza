@@ -16,32 +16,28 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" th:href="@{/}">Los 3 caballeros</a>
+            <a class="navbar-brand" th:href="@{/}">Rincones Mendoza</a>
         </div>
     </nav>
     <div class="container">
-        <div th:if="${error}" class="alert alert-danger alert-dismissible fade show mt-auto" role="alert">
-            <span><strong th:text="${error}"> </strong> </span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
         <div class="card ms-auto">
             <div class="card-header d-flex">
-                <h1>Registro de usuario</h1>
-                <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/}"> Volver </a></button>
+                <h1>Creacion de zona</h1>
+                <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/zona/list}"> Ver lista de zonas</a></button>
             </div>
             <div class="card-body">
-                <form th:action="@{/registro}" method="POST" class="col-6 mx-auto">
+                <form th:action="@{/zona/save}" method="POST" th:object="${zona}" class="col-6 mx-auto">
+                    <input hidden th:field="*{id}"> </input>
                     <div class="mb-3">
-                        <label for="username" class="form-label">Nombre de usuario</label>
-                        <input type="text" class="form-control" name="username" placeholder="nick"></input>
+                        <label for="nombre" class="form-label">Nombre </label>
+                        <input type="text" class="form-control" th:field="*{nombre}" placeholder="Mateo"></input>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Contraseña </label>
-                        <input type="password" class="form-control" name="password" placeholder="***********"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password2" class="form-label">Repita la contraseña </label>
-                        <input type="password" class="form-control" name="password2" placeholder="***********"></input>
+                        <label for="provincia" class="form-label">Provincia </label>
+                        <select class="form-control" th:field="*{provincia.id}">
+                            <option th:each="provincia : ${provincias}" th:value="${provincia.id}" th:text="${provincia.nombre}">
+                            </option>
+                        </select>
                     </div>
                     <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
                         <button type="submit" class="btn btn-primary">Guardar</button>
