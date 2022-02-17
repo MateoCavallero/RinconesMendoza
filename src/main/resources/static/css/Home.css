@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: linear-gradient(0deg, rgba(41,46,51,0.4), rgba(41,46,51,0.4)), url("images/espacio..jpg");
+  background-image: linear-gradient(0deg, rgba(41,46,51,0.4), rgba(41,46,51,0.4)), url("static/images/espacio..jpg");
   background-position: 50% 50%;
 }
 
@@ -330,7 +330,7 @@
 .u-section-3 .u-image-3 {
   width: 389px;
   height: 389px;
-  background-image: url("images/photo-1483197452165-7abc4b248905.jpg");
+  background-image: url("static/images/photo-1483197452165-7abc4b248905.jpg");
   background-position: 50% 50%;
   margin: 50px auto 0 156px;
 }
