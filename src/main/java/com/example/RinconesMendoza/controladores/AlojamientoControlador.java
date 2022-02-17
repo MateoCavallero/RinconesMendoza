@@ -58,6 +58,6 @@ public class AlojamientoControlador {
     @GetMapping("/delete")
     public String eliminarAlojamiento(@RequestParam(required = true) String id) {
         alojamientoServis.deletefinById(id);
-        return "redirect:/usuario/list";
+        return "redirect:/alojamiento/list";
     }
 }
