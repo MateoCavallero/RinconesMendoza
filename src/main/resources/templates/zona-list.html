@@ -30,8 +30,8 @@
         </div>
         <div class="card ms-auto">
             <div class="card-header d-flex">
-                <h1>Listado de usuario</h1>
-                <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/usuario/form}"> ir a usuario form</a></button>
+                <h1>Listado de zonas</h1>
+                <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/usuario/form}"> ir a zona form</a></button>
             </div>
             <div class="card-body">
                 <div>
@@ -52,25 +52,25 @@
                         <tr>
                             <th scope="col">N° </th>
                             <th scope="col">Nombre </th>
-                            <th scope="col">Apellido </th>
-                            <th scope="col">DNI </th>
-                            <th scope="col">Email </th>
+                            <th scope="col">Provincia </th>
+                            <th scope="col">Modificar </th>
+                            <th scope="col">Eliminar </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="tmp, iterator :${usuarios}">
+                        <tr th:each="tmp, iterator :${zonas}">
                             <th th:text="${iterator.index+1}" scope="row"></th>
                             <td th:text="${tmp.nombre}"> </td>
-                            <td th:text="${tmp.apellido}"> </td>
+                            <td th:text="${tmp.provincia.}"> </td>
                             <td th:text="${tmp.dni}"> </td>
                             <td th:text="${tmp.email}"> </td>
                             <td>
                                 <button class="btn btn-light px-5 py-2 ms-auto"><a
-                                        th:href="@{/usuario/form}+'?id='+${tmp.id}">Modificar</a></button>
+                                        th:href="@{/zona/form}+'?id='+${tmp.id}">Modificar</a></button>
                             </td>
                             <td>
                                 <button class="btn btn-danger px-5 py-2 ms-auto"><a
-                                        th:href="@{/usuario/delete}+'?id='+${tmp.id}">Eliminar</a></button>
+                                        th:href="@{/zona/delete}+'?id='+${tmp.id}">Eliminar</a></button>
                             </td>
                         </tr>
                     </tbody>
