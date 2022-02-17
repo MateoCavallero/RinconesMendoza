@@ -43,14 +43,11 @@ and open the template in the editor.
                             <label for="nombre" class="form-label">Web </label>
                             <input type="text" class="form-control" th:field="*{web}"></input>
                         </div>
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label"> 
-                                <input type="checkbox" class="form-control" th:field="*{aireAcondicionado}">
-                                Aire Acondicionado
-                                </input>
-
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"th:field="*{aireAcodicionado}">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Aire acondicionado
                             </label>
-
                         </div>
 
                         <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
