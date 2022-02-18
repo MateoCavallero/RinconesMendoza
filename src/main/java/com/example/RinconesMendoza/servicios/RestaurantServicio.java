@@ -1,6 +1,6 @@
 package com.example.RinconesMendoza.servicios;
 
-import com.example.RinconesMendoza.entidades.Restaurantes;
+import com.example.RinconesMendoza.entidades.Restaurant;
 import com.example.RinconesMendoza.repositorios.RestaurantRepositorio;
 import java.util.List;
 import java.util.Optional;
@@ -15,28 +15,28 @@ public class RestaurantServicio {
     private RestaurantRepositorio restaurantRepo;
 
     @Transactional
-    public void crearResto(Restaurantes resto) {
+    public void crearResto(Restaurant resto) {
         restaurantRepo.save(resto);
     }
 
-    public List<Restaurantes> listarResto(Restaurantes resto) {
+    public List<Restaurant> listarResto() {
         return restaurantRepo.findAll();
     }
     
-    public Optional<Restaurantes> listById(String id){
+    public Optional<Restaurant> listById(String id){
         return restaurantRepo.findById(id);
     }
 
-    public List<Restaurantes> listAllByQ(String q) {
+    public List<Restaurant> listAllByQ(String q) {
         return restaurantRepo.findAllByQ("%" + q + "%");
     }
 
     @Transactional
     public void eliminarResto(String id) {
-        Optional<Restaurantes> optional = restaurantRepo.findById(id);
+        Optional<Restaurant> optional = restaurantRepo.findById(id);
 
         if (optional.isPresent()) {
-            Restaurantes resto = optional.get();
+            Restaurant resto = optional.get();
             restaurantRepo.delete(resto);
         }
     }
