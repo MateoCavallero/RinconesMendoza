@@ -314,7 +314,7 @@
 .u-section-3 .u-image-1 {
   width: 628px;
   height: 628px;
-  background-image: url("images/photo-1504870712357-65ea720d6078.jpg");
+  background-image: url(https://www.losandes.com.ar/resizer/T63uL8Kp_oJEIXwmHt3a-toceK4=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/7CEQITORVRH2FF6IMKE7FECCY4.jpg);
   background-position: 50% 50%;
   margin: 63px 99px 0 auto;
 }
@@ -322,7 +322,7 @@
 .u-section-3 .u-image-2 {
   width: 276px;
   height: 276px;
-  background-image: url("images/photo-1418065460487-3e41a6c84dc5.jpg");
+  background-image: url('static/images/sur.jpg');
   background-position: 50% 50%;
   margin: -598px auto 0 71px;
 }
@@ -330,7 +330,7 @@
 .u-section-3 .u-image-3 {
   width: 389px;
   height: 389px;
-  background-image: url("static/images/photo-1483197452165-7abc4b248905.jpg");
+  background-image: url("static/images/Mza Turismo (1).jpg");
   background-position: 50% 50%;
   margin: 50px auto 0 156px;
 }
