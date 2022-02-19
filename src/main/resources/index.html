@@ -12,11 +12,11 @@
 
     <!--<head th:replace="/fragments/head :: head"></head>-->
 
-    <nav class="navbargral">
+    <!--<nav class="navbargral">
         <nav class="navbar navbar-expand-lg style=" background-color: white;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="static\images\logo.png" class="logo">
+                    <span><a href="index.html"><img src="static/images/logo.png" alt="Logo Rincones Mendoza"></a></span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -25,11 +25,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                        </li>
 
-                        <li class="nav-item">
+                        
+                        <!-- *** dejo el logo como boton de enlace al index.html***                  
+                            <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>-->-->
+
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="#">Lugares</a>
                         </li>
 
@@ -55,14 +58,14 @@
                 </div>
             </div>
         </nav>
-    </nav>
+    </nav>-->
 </head>
 
 <body>
 
 <!--****** Banner Principal ******-->
 
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <header id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="banner">
@@ -72,37 +75,38 @@
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-<!--****** Zonas ******-->
+<!--****** Seccion Zonas ******-->
 
-    <div class="zonas">
+    <section class="zonas">
         <div class="row">
             <div class="col">
-                <img src="static\images\uco.jpg" class="img-fluid" alt="Valle de Uco">
+                <img src="static\images\uco.jpg" href="zona-1.html" class="img-fluid" alt="Valle de Uco">
             </div>
             <div class="col">
-                <img src="static\images\alta-montaña.jpg" class="img-fluid" alt="Alta Montaña">
+                <img src="static\images\alta-montaña.jpg" href="zona-2.html" class="img-fluid" alt="Alta Montaña">
             </div>
             <div class="col">
-                <!--<span><i src="static\images\icons\place.png"></i></span>-->
+                <!--*****agregar enlace a buscar por filtros******-->
+                <span><img src="static\images\iconos\search-64.png" href="#"></img></span>
                 <h2>Encontrá lo que buscas</h2>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <img src="static\images\lavalle.jpg" class="img-fluid" alt="...">
+                <img src="static\images\lavalle.jpg" href="zona-3.html" class="img-fluid" alt="...">
             </div>
             <div class="col">
-                <img src="static\images\sur.jpg" class="img-fluid" alt="...">
+                <img src="static\images\sur.jpg" href="zona-4.html" class="img-fluid" alt="...">
             </div>
             <div class="col">
-                <img src="static\images\este.jpg" class="img-fluid" alt="...">
+                <img src="static\images\este.jpg" href="zona-5.html" class="img-fluid" alt="...">
             </div>
         </div>
-    </div>
+    </section>
 
-    <!--****** Banner Secundario ******-->
+    <!--****** Seccion Banner Secundario ******-->
 
     <section id="testimonials" class="">
         <div class="">
@@ -118,36 +122,44 @@
 
 <!--****** Actividades ******-->
 
-        <div class="actividades">
+        <section class="actividades">
             <div class="card-group">
                 <div class="card">
-                    <img src="static/images/Mza Turismo (1).jpg" class="card-img-top" alt="...">
+                    <img src="static/images/portada-hoteles.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Hoteles</h5>
-                        <p class="card-text"></p>
+                        <img src="static\images\iconos\ver-32.png" href="#"><p>Ver todos los hoteles</p></img>
+                        <img src="static\images\iconos\agregar-32.png" href="#"><p>Agregar un hotel recomendado</p></img>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="static/images/Mza Turismo (3).jpg" class="card-img-top" alt="...">
+                    <img src="static/images/portada-restaurantes.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Restaurantes</h5>
-                        <p class="card-text">
-                        </p>
+                        <img src="static\images\iconos\ver-32.png" href="#"><p>Ver todos los restaurantes</p></img>
+                        <img src="static\images\iconos\agregar-32.png" href="#"><p>Agregar un restaurant recomendado</p></img>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="static/images/Mza Turismo (2).jpg" class="card-img-top" alt="...">
+                    <img src="static/images/portada-actividades.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Actividades</h5>
-                        <p class="card-text"></p>
+                        <h5 class="card-title">Actividades</h5>             
+                        <img src="static\images\iconos\ver-32.png" href="#"><p>Ver todas las actividades</p></img>
+                        <img src="static\images\iconos\agregar-32.png" href="#"><p>Agregar una actividad recomendada</p></img>               
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
+        <!--****** Populares ******-->
+        <section>
 
+        </section>
+
+        <!--****** Footer ******-->
+        <footer></footer>
 </body>
 
-<footer></footer>
+
 
 </html>
