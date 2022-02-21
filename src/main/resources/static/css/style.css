@@ -68,3 +68,31 @@ a {
   position: relative;
   padding: 180px;
 }
+
+/*Pie de pagina*/
+footer{
+  background-color: #222;
+  padding: 3rem;
+  color:white;
+}
+
+footer section{
+  float: right;
+}
+  
+footer p {
+  margin: 0;
+
+}
+/*Aca le estamos cambiando el color a nuestro link*/
+footer a{
+  /*con el transition estamos dandole una animacion mas suave al link */
+  transition: color 0.3s ease;
+  color:white;
+  text-decoration: none;
+
+}
+/*aca le estamos dando la transicion*/
+footer a:hover{
+  color:cornflowerblue ;
+}
