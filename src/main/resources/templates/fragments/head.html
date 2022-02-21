@@ -1,73 +1,50 @@
-<!--************************************
-					Header Start
-			*************************************-->
 <header th:fragment="head" id="listar-header" class="listar-header cd-auto-hide-header
             listar-haslayout">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <strong class="listar-logo"><a href="index.html"><img src="static/images/logo.png"
-                            alt="company logo here"></a></strong>
-                <nav class="listar-addnav">
-                    <ul>
-                        <li>
-                            <a id="listar-btnsignin" class="listar-btn listar-btnblue" href="#listar-loginsingup">
-                                <i class="icon-enter"></i>
-                                <span>Ingresar</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="listar-btn listar-btngreen" href="dashboardaddlisting.html">
-                                <i class="icon-exit"></i>
-                                <span>Salir</span>
-                            </a>
+    <nav class="navbargral">
+        <nav class="navbar navbar-expand-lg style=" background-color: white;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <span><a href="index.html"><img src="static/images/logo.png" alt="Logo Rincones Mendoza"></a></span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+
+
+                        *** dejo el logo como boton de enlace al index.html***
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>-->-->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lugares</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Zonas
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Zona 1</a></li>
+                                <li><a class="dropdown-item" href="#">Zona 2</a></li>
+                                <li><a class="dropdown-item" href="#">Zona 3</a></li>
+                                <li><a class="dropdown-item" href="#">Zona 4</a></li>
+                                <li><a class="dropdown-item" href="#">Zona 5</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </nav>
-                <nav id="listar-nav" class="listar-nav">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#listar-navigation" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div id="listar-navigation" class="collapse navbar-collapse
-                                listar-navigation">
-                        <ul>
-                            <li>
-                                <a href="index.html">Inicio</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="javascript:void(0);">Zonas</a>
-                                <ul class="sub-menu">
-                                    <li><a href="listingvlist.html">Zona 1</a></li>
-                                    <li><a href="listingvlist.html">Zona 2</a></li>
-                                    <li><a href="listingvlist.html">Zona 3</a></li>
-                                    <li><a href="listingvlist.html">Zona 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="javascript:void(0);">Actividades</a>
-                                <ul class="sub-menu">
-                                    <li><a href="howitwork.html">1</a></li>
-                                    <li><a href="services.html">2</a></li>
-                                    <li><a href="pkgprice.html">3</a></li>
-                                    <li><a href="testimonials.html">4</a></li>
-                                    <li><a href="contactus.html">5</a></li>
-
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                </div>
             </div>
-        </div>
-    </div>
+        </nav>
+    </nav>
 </header>
-<!--************************************
-                Header End
-        *************************************-->
