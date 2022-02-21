@@ -19,10 +19,14 @@ a {
   color: white;
 }
 
-/*.textos-banner-1 {
-  -webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
-  box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
-}*/
+.textos-banner-1 {
+  /*-webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
+  box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);*/
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 60px auto 0;
+}
 
 /****** Zonas y Actividades ******/
 .zonas,
