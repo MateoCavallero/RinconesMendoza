@@ -11,6 +11,6 @@ public class MainController {
 
     @GetMapping("")
     public String index(Model model) {
-        return "index.html";
+        return "index-prueba.html";
     }
 }
