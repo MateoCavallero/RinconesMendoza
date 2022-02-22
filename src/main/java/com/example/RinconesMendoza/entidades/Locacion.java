@@ -2,6 +2,8 @@ package com.example.RinconesMendoza.entidades;
 
 import com.example.RinconesMendoza.utils.RangoDePrecio;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -20,8 +22,12 @@ public abstract class Locacion {
     private String domicilio;
     private String telefono;
     private String web;
+    
+    @Enumerated(value = EnumType.STRING)
     private RangoDePrecio rangoDePrecios;
+    
     private Double estrellas;
+    
     @OneToOne
     private Foto foto;
     @ManyToOne

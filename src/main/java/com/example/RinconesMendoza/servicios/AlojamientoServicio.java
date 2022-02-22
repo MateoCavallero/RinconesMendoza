@@ -19,6 +19,7 @@ public class AlojamientoServicio {
     @Transactional
     public void crearAlojamiento(Alojamiento alojamiento) throws WebException{
         validacion(alojamiento);
+        System.out.println(alojamiento.getRangoDePrecios());
         alojamientoRepo.save(alojamiento);
     }
     
