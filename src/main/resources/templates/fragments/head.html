@@ -1,53 +1,77 @@
-<header th:fragment="head">
-    <nav id="listar-header" class="listar-header cd-auto-hide-header listar-haslayout">
-        <nav class="navbargral">
-            <nav class="navbar navbar-expand-lg" style=" background-color: white;">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <span><a href="index.html"><img src="static/images/logo.png"
-                                    alt="Logo Rincones Mendoza"></a></span>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
+
+<header th:fragment="head" class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+    <div class="container">
+        <div class="row align-items-center position-relative">
 
 
-                            *** dejo el logo como boton de enlace al index.html***
+            <div class="site-logo">
+                <a href="index.html" class="text-black"><span class="text-primary">
+                    <img src="/images/logo.png" alt="Rincones Mendoza"></a>
+                </a>
+            </div>
 
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                            </li>
+            <div class="col-12">
+                <nav class="site-navigation text-right ml-auto " role="navigation">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Lugares</a>
-                            </li>
+                    <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contacto</a>
-                            </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Zonas
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Zona 1</a></li>
-                                    <li><a class="dropdown-item" href="#">Zona 2</a></li>
-                                    <li><a class="dropdown-item" href="#">Zona 3</a></li>
-                                    <li><a class="dropdown-item" href="#">Zona 4</a></li>
-                                    <li><a class="dropdown-item" href="#">Zona 5</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-            </nav>
-        </nav>
-    </nav>
+                        <li class="has-children">
+                            <a href="#">Paginas Prueba</a>
+                            <ul class="dropdown">
+                                <li><a th:href="@{/registro}" class="pure-menu-link"> Registro </a></li>
+                                <li><a th:href="@{/usuario/form}"> Usuario form</a></li>
+                                <li><a th:href="@{/usuario/list}"> usuario list</a></li>
+                                <li><a th:href="@{/zona/form}"> zona form</a></li>
+                                <li><a th:href="@{/zona/list}"> zona list</a></li>
+                                <li><a th:href="@{/comentario/form}"> comentario form</a></li>
+                                <li><a th:href="@{/comentario/list}"> comentario list</a></li>
+                                <li><a th:href="@{/alojamiento/form}"> alojamientos form</a></li>
+                                <li><a th:href="@{/alojamiento/list}"> alojamientos list</a></li>
+                                <li><a th:href="@{/restaurant/form}"> restaurantes form</a></li>
+                                <li><li><a th:href="@{/restaurant/form}"> restaurantes form</a></li></li>
+                                <li><a th:href="@{/actividad/form}"> actividades form</a></li>
+                                <li><a th:href="@{/actividad/list}"> actividades list</a></li>
+
+                            </ul>
+                        </li>
+
+
+                        <li><a href="#home-section" class="nav-link">Inicio</a></li>
+                        <li><a href="#services-section" class="nav-link">Nosotros</a></li>
+
+                        <li class="has-children">
+                            <a href="#">Zonas</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Zona Este</a></li>
+                                <li><a href="#">Valle de Uco</a></li>
+                                <li><a href="#">Precordillera y Alta Montaña</a></li>
+                                <li><a href="#">Zona Sur</a></li>
+                                <li><a href="#">Gran Mendoza y Lavalle</a></li>
+
+                            </ul>
+
+                        <li class="has-children">
+                            <a href="#">Actividades</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Alojamientos</a></li>
+                                <li><a href="#">Restaurantes</a></li>
+                                <li><a href="#">Aire Libre</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="#contact-section" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="toggle-button d-inline-block d-lg-none"><a href="#"
+                    class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+    </div>
+
 </header>
