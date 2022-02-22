@@ -1,0 +1,112 @@
+a {
+  color: #000000;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/******Navegador******/
+.navbargral {
+  background-color: #ffffff;
+  padding-left: 35%;
+}
+
+/****** Banner Principal ******/
+.carousel-inner {
+  background-image: url(../images/banner-1.png);
+  opacity: 0.9;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 20% 10% 20% 10%;
+  color: white;
+}
+
+.textos-banner-1 {
+  /*-webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
+  box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);*/
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 60px auto 0;
+}
+/* Modificacion de titulo principal*/
+header h1 {
+  /*Aca  le estamos dando el tamaño*/
+  font-size: 6rem;
+  /*Acá lo estamos centrando*/
+  text-align: center;
+}
+
+header p {
+  font-size: 3rem;
+  text-align: center;
+}
+
+
+/****** Zonas y Actividades ******/
+.zonas,
+.actividades {
+  margin: 3% 10% 3% 10%;
+}
+ 
+.row {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.img-fluid {
+  border-radius: 25px;
+  -webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
+  box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
+}
+
+.card {
+  padding: 1%;
+}
+
+.actividades {
+  background-color: rgb(3, 68, 68);
+}
+
+/*.textos {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+/* Banner Secundario */
+#testimonials {
+  color: white;
+  background-image: url(../images/banner-2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  padding: 180px;
+}
+
+/*Pie de pagina*/
+footer{
+  background-color: #222;
+  padding: 3rem;
+  color:white;
+}
+
+footer section{
+  float: right;
+}
+  
+footer p {
+  margin: 0;
+
+}
+/*Aca le estamos cambiando el color a nuestro link*/
+footer a{
+  /*con el transition estamos dandole una animacion mas suave al link */
+  transition: color 0.3s ease;
+  color:white;
+  text-decoration: none;
+
+}
+/*aca le estamos dando la transicion*/
+footer a:hover{
+  color:rgb(6, 86, 233) ;
+}
