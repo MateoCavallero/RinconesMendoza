@@ -25,7 +25,7 @@ and open the template in the editor.
                     <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/alojamiento/list}"> Ver lista de alojamientos </a></button>
                 </div>
                 <div class="card-body">
-                    <form th:action="@{/usuario/save}" method="POST" th:object="${alojamiento}" class="col-6 mx-auto">
+                    <form th:action="@{/alojamiento/save}" method="POST" th:object="${alojamiento}" class="col-6 mx-auto">
                         <input hidden th:field="*{id}"> </input>
                         <div class="mb-3">
                             <label for="nombre" class="form-label"> Nombre </label>
@@ -43,15 +43,57 @@ and open the template in the editor.
                             <label for="nombre" class="form-label">Web </label>
                             <input type="text" class="form-control" th:field="*{web}"></input>
                         </div>
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label"> 
-                                <input type="checkbox" class="form-control" th:field="*{aireAcondicionado}">
-                                Aire Acondicionado
-                                </input>
-
-                            </label>
-
+                        <div>
+                            <label>Rango de Precio</label>
+                            <select th:field="*{rangoDePrecios}">
+                                <option th:each="tc : ${T(com.example.RinconesMendoza.utils.RangoDePrecio).values()}" 
+                                        th:value="${tc}" th:text="${tc}"></option>
+                            </select>
                         </div>
+                         <div>
+                            <label>Tipo de Alojamiento</label>
+                            <select name="TipoAlojamiento" th:field="*{tipoAlojamiento}">
+                                <option th:each="tc : ${T(com.example.RinconesMendoza.utils.TipoAlojamiento).values()}" 
+                                        th:value="${tc}" th:text="${tc}"></option>
+                            </select>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{aireAcondicionado}">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Aire acondicionado
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{wifi}">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Wifi
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{pileta}">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Pileta
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{estacionamiento}">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Estacionamiento
+                            </label>
+                        </div>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{desayuno}">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Desayuno
+                            </label>
+                        </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{bar_restaurant}">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Restorante/Bar
+                            </label>
+                        </div>
+                        
 
                         <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
                             <button type="submit" class="btn btn-primary">Guardar</button>

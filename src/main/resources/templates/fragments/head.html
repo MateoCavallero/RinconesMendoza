@@ -1,73 +1,76 @@
-<!--************************************
-					Header Start
-			*************************************-->
-<header th:fragment="head" id="listar-header" class="listar-header cd-auto-hide-header
-            listar-haslayout">
+<header th:fragment="head" class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <strong class="listar-logo"><a href="index.html"><img src="static/images/logo.png"
-                            alt="company logo here"></a></strong>
-                <nav class="listar-addnav">
-                    <ul>
-                        <li>
-                            <a id="listar-btnsignin" class="listar-btn listar-btnblue" href="#listar-loginsingup">
-                                <i class="icon-enter"></i>
-                                <span>Ingresar</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="listar-btn listar-btngreen" href="dashboardaddlisting.html">
-                                <i class="icon-exit"></i>
-                                <span>Salir</span>
-                            </a>
+        <div class="row align-items-center position-relative">
+
+
+            <div class="site-logo">
+                <a href="index.html" class="text-black"><span class="text-primary">
+                        <img src="/images/logo.png" alt="Rincones Mendoza"></a>
+                </a>
+            </div>
+
+            <div class="col-12">
+                <nav class="site-navigation text-right ml-auto " role="navigation">
+
+                    <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+
+
+
+                        <li class="has-children">
+                            <a href="#">Paginas Prueba</a>
+                            <ul class="dropdown">
+                                <li><a th:href="@{/registro}" class="pure-menu-link"> Registro </a></li>
+                                <li><a th:href="@{/usuario/form}"> Usuario form</a></li>
+                                <li><a th:href="@{/usuario/list}"> usuario list</a></li>
+                                <li><a th:href="@{/zona/form}"> zona form</a></li>
+                                <li><a th:href="@{/zona/list}"> zona list</a></li>
+                                <li><a th:href="@{/comentario/form}"> comentario form</a></li>
+                                <li><a th:href="@{/comentario/list}"> comentario list</a></li>
+                                <li><a th:href="@{/alojamiento/form}"> alojamientos form</a></li>
+                                <li><a th:href="@{/alojamiento/list}"> alojamientos list</a></li>
+                                <li><a th:href="@{/restaurant/form}"> restaurantes form</a></li>
+                                <li><a th:href="@{/restaurant/form}"> restaurantes form</a></li>
+                                <li><a th:href="@{/actividad/form}"> actividades form</a></li>
+                                <li><a th:href="@{/actividad/list}"> actividades list</a></li>
+
+                            </ul>
                         </li>
 
+
+                        <li><a href="#home-section" class="nav-link">Inicio</a></li>
+                        <li><a href="#services-section" class="nav-link">Nosotros</a></li>
+
+                        <li class="has-children">
+                            <a href="#">Zonas</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Zona Este</a></li>
+                                <li><a href="zona-1.html">Valle de Uco</a></li>
+                                <li><a href="#">Precordillera y Alta Montaña</a></li>
+                                <li><a href="#">Zona Sur</a></li>
+                                <li><a href="#">Gran Mendoza y Lavalle</a></li>
+
+                            </ul>
+
+                        <li class="has-children">
+                            <a href="#">Actividades</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Alojamientos</a></li>
+                                <li><a href="#">Restaurantes</a></li>
+                                <li><a href="#">Aire Libre</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="#contact-section" class="nav-link">Contacto</a></li>
                     </ul>
                 </nav>
-                <nav id="listar-nav" class="listar-nav">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#listar-navigation" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div id="listar-navigation" class="collapse navbar-collapse
-                                listar-navigation">
-                        <ul>
-                            <li>
-                                <a href="index.html">Inicio</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="javascript:void(0);">Zonas</a>
-                                <ul class="sub-menu">
-                                    <li><a href="listingvlist.html">Zona 1</a></li>
-                                    <li><a href="listingvlist.html">Zona 2</a></li>
-                                    <li><a href="listingvlist.html">Zona 3</a></li>
-                                    <li><a href="listingvlist.html">Zona 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="javascript:void(0);">Actividades</a>
-                                <ul class="sub-menu">
-                                    <li><a href="howitwork.html">1</a></li>
-                                    <li><a href="services.html">2</a></li>
-                                    <li><a href="pkgprice.html">3</a></li>
-                                    <li><a href="testimonials.html">4</a></li>
-                                    <li><a href="contactus.html">5</a></li>
 
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
             </div>
+
+            <div class="toggle-button d-inline-block d-lg-none"><a href="#"
+                    class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
         </div>
     </div>
+
 </header>
-<!--************************************
-                Header End
-        *************************************-->
