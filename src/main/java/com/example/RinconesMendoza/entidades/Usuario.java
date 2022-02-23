@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -22,7 +22,7 @@ public class Usuario{
     private String apellido;
     private String dni;
     private String email;
-    @OneToMany
+    @OneToOne
     private Foto foto;
     
     
