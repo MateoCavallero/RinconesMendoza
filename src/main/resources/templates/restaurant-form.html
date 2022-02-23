@@ -49,7 +49,7 @@
                             <label>Tipos de Comida</label>
                             <select name="tipoDeComida" th:field="*{tipoDeComida}">
                                 <option th:each="tc : ${T(com.example.RinconesMendoza.utils.TipoComida).values()}" 
-                                        th:value="${tipoDeComida}" th:text="${tc}"></option>
+                                        th:value="${tc}" th:text="${tc}"></option>
                             </select>
                         </div>
                         <br>
