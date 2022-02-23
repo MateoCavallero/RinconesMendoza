@@ -3,6 +3,7 @@ package com.example.RinconesMendoza.controladores;
 import com.example.RinconesMendoza.entidades.Comentario;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
+import com.example.RinconesMendoza.servicios.LocacionService;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -21,9 +22,12 @@ public class ComentarioControlador {
 
     @Autowired
     private ComentarioServicio comentarioService;
+    @Autowired
+    private LocacionService locacionService; 
 
     @GetMapping("/form")
-    public String crearComentario(Model model, @RequestParam(required = false) String id) {
+    public String crearComentario(Model model, Model l,@RequestParam(required = false) String id) {
+        l.addAttribute("locaciones", locacionService.listar());
         if (id != null) {
             Optional<Comentario> optional = comentarioService.findAllByQ(id);
             if (optional.isPresent()) {
@@ -49,7 +53,7 @@ public class ComentarioControlador {
         }
     }
 
-    /*@GetMapping("/list")
+    @GetMapping("/list")
     public String listComentario(Model model, @RequestParam(required = false) String q) {
         if (q != null) {
             model.addAttribute("comentario", comentarioService.listAllByQ(q));
@@ -57,7 +61,7 @@ public class ComentarioControlador {
             model.addAttribute("comentario", comentarioService.listAll());
         }
         return "comentario-list";
-    }*/
+    }
     
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")

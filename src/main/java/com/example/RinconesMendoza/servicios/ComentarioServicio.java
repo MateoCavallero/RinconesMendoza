@@ -47,14 +47,14 @@ public class ComentarioServicio {
     }
 
     private void validacion(Comentario comentario) throws WebException {
-        if (comentario.getLocacion() == null || comentario.getLocacion().getNombre().length() < 3) {
-            throw new WebException("La locacion no puede ser nulo o el nombre ser menor a 3 caracteres");
+        if (comentario.getLocacion() == null){
+            throw new WebException("Debe seleccionar algun lugar para comentar");
         }
         if (comentario.getOpinion() == null || comentario.getOpinion().length() < 30) {
             throw new WebException("La opinion no puede ser nula o menor a 30 caracteres");
         }
         if (comentario.getPuntuacion() == null) {
-            throw new WebException("La puntuacion no puede ser nula");
+            throw new WebException("Debe seleccionar alguna opción de puntación");
         }
     }
 

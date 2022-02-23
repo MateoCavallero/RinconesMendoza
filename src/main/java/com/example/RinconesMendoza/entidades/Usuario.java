@@ -8,7 +8,10 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+<<<<<<< HEAD
+=======
 
+>>>>>>> c3c33fb72e3afc6ba2002945880b2c15f58cd8f9
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
