@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 
     <head th:fragments="head">
         <meta charset="UTF-8">
@@ -16,7 +16,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" th:href="@{/}">Los 3 caballeros</a>
+                <a class="navbar-brand" th:href="@{/}">Rincones mendoza</a>
             </div>
         </nav>
         <div class="container">
@@ -24,38 +24,27 @@
                 <span><strong th:text="${error}"> </strong> </span>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <div th:if="${success}" class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
-                <span><strong th:text="${success}"> </strong> </span>
+            <div th:if="${param.logout}" class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
+                <span> <strong> "Ha finalizado la sesion con exito" </strong> </span>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <div class="card ms-auto">
                 <div class="card-header d-flex">
-                    <h1>Creacion de usuario</h1>
-                    <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/usuario/list}"> Ver lista de usuarios
-                        </a></button>
+                    <h1>Login</h1>
+                    <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/}"> Volver </a></button>
                 </div>
                 <div class="card-body">
-                    <form th:action="@{/usuario/save}" method="POST" th:object="${usuario}" class="col-6 mx-auto">
-                        <input hidden th:field="*{id}"> </input>
+                    <form th:action="@{/logincheck}" method="POST" class="col-6 mx-auto">
                         <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre </label>
-                            <input type="text" class="form-control" th:field="*{nombre}" placeholder="Mateo"></input>
+                            <label for="username" class="form-label">Nombre de usuario</label>
+                            <input type="text" class="form-control" th:value="${username}" name="username" placeholder="nick"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="nombre" class="form-label">Apellido </label>
-                            <input type="text" class="form-control" th:field="*{apellido}" placeholder="Cavallero"></input>
-                        </div>
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">DNI </label>
-                            <input type="number" class="form-control" th:field="*{dni}" placeholder="43675857"></input>
-                        </div>
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Email </label>
-                            <input type="text" class="form-control" th:field="*{email}"
-                                   placeholder="mateo543@gmail.com"></input>
+                            <label for="password" class="form-label">Contraseña </label>
+                            <input type="password" class="form-control" name="password" placeholder="***********"></input>
                         </div>
                         <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-primary">Ingresar</button>
                         </div>
                 </div>
             </div>

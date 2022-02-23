@@ -33,7 +33,7 @@
                 <form th:action="@{/registro}" method="POST" class="col-6 mx-auto">
                     <div class="mb-3">
                         <label for="username" class="form-label">Nombre de usuario</label>
-                        <input type="text" class="form-control" name="username" placeholder="nick"></input>
+                        <input type="text" class="form-control" th:value="${username}" name="username" placeholder="nick"></input>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña </label>
@@ -42,6 +42,9 @@
                     <div class="mb-3">
                         <label for="password2" class="form-label">Repita la contraseña </label>
                         <input type="password" class="form-control" name="password2" placeholder="***********"></input>
+                    </div>                    <div class="mb-3">
+                        <label for="dni" class="form-label">DNI </label>
+                        <input type="text" class="form-control" name="dni" placeholder="43675643"></input>
                     </div>
                     <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
                         <button type="submit" class="btn btn-primary">Guardar</button>
