@@ -70,22 +70,25 @@ public class ZonaControlador {
     public String zona1() {
         return "zona-1";
     }
-        @GetMapping("/zona2")
+
+    @GetMapping("/zona2")
     public String zona2() {
         return "zona-2";
     }
-        @GetMapping("/zona3")
+
+    @GetMapping("/zona3")
     public String zona3() {
         return "zona-3";
     }
-        @GetMapping("/zona4")
+
+    @GetMapping("/zona4")
     public String zona4() {
         return "zona-4";
     }
-        @GetMapping("/zona5")
+
+    @GetMapping("/zona5")
     public String zona5() {
         return "zona-5";
     }
-    
-    
+
 }
