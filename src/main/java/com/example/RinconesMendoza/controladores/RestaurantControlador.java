@@ -4,6 +4,7 @@ import com.example.RinconesMendoza.entidades.Restaurant;
 import com.example.RinconesMendoza.servicios.RestaurantServicio;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,11 +42,12 @@ public class RestaurantControlador {
         }
         return "restaurant-list";
     }
-    
+
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")
-    public String deleteRestaurant (@RequestParam(required = true)String id){
+    public String deleteRestaurant(@RequestParam(required = true) String id) {
         restoService.eliminarResto(id);
-        return "redirect:/restaurant/list";        
+        return "redirect:/restaurant/list";
     }
 
 }

@@ -35,7 +35,7 @@
                         </a></button>
                 </div>
                 <div class="card-body">
-                    <form th:action="@{/usuario/save}" method="POST" th:object="${usuario}" class="col-6 mx-auto">
+                    <form th:action="@{/usuario/save}" method="POST" th:object="${usuario}" class="col-6 mx-auto" enctype="multipart/form-data">
                         <input hidden th:field="*{id}"> </input>
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre </label>
@@ -53,6 +53,10 @@
                             <label for="nombre" class="form-label">Email </label>
                             <input type="text" class="form-control" th:field="*{email}"
                                    placeholder="mateo543@gmail.com"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Foto </label>
+                            <input type="file" class="form-control" th:field="*{foto}"></input>
                         </div>
                         <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
                             <button type="submit" class="btn btn-primary">Guardar</button>
