@@ -4,66 +4,48 @@
 
 <head th:replace="/fragments/head :: head"></head>
 
-
 <body>
-    <!--****** Banner Principal ******-->
+    <!--****** Navbar ******-->
     <header th:replace="/fragments/navbar :: navbar"></header>
     <!--****** Banner Principal ******-->
-    <div id=" carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class=" carousel-inner">
-            <div class="carousel-item active">
-                <div class="banner-zona-1">
-                    <img src="../images/banner-zona-2.jpg" </div>
-                </div>
-            </div>
-        </div>
-
-    <h1>Zona Este</h1>
-
-    <p> texto sobre la zona</p>
-
-    <!--****** Actividades ******-->
-
-    <section class="actividades">
-        <div class="card-group">
-            <div class="card">
-                <img src="../images/portada-hoteles.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hoteles</h5>
-                    <a href="alojamientos.html"><img src="../images/iconos/ver-32.png" alt="...">
-                        <p>Ver todo en alojamientos</p>
-                    </a>
-                    <img src="../images/iconos/agregar-32.png" alt="...">
-                    <p>Agregar un alojamiento recomendado</p></img>
-                </div>
-            </div>
-            <div class="card">
-                <img src="../images/portada-restaurantes.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Gastronomía</h5>
-                    <a href="gastronomia.html"><img src="../images/iconos/ver-32.png" alt="...">
-                        <p>Ver todo en gastronomía</p>
-                    </a>
-                    <img src="../images/iconos/agregar-32.png" alt="...">
-                    <p>Agregar un lugar gastronomico recomendado</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="../images/portada-actividades.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Actividades</h5>
-                    <a href="actividades.html"><img src="../images/iconos/ver-32.png" alt="...">
-                        <p>Ver todo en actividades</p>
-                    </a>
-                    <img src="../images/iconos/agregar-32.png" alt="...">
-                    <p>Agregar una actividad recomendada</p></a>
-                </div>
-            </div>
-        </div>
+    <section class="banner-zona-1">
+        <img src="../images/banner-zona-2.jpg">
+        <h1>Zona Este</h1>
+        <p> texto zona</p>
     </section>
 
-    <!--****** Populares ******-->
+<!--****** Actividades ******-->
+
+        <section class="actividades">
+            <div class="card-group">
+                <div class="card">
+                    <img src="../images/portada-hoteles.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">ALOJAMIENTOS</h4>
+                        <h5><a href="alojamientos.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en alojamientos</a></h5>
+                        <h5><a href="alojamientos.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar un alojamiento</a></h5>
+                    </div>
+                <div class="card">
+                    <img src="../images/portada-restaurantes.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">GASTRONOMIA</h4>
+                        <h5><a href="gastronomia.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en gastronomia</a></h5>
+                        <h5><a href="gastronomia.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar local gastronomico</a></h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../images/portada-actividades.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">ACTIVIDADES</h4>
+                        <h5><a href="actividades.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en actividades></h5>
+                        <h5><a href="actividades.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar actividad</a></h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--****** Populares ******-->
+<!--******Footer ******-->
     <footer th:replace="/fragments/footer :: footer"></footer>
 </body>
-
 </html>
