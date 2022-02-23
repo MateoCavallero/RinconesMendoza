@@ -1,0 +1,76 @@
+<header th:fragment="navbar" class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+    <div class="container">
+        <div class="row align-items-center position-relative">
+
+
+            <div class="site-logo">
+                <a th:href="@{/}" class="text-black"><span class="text-primary">
+                        <img src="/images/logo.png" alt="Rincones Mendoza"></a>
+                </a>
+            </div>
+
+            <div class="col-12">
+                <nav class="site-navigation text-right ml-auto " role="navigation">
+
+                    <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+
+
+
+                        <li class="has-children">
+                            <a href="#">Paginas Prueba</a>
+                            <ul class="dropdown">
+                                <li><a th:href="@{/registro}" class="pure-menu-link"> Registro </a></li>
+                                <li><a th:href="@{/usuario/form}"> Usuario form</a></li>
+                                <li><a th:href="@{/usuario/list}"> usuario list</a></li>
+                                <li><a th:href="@{/zona/form}"> zona form</a></li>
+                                <li><a th:href="@{/zona/list}"> zona list</a></li>
+                                <li><a th:href="@{/comentario/form}"> comentario form</a></li>
+                                <li><a th:href="@{/comentario/list}"> comentario list</a></li>
+                                <li><a th:href="@{/alojamiento/form}"> alojamientos form</a></li>
+                                <li><a th:href="@{/alojamiento/list}"> alojamientos list</a></li>
+                                <li><a th:href="@{/restaurant/form}"> restaurantes form</a></li>
+                                <li><a th:href="@{/restaurant/form}"> restaurantes form</a></li>
+                                <li><a th:href="@{/actividad/form}"> actividades form</a></li>
+                                <li><a th:href="@{/actividad/list}"> actividades list</a></li>
+
+                            </ul>
+                        </li>
+
+
+                        <li><a href="#home-section" class="nav-link">Inicio</a></li>
+                        <li><a href="#services-section" class="nav-link">Nosotros</a></li>
+
+                        <li class="has-children">
+                            <a href="#">Zonas</a>
+                            <ul class="dropdown">
+                                <li><a th:href="@{/zona/zona1}">Zona Este</a></li>
+                                <li><a th:href="@{/zona/zona2}">Valle de Uco</a></li>
+                                <li><a th:href="@{/zona/zona3}">Precordillera y Alta Montaña</a></li>
+                                <li><a th:href="@{/zona/zona4}">Zona Sur</a></li>
+                                <li><a th:href="@{/zona/zona5}">Gran Mendoza y Lavalle</a></li>
+
+                            </ul>
+
+                        <li class="has-children">
+                            <a href="#">Actividades</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Alojamientos</a></li>
+                                <li><a href="#">Restaurantes</a></li>
+                                <li><a href="#">Aire Libre</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="#contact-section" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="toggle-button d-inline-block d-lg-none"><a href="#"
+                    class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+    </div>
+
+</header>

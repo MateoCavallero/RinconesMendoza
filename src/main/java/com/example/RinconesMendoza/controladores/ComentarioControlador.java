@@ -5,6 +5,7 @@ import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,7 +58,8 @@ public class ComentarioControlador {
         }
         return "comentario-list";
     }*/
-
+    
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")
     public String eliminarComentario(@RequestParam(required = true) String id) {
         comentarioService.deleteById(id);

@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RM|Precordillera y Alta Montaña </title>
-</head>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/fragments/head :: head"></head>
+
 <body>
-    <h1>Precordillera y Alta Montaña</h1>
+    <!--****** Navbar ******-->
+    <header th:replace="/fragments/navbar :: navbar"></header>
+    <!--****** Banner Principal ******-->
+                <section class="banner-zonas">
+                    <img src="../images/banner-zona-2.jpg">
+                    <h1>Precordillera y Alta Montaña</h1>
+                    <p> texto sobre la zona</p>
+                </section>
+
+        <!--****** Actividades ******-->
+
+        <section class="actividades">
+            <div class="card-group">
+                <div class="card">
+                    <img src="../images/portada-hoteles.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">ALOJAMIENTOS</h4>
+                        <h5><a href="alojamientos.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en alojamientos</a></h5>
+                        <h5><a href="alojamientos.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar un alojamiento</a></h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../images/portada-restaurantes.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">GASTRONOMIA</h4>
+                        <h5><a href="gastronomia.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en gastronomia</a></h5>
+                        <h5><a href="gastronomia.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar local gastronomico</a></h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../images/portada-actividades.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">ACTIVIDADES</h4>
+                        <h5><a href="actividades.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en actividades></h5>
+                        <h5><a href="actividades.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar actividad</a></h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--****** Populares ******-->
+        <!--******Footer ******-->
+        <footer th:replace="/fragments/footer :: footer"></footer>
 </body>
+
 </html>

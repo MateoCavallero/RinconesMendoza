@@ -1,50 +1,12 @@
-<header th:fragment="head" id="listar-header" class="listar-header cd-auto-hide-header
-            listar-haslayout">
-    <nav class="navbargral">
-        <nav class="navbar navbar-expand-lg style=" background-color: white;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <span><a href="index.html"><img src="static/images/logo.png" alt="Logo Rincones Mendoza"></a></span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/css/head.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <title>Rincones Mendoza</title>
+    <link rel="icon" href="/images/favicon.png">
 
-
-                        *** dejo el logo como boton de enlace al index.html***
-
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                        </li>-->-->
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Lugares</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Zonas
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Zona 1</a></li>
-                                <li><a class="dropdown-item" href="#">Zona 2</a></li>
-                                <li><a class="dropdown-item" href="#">Zona 3</a></li>
-                                <li><a class="dropdown-item" href="#">Zona 4</a></li>
-                                <li><a class="dropdown-item" href="#">Zona 5</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </nav>
-</header>
+</head>

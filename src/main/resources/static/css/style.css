@@ -21,8 +21,6 @@ a {
 }
 
 .textos-banner-1 {
-  /*-webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
-  box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);*/
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -61,6 +59,16 @@ header p {
 
 .card {
   padding: 1%;
+}
+.card-img-top {
+  box-shadow: 0px 5px 5px -1px rgb(0 0 0 / 32%);
+}
+.card-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #740128;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .actividades {
@@ -110,3 +118,5 @@ footer a{
 footer a:hover{
   color:rgb(6, 86, 233) ;
 }
+
+

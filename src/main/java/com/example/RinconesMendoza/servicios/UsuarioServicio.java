@@ -1,5 +1,6 @@
 package com.example.RinconesMendoza.servicios;
 
+import com.example.RinconesMendoza.entidades.Foto;
 import com.example.RinconesMendoza.entidades.Usuario;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.repositorios.UsuarioRepositorio;
@@ -8,6 +9,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class UsuarioServicio {
@@ -15,6 +17,8 @@ public class UsuarioServicio {
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
+    @Autowired
+    private FotoServicio fotoService;
     @Transactional
     public void crearUsuario(Usuario usuario) throws WebException {
         validacion(usuario);
@@ -27,6 +31,10 @@ public class UsuarioServicio {
 
     public Optional<Usuario> findAllByQ(String id) {
         return usuarioRepositorio.findById(id);
+    }
+
+    public Usuario findByDNI(String dni) {
+        return usuarioRepositorio.findAllByDNI(dni);
     }
 
     public List<Usuario> listAllByQ(String q) {
@@ -47,13 +55,16 @@ public class UsuarioServicio {
     }
 
     private void validacion(Usuario usuario) throws WebException {
+        if (findByDNI(usuario.getDni()) != null) {
+            throw new WebException("El DNI ya existe no se puede registrar con el mismo DNI");
+        }
         if (usuario.getNombre() == null || usuario.getNombre().length() < 3) {
             throw new WebException("El nombre no puede ser nulo o menor a 3 caracteres");
         }
         if (usuario.getApellido() == null || usuario.getApellido().length() < 3) {
             throw new WebException("El apellido no puede ser nulo o menor a 3 caracteres");
         }
-        if (usuario.getDni() == null || usuario.getDni() < 7) {
+        if (usuario.getDni() == null || usuario.getDni().length() < 7) {
             throw new WebException("El DNI no puede ser nulo o menor a 7 caracteres y debe contener solo numeros");
         }
         if (usuario.getEmail() == null || usuario.getEmail().length() < 3) {

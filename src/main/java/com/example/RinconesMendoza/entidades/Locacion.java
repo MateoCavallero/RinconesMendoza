@@ -14,6 +14,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Data
 public abstract class Locacion {
+
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
@@ -22,12 +23,12 @@ public abstract class Locacion {
     private String domicilio;
     private String telefono;
     private String web;
-    
     @Enumerated(value = EnumType.STRING)
     private RangoDePrecio rangoDePrecios;
-    
+    @ManyToOne
+    private Locacion locacion;
     private Double estrellas;
-    
+
     @OneToOne
     private Foto foto;
     @ManyToOne
