@@ -20,7 +20,7 @@ public abstract class Locacion {
     private String domicilio;
     private String telefono;
     private String web;
-    private RangoDePrecio rangoDePrecios;
+    private String rangoDePrecios;
     private Double estrellas;
     @OneToOne
     private Foto foto;
