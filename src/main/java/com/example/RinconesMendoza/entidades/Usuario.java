@@ -12,14 +12,14 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Data
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Usuario implements Serializable {
+public class Usuario{
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     private String nombre;
     private String apellido;
-    private Integer dni;
+    private String dni;
     private String email;
     
     

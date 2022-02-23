@@ -5,6 +5,7 @@ import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.UsuarioServicio;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,16 +18,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioControlador {
-    
+
     @Autowired
     private UsuarioServicio usuarioService;
-    
+
     @GetMapping("/form")
     public String crearUsuario(Model model, @RequestParam(required = false) String id) {
         if (id != null) {
             Optional<Usuario> optional = usuarioService.findAllByQ(id);
             if (optional.isPresent()) {
-                model.addAttribute("usuario", optional.get());
+                model.addAttribute("usuarios", optional.get());
             } else {
                 return "redirect:/usuario/list";
             }
@@ -35,29 +36,32 @@ public class UsuarioControlador {
         }
         return "usuario-form";
     }
-    
+
     @PostMapping("/save")
-    public String saveUsuario(RedirectAttributes redirect, @ModelAttribute Usuario usuario) {
+    public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario) {
         try {
             usuarioService.crearUsuario(usuario);
             redirect.addFlashAttribute("success", "Usuario guardado con exito");
             return "redirect:/usuario/list";
         } catch (WebException e) {
-            redirect.addFlashAttribute("error", e.getMessage());
-            return "redirect:/usuario/list";
+            model.addAttribute("error", e.getMessage());
+            model.addAttribute("persona", usuario);
+            return "usuario-form";
         }
     }
-    
+
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/list")
     public String listUsuario(Model model, @RequestParam(required = false) String q) {
         if (q != null) {
-            model.addAttribute("usuario", usuarioService.listAllByQ(q));
-        }else{
-            model.addAttribute("usuario", usuarioService.listAll());
+            model.addAttribute("usuarios", usuarioService.listAllByQ(q));
+        } else {
+            model.addAttribute("usuarios", usuarioService.listAll());
         }
         return "usuario-list";
     }
-    
+
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")
     public String eliminarUsuario(@RequestParam(required = true) String id) {
         usuarioService.deleteById(id);

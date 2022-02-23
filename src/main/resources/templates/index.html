@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
-    <link th:href="@{/css/head.css}" rel="stylesheet" />
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <title>Rincones Mendoza</title>
-    <link rel="icon" href="/images/favicon.png">
-
-</head>
+<head th:replace="/fragments/head :: head"></head>
 
 <body>
 
-
-
-    <header th:replace="/fragments/head :: head"></header>
+    <header th:replace="/fragments/navbar :: navbar"></header>
 
     <!--****** Banner Principal ******-->
     <div id=" carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -124,13 +111,7 @@
     </section>
 
     <!--****** Footer ******-->
-    <footer>
-        <section>
-            <a href="title">Ir al comienzo</a>
-            <a href="mailto:">Contactanos Ac&aacute;</a>
-        </section>
-        <p>©Copyrigth 2021</p>
-    </footer>
+    <footer th:replace="/fragments/footer :: footer"></footer>
 </body>
 
 

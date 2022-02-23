@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:fragments="head">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rincones mendoza</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!--CSS (Bootstrap)-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="/resources/static/css/styles.css">
-</head>
+    <head th:fragments="head">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>rincones mendoza</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!--CSS (Bootstrap)-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="/resources/static/css/styles.css">
+    </head>
 
+<<<<<<< HEAD
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+            <div class="container-fluid">
+                <a class="navbar-brand" th:href="@{/}">Rincones mendoza</a>
+                <a class="navbar-brand" th:href="@{/login}">Login</a>
+                <a class="navbar-brand" th:href="@{/logout}">Logout</a>
+                <a class="navbar-brand" th:href="@{/registro}">Registrarse</a>
+=======
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -23,50 +32,61 @@
         <div class="row">
             <div class="column">
                 <div class="display-1 text-center"></div>
+>>>>>>> 22c26c4f2ac5e930157166171932232c105c03e7
             </div>
+        </nav>
+        <main class="container">
+            <div class="row">
+                <div class="column">
+                    <div class="display-1 text-center"></div>
+                </div>
+            </div>
+        </main>
+        <div style="text-align:center">
+            <br>
+            <h2>Registro</h2>
+            <br>
+            <button class="btn btn-dark"><a th:href="@{/registro}" class="pure-menu-link"> Registro </a></button>
+            <br> <br>
+            <h2>Usuario</h2>
+            <br>
+            <button class="btn btn-dark"><a th:href="@{/usuario/form}"> Usuario form</a></button> <br> <br>
+            <button class="btn btn-dark"><a th:href="@{/usuario/list}"> usuario list</a></button> <br> <br>
+            <br> <br>
+            <h2>Zona</h2>
+            <br>
+            <button class="btn btn-dark"><a th:href="@{/zona/form}"> zona form</a></button> <br> <br>
+            <button class="btn btn-dark"><a th:href="@{/zona/list}"> zona list</a></button> <br> <br>
+            <br> <br>
+            <h2>Comentario</h2>
+            <br>
+            <button class="btn btn-dark"><a th:href="@{/comentario/form}"> comentario form</a></button> <br> <br>
+            <button class="btn btn-dark"><a th:href="@{/comentario/list}"> comentario list</a></button> <br> <br>
+            <br> <br>
+            <h2>Alojamientos</h2>
+            <br>
+            <button class="btn btn-dark"><a th:href="@{/alojamiento/form}"> alojamientos form</a></button> <br> <br>
+            <button class="btn btn-dark"><a th:href="@{/alojamiento/list}"> alojamientos list</a></button> <br> <br>
+            <br> <br>
+            <h2>Restaurantes</h2>
+            <br>
+            <button class="btn btn-dark"><a th:href="@{/restaurant/form}"> restaurantes form</a></button> <br> <br>
+            <button class="btn btn-dark"><a th:href="@{/restaurant/list}"> restaurantes list</a></button> <br> <br>
+            <br> <br>
+            <h2>Actividades</h2>
+            <br>
+            <button class="btn btn-dark"><a th:href="@{/actividad/form}"> actividades form</a></button> <br> <br>
+            <button class="btn btn-dark"><a th:href="@{/actividad/list}"> actividades list</a></button> <br> <br>
+            <br> <br>
+            <h2>Usuarios seguridad</h2>
+            <br>
+            <button class="btn btn-dark"><a th:href="@{/usuario-seguridad/list}"> usuarios seguridad list</a></button> <br> <br>
+            <br> <br>
         </div>
-    </main>
-    <div style="text-align:center">
-        <br>
-        <h2>Registro</h2>
-        <br>
-        <button class="btn btn-dark"><a th:href="@{/registro}" class="pure-menu-link"> Registro </a></button>
-        <br> <br>
-        <h2>Usuario</h2>
-        <br>
-        <button class="btn btn-dark"><a th:href="@{/usuario/form}"> Usuario form</a></button> <br> <br>
-        <button class="btn btn-dark"><a th:href="@{/usuario/list}"> usuario list</a></button> <br> <br>
-        <br> <br>
-        <h2>Zona</h2>
-        <br>
-        <button class="btn btn-dark"><a th:href="@{/zona/form}"> zona form</a></button> <br> <br>
-        <button class="btn btn-dark"><a th:href="@{/zona/list}"> zona list</a></button> <br> <br>
-        <br> <br>
-        <h2>Comentario</h2>
-        <br>
-        <button class="btn btn-dark"><a th:href="@{/comentario/form}"> comentario form</a></button> <br> <br>
-        <button class="btn btn-dark"><a th:href="@{/comentario/list}"> comentario list</a></button> <br> <br>
-        <br> <br>
-        <h2>Alojamientos</h2>
-        <br>
-        <button class="btn btn-dark"><a th:href="@{/alojamiento/form}"> alojamientos form</a></button> <br> <br>
-        <button class="btn btn-dark"><a th:href="@{/alojamiento/list}"> alojamientos list</a></button> <br> <br>
-        <br> <br>
-        <h2>Restaurantes</h2>
-        <br>
-        <button class="btn btn-dark"><a th:href="@{/restaurant/form}"> restaurantes form</a></button> <br> <br>
-        <button class="btn btn-dark"><a th:href="@{/restaurant/list}"> restaurantes list</a></button> <br> <br>
-        <br> <br>
-        <h2>Actividades</h2>
-        <br>
-        <button class="btn btn-dark"><a th:href="@{/actividad/form}"> actividades form</a></button> <br> <br>
-        <button class="btn btn-dark"><a th:href="@{/actividad/list}"> actividades list</a></button> <br> <br>
-        <br> <br>
-    </div>
-    <!--JS (Bootstrap)-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        <!--JS (Bootstrap)-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-</body>
+    </body>
 
 </html>

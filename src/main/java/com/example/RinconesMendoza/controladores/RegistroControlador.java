@@ -12,24 +12,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/registro")
-public class registroControlador {
+public class RegistroControlador {
 
     @Autowired
     private UsuarioSeguridadServicio userSerServicio;
 
     @GetMapping("")
     public String registro() {
-        return "registro";
+        return "registro-form";
     }
 
     @PostMapping("")
-    public String registroSave(Model model, @RequestParam String username, @RequestParam String password, @RequestParam String password2) throws WebException {
+    public String registroSave(Model model, @RequestParam String username, @RequestParam String password, @RequestParam String password2, @RequestParam String dni) throws WebException {
         try {
-            userSerServicio.save(username, password, password2);
+            userSerServicio.save(username, password, password2, dni);
             return "redirect:/";
         } catch (Exception e) {
             model.addAttribute("error", e.getMessage());
-            return "registro";
+            model.addAttribute("username", username);
+            return "registro-form";
         }
 
     }

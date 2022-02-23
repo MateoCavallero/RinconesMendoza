@@ -22,10 +22,8 @@ public abstract class Locacion {
     private String domicilio;
     private String telefono;
     private String web;
-    
     @Enumerated(value = EnumType.STRING)
     private RangoDePrecio rangoDePrecios;
-    
     private Double estrellas;
     
     @OneToOne
