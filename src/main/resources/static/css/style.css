@@ -20,25 +20,17 @@ a {
   color: white;
 }
 
-.textos-banner-1 {
-  font-weight: 300;
+.titulo-banner-1 {
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 60px auto 0;
 }
-/* Modificacion de titulo principal*/
-header h1 {
-  /*Aca  le estamos dando el tamaño*/
-  font-size: 6rem;
-  /*Acá lo estamos centrando*/
-  text-align: center;
-}
 
-header p {
-  font-size: 3rem;
-  text-align: center;
+.escrito-banner-1 {
+  color: #e31616;
+  font-weight: 600;
 }
-
 
 /****** Zonas y Actividades ******/
 .zonas,
@@ -118,5 +110,3 @@ footer a{
 footer a:hover{
   color:rgb(6, 86, 233) ;
 }
-
-

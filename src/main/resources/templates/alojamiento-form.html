@@ -50,7 +50,7 @@ and open the template in the editor.
                                         th:value="${tc}" th:text="${tc}"></option>
                             </select>
                         </div>
-                         <div>
+                        <div>
                             <label>Tipo de Alojamiento</label>
                             <select name="TipoAlojamiento" th:field="*{tipoAlojamiento}">
                                 <option th:each="tc : ${T(com.example.RinconesMendoza.utils.TipoAlojamiento).values()}" 
