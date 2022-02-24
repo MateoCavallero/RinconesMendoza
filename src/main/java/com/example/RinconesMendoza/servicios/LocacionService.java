@@ -21,7 +21,7 @@ public class LocacionService {
         locacionRepo.save(locacion);
     }
 
-    public List<Locacion> listar(Locacion locacion) {
+    public List<Locacion> listar() {
         return locacionRepo.findAll();
     }
 
