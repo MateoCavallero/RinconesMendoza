@@ -25,10 +25,7 @@ public abstract class Locacion {
     private String web;
     @Enumerated(value = EnumType.STRING)
     private RangoDePrecio rangoDePrecios;
-    @ManyToOne
-    private Locacion locacion;
     private Double estrellas;
-
     @OneToOne
     private Foto foto;
     @ManyToOne
