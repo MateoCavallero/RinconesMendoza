@@ -56,5 +56,6 @@ public class LocacionService {
         if (locacion.getTelefono() == null || locacion.getTelefono().length() < 3) {
             throw new WebException("");
         }
+        
     }
 }
