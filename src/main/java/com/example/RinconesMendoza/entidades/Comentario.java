@@ -1,6 +1,6 @@
 package com.example.RinconesMendoza.entidades;
 
-import com.example.RinconesMendoza.utils.Calidad;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,7 +18,7 @@ public class Comentario {
     @OneToOne
     private Locacion locacion;
     private String opinion;
-    private Calidad puntuacion;
+    
     
     
     

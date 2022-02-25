@@ -25,7 +25,7 @@
                         <div>
                             <label>Lugar a comentar</label>
                             <select  th:field="*{locacion}">
-                                <option th:each="ta : ${locaciones}" th:value="${ta.id}" th:text="${ta}"></option>
+                                <option th:each="ta : ${locaciones}" th:value="${ta.id}" th:text="${ta.nombre}"></option>
                             </select>
                         </div>
                         <div class="form-floating">

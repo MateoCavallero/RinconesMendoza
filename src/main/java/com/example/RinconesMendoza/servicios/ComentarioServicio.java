@@ -53,9 +53,7 @@ public class ComentarioServicio {
         if (comentario.getOpinion() == null || comentario.getOpinion().length() < 30) {
             throw new WebException("La opinion no puede ser nula o menor a 30 caracteres");
         }
-        if (comentario.getPuntuacion() == null) {
-            throw new WebException("Debe seleccionar alguna opción de puntación");
-        }
+        
     }
 
 }

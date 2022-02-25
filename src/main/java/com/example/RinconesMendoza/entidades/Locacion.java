@@ -1,5 +1,6 @@
 package com.example.RinconesMendoza.entidades;
 
+import com.example.RinconesMendoza.utils.Calidad;
 import com.example.RinconesMendoza.utils.RangoDePrecio;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -19,18 +20,18 @@ public abstract class Locacion {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+
     private String nombre;
     private String domicilio;
     private String telefono;
     private String web;
+
     @Enumerated(value = EnumType.STRING)
     private RangoDePrecio rangoDePrecios;
-    @ManyToOne
-    private Locacion locacion;
-    private Double estrellas;
 
     @OneToOne
     private Foto foto;
+
     @ManyToOne
     private Zona zona;
 }
