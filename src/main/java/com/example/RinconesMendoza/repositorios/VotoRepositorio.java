@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface VotoRepositorio extends JpaRepository<Voto, String> {
     
-    @Query("SELECT c FROM voto c WHERE c.id = :id")
+    @Query("SELECT c FROM Voto c WHERE c.id = :id")
     List<Voto> findByLocacion(@Param("id")String id);
 }
