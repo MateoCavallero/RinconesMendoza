@@ -22,8 +22,6 @@ public class Usuario{
     private String apellido;
     private String dni;
     private String email;
-//    @OneToOne
-//    private Foto foto;
     private String foto;
     
 }
