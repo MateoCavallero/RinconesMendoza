@@ -17,6 +17,9 @@ public class Comentario {
     private String id;
     @OneToOne
     private Locacion locacion;
+    @OneToOne
+    private Usuario usario;
+    private Double puntuacion;
     private String opinion;
     
     

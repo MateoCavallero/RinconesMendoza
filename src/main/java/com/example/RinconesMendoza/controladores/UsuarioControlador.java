@@ -3,6 +3,10 @@ package com.example.RinconesMendoza.controladores;
 import com.example.RinconesMendoza.entidades.Usuario;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.UsuarioServicio;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -40,11 +44,27 @@ public class UsuarioControlador {
 
     @PostMapping("/save")
     public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen) {
-        
-        if (imagen.isEmpty()) {
-            
+
+        if (!imagen.isEmpty()) {
+            try {
+                Path directorioImagenes = Paths.get("C:\\Users\\matuc\\Documents\\NetBeansProjects\\Spring\\RinconesMendoza\\src\\main\\resources\\images\\usuariosSubidas");
+                String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
+
+                byte[] bytesImg = imagen.getBytes();
+                
+                Path rutaCompleta = Paths.get(rutaAbsoluta+"/"+imagen.getOriginalFilename());
+                
+                Files.write(rutaCompleta, bytesImg);
+                
+                usuario.setFoto(imagen.getOriginalFilename());
+                
+                
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+
         }
-        
+
         try {
             usuarioService.crearUsuario(usuario);
             redirect.addFlashAttribute("success", "Usuario guardado con exito");
