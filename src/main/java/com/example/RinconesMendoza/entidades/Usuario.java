@@ -9,6 +9,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.OneToOne;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Data
@@ -22,8 +23,8 @@ public class Usuario{
     private String apellido;
     private String dni;
     private String email;
-    @OneToOne
-    private Foto foto;
-    
+//    @OneToOne
+//    private Foto foto;
+    private String foto;
     
 }

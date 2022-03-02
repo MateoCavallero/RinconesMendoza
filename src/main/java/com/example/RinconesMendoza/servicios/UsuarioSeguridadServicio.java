@@ -66,7 +66,8 @@ public class UsuarioSeguridadServicio implements UserDetailsService{
         
         return userSegRepositorio.save(user);
     }
-
+    
+    
     public UsuarioSeguridad findByUsername(String username) {
         return userSegRepositorio.findByUsername(username);
     }

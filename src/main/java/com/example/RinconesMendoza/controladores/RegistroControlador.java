@@ -2,6 +2,7 @@ package com.example.RinconesMendoza.controladores;
 
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.UsuarioSeguridadServicio;
+import com.example.RinconesMendoza.servicios.UsuarioServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,9 @@ public class RegistroControlador {
 
     @Autowired
     private UsuarioSeguridadServicio userSerServicio;
+
+    @Autowired
+    private UsuarioServicio userServicio;
 
     @GetMapping("")
     public String registro() {
@@ -32,6 +36,5 @@ public class RegistroControlador {
             model.addAttribute("username", username);
             return "registro-form";
         }
-
     }
 }

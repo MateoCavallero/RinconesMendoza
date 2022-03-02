@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -38,7 +39,12 @@ public class UsuarioControlador {
     }
 
     @PostMapping("/save")
-    public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario) {
+    public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen) {
+        
+        if (imagen.isEmpty()) {
+            
+        }
+        
         try {
             usuarioService.crearUsuario(usuario);
             redirect.addFlashAttribute("success", "Usuario guardado con exito");

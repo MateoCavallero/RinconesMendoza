@@ -29,8 +29,8 @@ public abstract class Locacion {
     private Locacion locacion;
     private Double estrellas;
 
-    @OneToOne
-    private Foto foto;
+//    @OneToOne
+//    private Foto foto;
     @ManyToOne
     private Zona zona;
 }
