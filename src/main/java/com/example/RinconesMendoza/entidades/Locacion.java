@@ -29,9 +29,7 @@ public abstract class Locacion {
     @OneToMany
     private List<Comentario> comentario;
     private Double estrellas;
-
-//    @OneToOne
-//    private Foto foto;
+    private String foto;
     @ManyToOne
     private Zona zona;
 }

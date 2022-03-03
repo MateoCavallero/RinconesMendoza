@@ -3,6 +3,10 @@ package com.example.RinconesMendoza.controladores;
 import com.example.RinconesMendoza.entidades.Alojamiento;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.AlojamientoServicio;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -13,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -39,8 +44,20 @@ public class AlojamientoControlador {
     }
 
     @PostMapping("/save")
-    public String saveUsuario(RedirectAttributes redirect, @ModelAttribute Alojamiento alojamiento) {
+    public String saveUsuario(RedirectAttributes redirect, @ModelAttribute Alojamiento alojamiento, @RequestParam("file") MultipartFile imagen) {
         try {
+            try {
+                if (!imagen.isEmpty()) {
+                    Path directorioImagenes = Paths.get(".//src/main/resources/images/locacion/");
+                    String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
+                    byte[] bytesImg = imagen.getBytes();
+                    Path rutaCompleta = Paths.get(rutaAbsoluta + "/" + imagen.getOriginalFilename());
+                    Files.write(rutaCompleta, bytesImg);
+                    alojamiento.setFoto(imagen.getOriginalFilename());
+                }
+            } catch (IOException e) {
+                System.out.println(e);
+            }
             alojamientoServis.crearAlojamiento(alojamiento);
             redirect.addFlashAttribute("success", "Alojamiento fue guardado con exito");
             return "redirect:/alojamiento/list";
@@ -48,6 +65,7 @@ public class AlojamientoControlador {
             redirect.addFlashAttribute("error", e.getMessage());
             return "redirect:/alojamiento/list";
         }
+
     }
 
     @GetMapping("/list")

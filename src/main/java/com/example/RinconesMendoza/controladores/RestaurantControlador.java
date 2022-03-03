@@ -1,15 +1,24 @@
 package com.example.RinconesMendoza.controladores;
 
 import com.example.RinconesMendoza.entidades.Restaurant;
+import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.RestaurantServicio;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/restaurant")
@@ -31,6 +40,31 @@ public class RestaurantControlador {
             model.addAttribute("restaurant", new Restaurant());
         }
         return "restaurant-form";
+    }
+
+    @PostMapping("/save")
+    public String saveUsuario(RedirectAttributes redirect, @ModelAttribute Restaurant restaurant, @RequestParam("file") MultipartFile imagen) {
+        try {
+            try {
+                if (!imagen.isEmpty()) {
+                    Path directorioImagenes = Paths.get(".//src/main/resources/images/locacion/");
+                    String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
+                    byte[] bytesImg = imagen.getBytes();
+                    Path rutaCompleta = Paths.get(rutaAbsoluta + "/" + imagen.getOriginalFilename());
+                    Files.write(rutaCompleta, bytesImg);
+                    restaurant.setFoto(imagen.getOriginalFilename());
+                }
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+            restoService.crearResto(restaurant);
+            redirect.addFlashAttribute("success", "Restaurant guardado con exito");
+            return "redirect:/restaurant/list";
+        } catch (Exception e) {
+            redirect.addFlashAttribute("error", e.getMessage());
+            return "redirect:/restaurant/list";
+        }
+
     }
 
     @GetMapping("/list")
