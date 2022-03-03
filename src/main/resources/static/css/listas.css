@@ -4,7 +4,7 @@
     color:white
 }
 .tabla {
-    margin: 5%;
+    color: #740128;
 }
 .boton {
     margin: 0;
@@ -12,4 +12,9 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+p {
+    color: #000000;
+    font-weight: 500;
+    line-height: 7px;
 }
