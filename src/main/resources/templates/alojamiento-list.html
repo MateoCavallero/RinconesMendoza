@@ -33,7 +33,7 @@
         <div class="card mt-3">
             <div class="card-header d-flex">
                 <h1> Lista de Alojamientos</h1>
-                <button class="btn-dark px-5 py-2 ms-auto"><a th:href="@{/alojamiento/form}">Crear Ciudad</a></button>
+                <button class="btn btn-primary"><a th:href="@{/alojamiento/form}">Crear Alojamiento</a></button>
             </div>
             <div class="card-body">
                 <form class="row g-3" th:action="@{/alojamiento/list}" method="GET">
@@ -41,7 +41,7 @@
                         <input type="text" style="width: 100%;" name="q" placeholder="Buscar...">
                     </div>
                     <div class="col-2">
-                        <button type="submit" class="btn btn-dark mb-3">Buscar</button>
+                        <button type="submit" class="btn btn-primary">Buscar</button>
                     </div>
                 </form>
                 <table class="table table-dark table-striped">
@@ -50,20 +50,32 @@
                             <div class="tabla" id="secwrapper">
                                 <section>
                                     <article>
-                                        <a href="#"><img src="../images/alta-montaña.jpg" alt="" /></a>
-                                        <h1 th:text="${c.nombre}"></h1>
-                                        <p th:text="${c.zona}"></p>
-                                        <p th:text="${c.domicilio}"></p>
-                                        <p th:text="${c.telefono}"></p>
-                                        <p th:text="${c.web}"></p>
-                                        <p th:text="${c.rangoDePrecios}"></p>
-                                        <p th:text="${c.TipoAlojamiento}"></p>
-                                        <p th:text="${c.aireAcondicionado}"></p>
-                                        <p th:text="${c.wifi}"></p>
-                                        <p th:text="${c.estacionamiento}"></p>
-                                        <p th:text="${c.desayuno}"></p>
-                                        <p th:text="${c.pileta}"></p>
-                                        <a href="#" class="readmore">Ver Más</a>
+
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="#"><img class="imag" src="../images/alta-montaña.jpg"
+                                                            alt="" /></a>
+                                                </div>
+                                                <div class="col">
+                                                    <h1 th:text="${c.nombre}"></h1>
+                                                    <p th:text="${c.zona}"></p>
+                                                    <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
+                                                    <p th:text="'Teléfono: ' + ${c.telefono}"></p>
+                                                    <p th:text="'Web: ' + ${c.web}"></p>
+                                                    <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
+                                                    <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
+                                                    <p th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'"></p>
+                                                    <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
+                                                    <p th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'"></p>
+                                                    <p th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'"></p>
+                                                    <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="boton btn btn-primary">Ver Más</a>
+                                        </div>
+
                                     </article>
                                 </section>
                             </div>

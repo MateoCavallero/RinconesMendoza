@@ -18,3 +18,11 @@ p {
     font-weight: 500;
     line-height: 7px;
 }
+.container{
+    min-height: 350px;
+}
+.imag{
+    border-radius: 25px;
+    -webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
+    box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
+}
