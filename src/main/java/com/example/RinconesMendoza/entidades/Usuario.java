@@ -7,6 +7,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Data
 @Inheritance(strategy = InheritanceType.JOINED)
