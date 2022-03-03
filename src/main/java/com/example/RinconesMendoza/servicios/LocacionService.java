@@ -1,5 +1,6 @@
 package com.example.RinconesMendoza.servicios;
 
+import com.example.RinconesMendoza.entidades.Comentario;
 import com.example.RinconesMendoza.entidades.Locacion;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.repositorios.LocacionRepositorio;
@@ -46,6 +47,26 @@ public class LocacionService {
         }
     }
 
+    @Transactional
+    public void setEstrellas(String id) {
+        Optional<Locacion> optional = locacionRepo.findById(id);
+        Integer i = 0;
+        Integer suma = 0;
+
+        if (optional.isPresent()) {
+            
+            Locacion locacion = optional.get();
+            for (Comentario aux : locacion.getComentario()) {
+                suma += aux.getPuntuacion();
+                i++;
+            }
+            
+            locacion.setEstrellas((double)suma/i);
+
+        }
+
+    }
+
     private void validacion(Locacion locacion) throws WebException {
         if (locacion.getNombre() == null || locacion.getNombre().length() < 3) {
             throw new WebException("El nombre no puede ser nulo o menor a 3 caracteres");
@@ -56,6 +77,7 @@ public class LocacionService {
         if (locacion.getTelefono() == null || locacion.getTelefono().length() < 3) {
             throw new WebException("");
         }
-        
+
     }
+
 }

@@ -17,28 +17,28 @@
             <div class="card ms-auto">
                 <div class="card-header d-flex">
                     <h1>Crear Comentario</h1>
-                   
+
                 </div>
                 <div class="card-body">
                     <form th:action="@{/comentario/save}" method="POST" th:object="${comentario}" class="col-6 mx-auto">
 
-                        <div>
-                            <label>Lugar a comentar</label>
-                            <select  th:field="*{locacion}">
-                                <option th:each="ta : ${locaciones}" th:value="${ta.id}" th:text="${ta.nombre}"></option>
-                            </select>
-                        </div>
                         <div class="form-floating">
                             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" maxlength="100"></textarea>
                             <label for="floatingTextarea2">Comentarios</label>
                         </div>
+
                         <div>
-                            <label>Calidad</label>
-                            <select th:field="*{puntuacion}">
-                                <option th:each="c : ${T(com.example.RinconesMendoza.utils.Calidad).values()}" 
-                                        th:value="${c}" th:text="${c}"></option>
+                            <label>Puntuación</label>
+                            <select>
+                                
+                                <option  th:value="${comentario.puntuacion}">1</option>
+                                <option  th:value="${comentario.puntuacion}">2</option>
+                                <option  th:value="${comentario.puntuacion}">3</option>
+                                <option  th:value="${comentario.puntuacion}">4</option>
+                                <option  th:value="${comentario.puntuacion}">5</option>
                             </select>
                         </div>
+
                         <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>
