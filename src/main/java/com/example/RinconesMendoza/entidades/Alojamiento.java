@@ -11,11 +11,11 @@ import lombok.Data;
 public class Alojamiento extends Locacion{
     @Enumerated(value = EnumType.STRING)
     private TipoAlojamiento tipoAlojamiento;
-    
     private Boolean aireAcondicionado;
     private Boolean estacionamiento;
     private Boolean wifi;
     private Boolean pileta;
     private Boolean desayuno;
     private Boolean bar_restaurant;
+    private String foto;
 }

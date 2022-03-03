@@ -2,6 +2,7 @@ package com.example.RinconesMendoza.controladores;
 
 import com.example.RinconesMendoza.entidades.Zona;
 import com.example.RinconesMendoza.excepciones.WebException;
+import com.example.RinconesMendoza.servicios.ProvinciaServicio;
 import com.example.RinconesMendoza.servicios.ZonaServicio;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,13 @@ public class ZonaControlador {
 
     @Autowired
     private ZonaServicio zonaService;
+    
+    @Autowired
+    private ProvinciaServicio provinciaService;
 
     @GetMapping("/form")
-    public String crearZona(Model model, @RequestParam(required = false) String id) {
+    public String crearZona(Model model, Model modelP, @RequestParam(required = false) String id) {
+        modelP.addAttribute("provincias", provinciaService.listAll());
         if (id != null) {
             Optional<Zona> optional = zonaService.findAllByQ(id);
             if (optional.isPresent()) {
