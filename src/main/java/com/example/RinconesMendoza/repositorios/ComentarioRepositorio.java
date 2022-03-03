@@ -13,4 +13,6 @@ public interface ComentarioRepositorio extends JpaRepository<Comentario, String>
     @Query("SELECT c FROM Comentario c WHERE c.locacion LIKE :q")
     List<Comentario>findAllByQ(@Param("q") String q);
     
+    
+    
 }

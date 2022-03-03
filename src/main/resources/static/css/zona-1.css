@@ -1,0 +1,23 @@
+/****** Banner zonas ******/
+.carousel-slide {
+    background-image: url(../images/banner-2.png);
+    opacity: 0.9;
+    background-repeat: round;
+    background-size: 100%;
+    padding: 20% 10% 20% 10%;
+    color: white;
+  }
+  .titulo-banner-zona {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 60px auto 0;
+  }
+  .escrito-descripcion {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .descripcion {
+    background-color: #212121;
+    padding: 10% 5% 10% 5%;
+}

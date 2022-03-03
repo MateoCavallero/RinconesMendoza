@@ -1,13 +1,14 @@
 package com.example.RinconesMendoza.entidades;
 
 import com.example.RinconesMendoza.utils.RangoDePrecio;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -25,8 +26,8 @@ public abstract class Locacion {
     private String web;
     @Enumerated(value = EnumType.STRING)
     private RangoDePrecio rangoDePrecios;
-    @ManyToOne
-    private Locacion locacion;
+    @OneToMany
+    private List<Comentario> comentario;
     private Double estrellas;
 
 //    @OneToOne

@@ -50,10 +50,13 @@ public class ComentarioServicio {
         if (comentario.getLocacion() == null){
             throw new WebException("Debe seleccionar algun lugar para comentar");
         }
-        if (comentario.getOpinion() == null || comentario.getOpinion().length() < 30) {
-            throw new WebException("La opinion no puede ser nula o menor a 30 caracteres");
+        if (comentario.getOpinion() == null) {
+            throw new WebException("La opinión no puede estar vacía");
         }
         
+        if(comentario.getPuntuacion() == null){
+            throw new WebException("Debe seleccionar una puntuación");
+        }
     }
 
 }
