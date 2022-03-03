@@ -44,28 +44,19 @@ public class UsuarioControlador {
 
     @PostMapping("/save")
     public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen) {
-
-        if (!imagen.isEmpty()) {
+        try {
             try {
-                Path directorioImagenes = Paths.get("C:\\Users\\matuc\\Documents\\NetBeansProjects\\Spring\\RinconesMendoza\\src\\main\\resources\\images\\usuariosSubidas");
-                String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
-
-                byte[] bytesImg = imagen.getBytes();
-                
-                Path rutaCompleta = Paths.get(rutaAbsoluta+"/"+imagen.getOriginalFilename());
-                
-                Files.write(rutaCompleta, bytesImg);
-                
-                usuario.setFoto(imagen.getOriginalFilename());
-                
-                
+                if (!imagen.isEmpty()) {
+                    Path directorioImagenes = Paths.get(".//src/main/resources/images/usuariosSubidas/");
+                    String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
+                    byte[] bytesImg = imagen.getBytes();
+                    Path rutaCompleta = Paths.get(rutaAbsoluta + "/" + imagen.getOriginalFilename());
+                    Files.write(rutaCompleta, bytesImg);
+                    usuario.setFoto(imagen.getOriginalFilename());
+                }
             } catch (IOException e) {
                 System.out.println(e);
             }
-
-        }
-
-        try {
             usuarioService.crearUsuario(usuario);
             redirect.addFlashAttribute("success", "Usuario guardado con exito");
             return "redirect:/usuario/list";
@@ -76,7 +67,7 @@ public class UsuarioControlador {
         }
     }
 
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/list")
     public String listUsuario(Model model, @RequestParam(required = false) String q) {
         if (q != null) {

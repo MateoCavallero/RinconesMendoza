@@ -1,7 +1,6 @@
 package com.example.RinconesMendoza;
 
 import com.example.RinconesMendoza.servicios.UsuarioSeguridadServicio;
-import javafx.beans.binding.Bindings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
