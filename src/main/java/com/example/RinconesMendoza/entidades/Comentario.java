@@ -19,7 +19,7 @@ public class Comentario {
     private Locacion locacion;
     @OneToOne
     private Usuario usario;
-    private Double puntuacion;
+    private Integer puntuacion;
     private String opinion;
     
     
