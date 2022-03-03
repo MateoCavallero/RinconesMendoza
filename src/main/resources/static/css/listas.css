@@ -3,3 +3,13 @@
     padding: 5% 5% 10% 5%;
     color:white
 }
+.tabla {
+    margin: 5%;
+}
+.boton {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
