@@ -3,6 +3,7 @@ package com.example.RinconesMendoza.controladores;
 import com.example.RinconesMendoza.entidades.Alojamiento;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.AlojamientoServicio;
+import com.example.RinconesMendoza.servicios.ZonaServicio;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,9 +27,13 @@ public class AlojamientoControlador {
 
     @Autowired
     private AlojamientoServicio alojamientoServis;
+    
+    @Autowired
+    private ZonaServicio zonaService;
 
     @GetMapping("/form")
-    public String crearAlojaiento(Model model, @RequestParam(required = false) String id) {
+    public String crearAlojaiento(Model model,Model modelz, @RequestParam(required = false) String id) {
+        modelz.addAttribute("zonas",zonaService.listAll());
         if (id != null) {
             Optional<Alojamiento> optional = alojamientoServis.findById(id);
             if (optional.isPresent()) {
