@@ -13,6 +13,9 @@
             <div class="carousel-item active">
                 <div class="banner">
                     <h1 class="titulo-banner-zona">CREAR ALOJAMIENTO</h1>
+                    <p>En esta sección podes subir lugares que recomiendes a otros usuarios. Recordá que deben ser
+                        lugares
+                        ubicados dentro de la Provincia de Mendoza, en cualquiera de sus cinco zonas.</p>
                 </div>
             </div>
         </div>
@@ -26,24 +29,35 @@
         <div class="card-body">
             <form th:action="@{/alojamiento/save}" method="POST" th:object="${alojamiento}" class="col-6 mx-auto">
                 <input hidden th:field="*{id}"> </input>
+
+
                 <div class="mb-3">
-                    <label for="nombre" class="form-label"> Nombre </label>
-                    <input type="text" class="form-control" th:field="*{nombre}" placeholder="Mateo"></input>
+                    <label for="nombre" class="form-label"> Nombre del lugar </label>
+                    <input type="text" class="form-control" th:field="*{nombre}"
+                        placeholder="Ej.: Hostal Mendoza"></input>
                 </div>
                 <div class="mb-3">
-                    <label for="nombre" class="form-label"> Domicilio </label>
-                    <input type="text" class="form-control" th:field="*{domicilio}"></input>
-                </div>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"> Telefono </label>
-                    <input type="text" class="form-control" th:field="*{telefono}"></input>
-                </div>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Web </label>
-                    <input type="text" class="form-control" th:field="*{web}"></input>
+                    <label for="nombre" class="form-label"> Dirección</label>
+                    <input type="text" class="form-control" th:field="*{domicilio}"
+                        placeholder="Ej.: Avenida Los Arroyos N° 300"></input>
                 </div>
                 <div>
-                    <label>Rango de Precio</label>
+                    <label>Zona a la que pertenece</label>
+                    <select th:field="*{zona.id}">
+                        <option th:each="tc : ${zonas}" th:value="${tc.id}" th:text="${tc.nombre}"></option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label"> Teléfono </label>
+                    <input type="tel" class="form-control" th:field="*{telefono}" placeholder="+542613025478"></input>
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Sitio Web</label>
+                    <input type="url" class="form-control" th:field="*{web}"
+                        placeholder="Ej.: www.hostalmendoza.com.ar"></input>
+                </div>
+                <div>
+                    <label>Rango de Precios del Lugar</label>
                     <select th:field="*{rangoDePrecios}">
                         <option th:each="tc : ${T(com.example.RinconesMendoza.utils.RangoDePrecio).values()}"
                             th:value="${tc}" th:text="${tc}"></option>
@@ -57,6 +71,7 @@
                     </select>
                 </div>
                 <div class="form-check">
+                    <h2>Selecciona los servicios que brinda el lugar</h2>
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                         th:field="*{aireAcondicionado}">
                     <label class="form-check-label" for="flexCheckDefault">
@@ -86,15 +101,20 @@
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                         th:field="*{desayuno}">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Desayuno
+                        Desayuno incluido
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                         th:field="*{bar_restaurant}">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Restorante/Bar
+                        Restaurante/Bar en el lugar
                     </label>
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagen" class="form-label">Foto</label>
+                    <input type="file" class="form-control" name="file" id="imagen"></input>
                 </div>
 
 
@@ -102,6 +122,8 @@
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
         </div>
+
+    </div>
     </div>
 
     <!--****** Actividades ******-->
