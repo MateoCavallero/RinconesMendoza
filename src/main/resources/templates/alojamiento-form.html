@@ -26,7 +26,8 @@
             <button class="btn btn-primary"><a th:href="@{/alojamiento/list}"> Ver lista de alojamientos </a></button>
         </div>
         <div class="card-body">
-            <form th:action="@{/alojamiento/save}" method="POST" th:object="${alojamiento}" class="col-6 mx-auto">
+            <form th:action="@{/alojamiento/save}" method="POST" th:object="${alojamiento}" class="col-6 mx-auto" enctype="multipart/form-data"
+            >
                 <input hidden th:field="*{id}"> </input>
 
 

@@ -26,3 +26,9 @@
     -webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
     box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
 }
+.container .card {
+    padding: 5%;
+}
+.vermas{
+    padding-top: 15px;
+}
