@@ -27,13 +27,13 @@ public class AlojamientoControlador {
 
     @Autowired
     private AlojamientoServicio alojamientoServis;
-    
+
     @Autowired
     private ZonaServicio zonaService;
 
     @GetMapping("/form")
-    public String crearAlojaiento(Model model,Model modelz, @RequestParam(required = false) String id) {
-        modelz.addAttribute("zonas",zonaService.listAll());
+    public String crearAlojaiento(Model model, Model modelz, @RequestParam(required = false) String id) {
+        modelz.addAttribute("zonas", zonaService.listAll());
         if (id != null) {
             Optional<Alojamiento> optional = alojamientoServis.findById(id);
             if (optional.isPresent()) {
@@ -84,5 +84,12 @@ public class AlojamientoControlador {
     public String eliminarAlojamiento(@RequestParam(required = true) String id) {
         alojamientoServis.deletefinById(id);
         return "redirect:/alojamiento/list";
+    }
+
+    @GetMapping("/alojamiento")
+    public String vistaAlojamiento(Model model, @RequestParam (required = true)  String id) {
+        Optional<Alojamiento> optional = alojamientoServis.findById(id);
+        model.addAttribute("alojamiento", optional.get());
+        return "alojamientos";
     }
 }
