@@ -20,6 +20,10 @@ public class ComentarioServicio {
         validacion(comentario);
         comentarioRepositorio.save(comentario);
     }
+    
+    public List<Comentario> listLocacion(String id){
+        return comentarioRepositorio.findAllLocacion(id);
+    }
 
     public List<Comentario> listAll() {
         return comentarioRepositorio.findAll();
@@ -47,9 +51,6 @@ public class ComentarioServicio {
     }
 
     private void validacion(Comentario comentario) throws WebException {
-        if (comentario.getLocacion() == null){
-            throw new WebException("Debe seleccionar algun lugar para comentar");
-        }
         if (comentario.getOpinion() == null) {
             throw new WebException("La opinión no puede estar vacía");
         }

@@ -17,8 +17,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <a href=""><img class="imag" src="../images/alta-montaña.jpg"
-                                                                                             alt="" /></a>
+                                <a
+                                    href=""><img class="imag" src="../images/alta-montaña.jpg" alt="" />
+                                </a>
                             </div>
                             <div class="col">
                                 <h1 th:text="${c.nombre}"></h1>
@@ -45,7 +46,15 @@
         </tr>
     </tbody>
 </table>
+
+<a th:href="@{/comentario/form}"><button>Crear Comentario</button></a><br>
+
+<table>
+    <tr th:each="p : ${comentarios}">
         
-        <a th:href="@{/comentario/form}"><button>Crear Comentario</button></a>
+    <p th:text="${p.comentario}"></p>
+        
+    </tr>
+</table>
 </body>
 </html>
