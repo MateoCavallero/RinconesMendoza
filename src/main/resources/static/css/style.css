@@ -21,6 +21,8 @@ a {
 }
 
 .titulo-banner-1 {
+  text-align: center;
+  font-size: 6rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -28,18 +30,20 @@ a {
 }
 
 .escrito-banner-1 {
-  color: #e31616;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #f7f0f0;
   font-weight: 600;
 }
 
 /****** Zonas y Actividades ******/
 .zonas,
 .actividades {
-  margin: 3% 10% 3% 10%;
+  margin: 5% 10% 3% 10%;
 }
  
 .row {
-  margin-top: 2%;
+  margin-top: 1%;
   margin-bottom: 2%;
 }
 
@@ -75,6 +79,8 @@ a {
 /* Banner Secundario */
 #testimonials {
   color: white;
+  font-size: 5rem;
+  text-align: center;
   background-image: url(../images/banner-2.png);
   background-size: cover;
   background-repeat: no-repeat;
