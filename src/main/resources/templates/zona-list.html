@@ -36,7 +36,7 @@
             </div>
             <div class="card-body">
                 <div>
-                    <form class="row g-3" th:action="@{/usuario/list}" method="GET">
+                    <form class="row g-3" th:action="@{/zona/list}" method="GET">
                         <div class="col">
                             <input type="text"
                                 style="width: 100%; height: 100%; background-color:#212529 ; color: white;" name="q"
@@ -55,14 +55,13 @@
                             <th scope="col">Nombre </th>
                             <th scope="col">Provincia </th>
                             <th scope="col"> </th>
-
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="tmp, iterator :${zonas}">
                             <th th:text="${iterator.index+1}" scope="row"></th>
                             <td th:text="${tmp.nombre}"> </td>
-                            <td th:text="${tmp.provincia.nombre}"> </td>
+                            <td th:text="${tmp.provincia}"> </td>
                             <td>
                                 <button class="btn btn-light px-5 py-2 ms-auto"><a
                                         th:href="@{/zona/form}+'?id='+${tmp.id}">Modificar</a></button>

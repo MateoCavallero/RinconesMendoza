@@ -14,6 +14,11 @@
     </head>
 
     <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" th:href="@{/}">Rincones mendoza</a>
+            </div>
+        </nav>
         <div class="container">
             <div th:if="${error}" class="alert alert-danger alert-dismissible fade show mt-auto" role="alert">
                 <span><strong th:text="${error}"> </strong> </span>
