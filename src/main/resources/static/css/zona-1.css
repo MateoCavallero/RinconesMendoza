@@ -1,6 +1,5 @@
 /****** Banner zonas ******/
 
-
 .carousel-slide {
   background-image: url(../images/banner-2.png);
   opacity: 0.9;
@@ -14,7 +13,7 @@
 }
 
 .banner {
-  display : flex;
+  display: flex;
 }
 
 .titulo-banner-zona {
@@ -24,7 +23,6 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 0px auto 0;
-  
 }
 
 .escrito-descripcion {
@@ -44,35 +42,30 @@
   padding: 120px 30px;
 }
 
-
-
 .titulo-Act {
   text-align: center;
   font-weight: 600;
   letter-spacing: 2px;
   margin: 0px auto 0;
-  padding: 30px 0px
-  
+  padding: 30px 0px;
 }
-.titulo-2{
-  font-size: 4rem
+.titulo-2 {
+  font-size: 4rem;
 }
 
 .container {
   margin: 0 auto;
   max-width: 960px;
 }
-.titulo-3{
-  font-size: 4rem
-  
+.titulo-3 {
+  font-size: 4rem;
 }
-.titulo-4{
-  font-size: 1.5rem
+.titulo-4 {
+  font-size: 1.5rem;
 }
-.ubicacion{
-  /*background-color:#fffbf3;*/ 
+.ubicacion {
+  /*background-color:#fffbf3;*/
 }
 .mapa {
   padding: 100px 500px;
 }
-  
