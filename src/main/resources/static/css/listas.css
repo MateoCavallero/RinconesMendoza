@@ -32,3 +32,16 @@
 .vermas{
     padding-top: 15px;
 }
+.bann-listaalojamiento {
+    background-image: url(../images/banner-1.png);
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 20% 10% 20% 10%;
+    color: white;
+  }
+  .titub {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 800;
+  }

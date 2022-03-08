@@ -8,8 +8,8 @@
         <header th:replace="/fragments/navbar :: navbar"></header>
 
         <!--****** Banner Principal ******-->
-        <div id=" carouselExampleSlidesOnly" class="carousel-lista" data-bs-ride="carousel">
-            <div class=" carousel-lista">
+        <div id=" carouselExampleSlidesOnly" class="" data-bs-ride="carousel">
+            <div class="bann-listaalojamiento">
                 <div class="carousel-item active">
                     <div class="banner">
                         <h1 class="titulo-banner-zona">LISTA DE ALOJAMIENTOS</h1>
@@ -52,11 +52,10 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col">
-                                            <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"><img class="imag" src="../images/alta-montaña.jpg"
-                                                             alt="" /></a>
+                                            <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"><img class="imag" src="../images/alta-montaña.jpg"                                          alt="" /></a>
                                         </div>
                                         <div class="col">
-                                            <h1 th:text="${c.nombre}"></h1>
+                                            <h1 class="titub" th:text="${c.nombre}"></h1>
                                             <p th:text="${c.zona}"></p>
                                             <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
                                             <p th:text="'Teléfono: ' + ${c.telefono}"></p>
@@ -71,8 +70,7 @@
                                         </div>
                                     </div>
                                     <div class="vermas">
-                                        <a class="boton btn btn-primary" th:href="@{/views/productos/detalle/}+${c.id}" th:text="${c.id}">
-                                        <a href="#" class="boton btn btn-primary">Ver Más</a>
+                                        <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}" class="boton btn btn-primary">Ver Más</a>
                                     </div>
                                 </div>
                             </section>
@@ -87,41 +85,7 @@
 
 
         <!--****** Actividades ******-->
-
-        <section class="actividades">
-            <div class="card-group">
-                <div class="card">
-                    <img src="/images/portada-hoteles.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">ALOJAMIENTOS</h4>
-                        <h5><a href="alojamientos.html"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
-                                alojamientos</a></h5>
-                        <h5><a href="alojamientos.html"><img src="/images/iconos/agregar-32.png" alt="..." /> Agregar un
-                                alojamiento</a></h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="/images/portada-restaurantes.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">GASTRONOMIA</h4>
-                        <h5><a href="gastronomia.html"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
-                                gastronomia</a></h5>
-                        <h5><a href="gastronomia.html"><img src="/images/iconos/agregar-32.png" alt="..." /> Agregar local
-                                gastronomico</a></h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="/images/portada-actividades.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">ACTIVIDADES</h4>
-                        <h5><a href="actividades.html"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
-                                actividades</a></h5>
-                        <h5><a href="actividades.html"><img src="/images/iconos/agregar-32.png" alt="..." /> Agregar
-                                actividad</a></h5>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section th:replace="/fragments/actividades :: actividades"></section>
 
         <!--****** Footer ******-->
         <footer th:replace="/fragments/footer :: footer"></footer>
