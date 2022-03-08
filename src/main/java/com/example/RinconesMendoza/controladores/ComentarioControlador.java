@@ -1,6 +1,8 @@
 package com.example.RinconesMendoza.controladores;
 
+import com.example.RinconesMendoza.entidades.Alojamiento;
 import com.example.RinconesMendoza.entidades.Comentario;
+import com.example.RinconesMendoza.entidades.Locacion;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import com.example.RinconesMendoza.servicios.LocacionService;
@@ -26,28 +28,23 @@ public class ComentarioControlador {
     private LocacionService locacionService; 
 
     @GetMapping("/form")
-    public String crearComentario(Model model, Model l,@RequestParam(required = false) String id) {
-        l.addAttribute("locaciones", locacionService.listar());
-        if (id != null) {
-            Optional<Comentario> optional = comentarioService.findAllByQ(id);
-            if (optional.isPresent()) {
-                model.addAttribute("comentario", optional.get());
-            } else {
-                return "redirect:/comentario/list";
-            }
-        } else {
-            model.addAttribute("comentario", new Comentario());
-        }
+    public String crearComentario(Model model, Model l,@RequestParam(required = true) String id) {
+            Comentario com = new Comentario();
+            Optional<Locacion> optional = locacionService.buscarId(id);
+            com.setLocacion(optional.get());
+            model.addAttribute("comentario", com);
         return "comentario-form";
     }
 
     @PostMapping("/save")
     public String saveComentario(RedirectAttributes redirect, @ModelAttribute Comentario comentario) {
+        
         try {
-            comentarioService.crearComentario(comentario);
+           comentarioService.crearComentario(comentario);            
             redirect.addFlashAttribute("success", "Comentario guardado con exito");
-            return "redirect:/comentario/list";
+            return "redirect:/alojamiento/alojamiento?id="+comentario.getLocacion().getId();
         } catch (WebException e) {
+            System.out.println(e.getMessage());
             redirect.addFlashAttribute("error", e.getMessage());
             return "redirect:/comentario/list";
         }
