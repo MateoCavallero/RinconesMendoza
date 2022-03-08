@@ -3,6 +3,7 @@ package com.example.RinconesMendoza.controladores;
 import com.example.RinconesMendoza.entidades.Alojamiento;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.AlojamientoServicio;
+import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import com.example.RinconesMendoza.servicios.ZonaServicio;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -29,11 +30,14 @@ public class AlojamientoControlador {
     private AlojamientoServicio alojamientoServis;
     
     @Autowired
+    private ComentarioServicio comentarioService;
+
+    @Autowired
     private ZonaServicio zonaService;
 
     @GetMapping("/form")
-    public String crearAlojaiento(Model model,Model modelz, @RequestParam(required = false) String id) {
-        modelz.addAttribute("zonas",zonaService.listAll());
+    public String crearAlojaiento(Model model, Model modelz, @RequestParam(required = false) String id) {
+        modelz.addAttribute("zonas", zonaService.listAll());
         if (id != null) {
             Optional<Alojamiento> optional = alojamientoServis.findById(id);
             if (optional.isPresent()) {
@@ -84,5 +88,15 @@ public class AlojamientoControlador {
     public String eliminarAlojamiento(@RequestParam(required = true) String id) {
         alojamientoServis.deletefinById(id);
         return "redirect:/alojamiento/list";
+    }
+
+    @GetMapping("/alojamiento")
+    public String vistaAlojamiento(Model model, Model modelcomentario, @RequestParam (required = true)  String id) {
+        Optional<Alojamiento> optional = alojamientoServis.findById(id);
+        model.addAttribute("alojamiento", optional.get());
+        
+        modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
+        
+        return "alojamientos";
     }
 }

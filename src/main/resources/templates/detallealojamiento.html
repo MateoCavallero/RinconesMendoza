@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/fragments/head :: head"></head>
+
+<body>
+
+    <header th:replace="/fragments/navbar :: navbar"></header>
+
+    <!--****** Banner Principal ******-->
+    <div id=" carouselExampleSlidesOnly" class="carousel-lista" data-bs-ride="carousel">
+        <div class=" carousel-lista">
+            <div class="carousel-item active">
+                <div class="banner">
+                    <h1 class="titulo-banner-zona">LISTA DE ALOJAMIENTOS</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--****** detalle de alojamientos ******-->
+
+    <div class="container ">
+        <div class="card bg-Light ">
+            <div class=" card-he ader bg-dark text-white" th: text="s{titulo} "> </div>
+            <div class="card-body">
+                <img class="img-thumbnail rounded float- Left" 
+                th:src="el/images/ + ${producto.imagen}}" 
+                th:alt="${producto.imagen} " 
+                style="max-width: 25%;">
+
+                <ul class="list-group">
+                    <li class="list-group-item" th: text="'NOMBRE DEL PRODUCTO:' +${producto.imagen}"></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--****** Footer ******-->
+        <footer th:replace="/fragments/footer :: footer"></footer>
+</body>
+
+</html>
