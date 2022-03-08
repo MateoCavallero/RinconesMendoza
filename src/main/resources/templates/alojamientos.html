@@ -37,24 +37,26 @@
                             </div>
                         </div>
                         <div class="vermas">
-                            <a class="boton btn btn-primary" th:href="@{/views/productos/detalle/}+${c.id}">
+                            <a class="boton btn btn-primary" th:href="@{/views/productos/detalle/}+${c.id}" >
                                 <a href="#" class="boton btn btn-primary">Ver Más</a>
                         </div>
                     </div>
                 </section>
             </div>
+            <a th:href="@{/comentario/form}+'?id='+${c.id}"><button>Crear Comentario</button></a><br>
+            </tr>
+            </tbody>
+
+        </table>
+
+
+
+        <table>
+            <tr th:each="p : ${comentarios}">
+
+            <p th:text="${p.opinion}"></p>
+
         </tr>
-    </tbody>
-</table>
-
-<a th:href="@{/comentario/form}"><button>Crear Comentario</button></a><br>
-
-<table>
-    <tr th:each="p : ${comentarios}">
-
-    <p th:text="${p.comentario}"></p>
-
-</tr>
-</table>
+    </table>
 </body>
 </html>

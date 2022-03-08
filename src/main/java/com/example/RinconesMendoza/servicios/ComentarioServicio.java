@@ -17,8 +17,9 @@ public class ComentarioServicio {
 
     @Transactional
     public void crearComentario(Comentario comentario) throws WebException {
-        validacion(comentario);
+        //validacion(comentario);
         comentarioRepositorio.save(comentario);
+        
     }
     
     public List<Comentario> listLocacion(String id){
