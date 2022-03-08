@@ -30,9 +30,8 @@
             </div>
             <div class="card ms-auto">
                 <div class="card-header d-flex">
-                    <h1>Creacion de usuario</h1>
-                    <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/usuario/list}"> Ver lista de usuarios
-                        </a></button>
+                    <h1>Creacion de usuario registro</h1>
+                    <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/usuario/list}"> Ver lista de usuarios </a></button>
                 </div>
                 <div class="card-body">
                     <form th:action="@{/usuario/save}" method="POST" th:object="${usuario}" class="col-6 mx-auto" enctype="multipart/form-data">
@@ -58,6 +57,18 @@
                             <label for="imagen" class="form-label">Foto</label>
                             <input type="file" class="form-control" name="file" id="imagen"></input>
                         </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de usuario</label>
+                            <input type="text" class="form-control" th:value="${username}" name="username" placeholder="nick"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña </label>
+                            <input type="password" class="form-control" th:field="*{password}" placeholder="***********"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Repita la contraseña </label>
+                            <input type="password" class="form-control" name="password2" placeholder="***********"></input>
+                        </div>                    
                         <div style="text-align:center" class="d-grid gap-2 col-6 mx-auto">
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>
