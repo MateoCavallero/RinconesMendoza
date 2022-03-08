@@ -116,3 +116,12 @@ footer a{
 footer a:hover{
   color:rgb(6, 86, 233) ;
 }
+
+.footer-link-list {
+  display: flex;
+  align-items: center;
+}
+
+.footer-link-list > * + *{
+  margin-left: 20px ; 
+}
