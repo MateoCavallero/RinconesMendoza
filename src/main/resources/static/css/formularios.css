@@ -1,22 +1,21 @@
-.carousel-lista {
+.banner-form {
   background-image: url(../images/banner-2.png);
   width: 100%;
+  height: 25%;
   display: flex;
   align-items: center;
 }
 
 .titulo-banner-form {
   display: flex;
-  color: #252525;
-}
-
-.titulo-banner-form {
+  color: #ffffff;
   text-align: center;
   font-size: 6rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 0px auto 0;
+  padding: auto;
 }
 
 .descripcion {
