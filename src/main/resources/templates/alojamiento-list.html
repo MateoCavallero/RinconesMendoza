@@ -52,8 +52,7 @@
                                     <div class="place">
                                         <div class="row">
                                             <div class="col">
-                                                <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"><img
-                                                        class="imag" src="../images/alta-montaña.jpg" alt="" /></a>
+                                                <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
                                             </div>
                                             <div class="col">
                                                 <h1 class="titub" th:text="${c.nombre}"></h1>

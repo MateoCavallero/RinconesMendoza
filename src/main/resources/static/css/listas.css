@@ -31,6 +31,7 @@
     -webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
     box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
     max-height: 220px;
+    max-width: 350px;
 }
 
 .container .card {
@@ -38,7 +39,7 @@
 }
 
 .vermas {
-    padding-top: 205px;
+    padding-top: 225px;
     padding-bottom: 15px;
 }
 
@@ -55,6 +56,7 @@
     text-transform: uppercase;
     font-size: 30px;
     font-weight: 800;
+    min-height: 75px;
 }
 
 
