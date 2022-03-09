@@ -14,19 +14,18 @@
 
     <!--****** Banner Principal ******-->
 
-    <div id=" carouselExampleSlidesOnly" class="carousel-lista" data-bs-ride="carousel">
-        <div class=" carousel-lista">
-            <div class="carousel-item active">
-                <div class="banner">
-                    <h1 class="titulo-banner-form">RECOMENDAR ALOJAMIENTO</h1>
-                </div>
+    <div class=" carousel-lista banner-form ">
+        <div class="carousel-item active">
+            <div class="banner">
+                <h1 class="titulo-banner-form">RECOMENDAR ALOJAMIENTO</h1>
             </div>
         </div>
     </div>
 
     <div class="descripcion">
         <div class="container">
-            <p class="escrito-descripcion">En esta sección podes subir lugares que quieras recomendar a otros usuarios. Recordá que deben
+            <p class="escrito-descripcion">En esta sección podes subir lugares que quieras recomendar a otros usuarios.
+                Recordá que deben
                 ser lugares ubicados dentro de la Provincia de Mendoza, en cualquiera de sus cinco zonas.
             </p>
         </div>
@@ -139,40 +138,7 @@
 
     <!--****** Actividades ******-->
 
-    <section class="actividades">
-        <div class="card-group">
-            <div class="card">
-                <img src="/images/portada-hoteles.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title">ALOJAMIENTOS</h4>
-                    <h5><a href="alojamientos.html"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
-                            alojamientos</a></h5>
-                    <h5><a href="alojamientos.html"><img src="/images/iconos/agregar-32.png" alt="..." /> Agregar un
-                            alojamiento</a></h5>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/images/portada-restaurantes.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title">GASTRONOMIA</h4>
-                    <h5><a href="gastronomia.html"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
-                            gastronomia</a></h5>
-                    <h5><a href="gastronomia.html"><img src="/images/iconos/agregar-32.png" alt="..." /> Agregar local
-                            gastronomico</a></h5>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/images/portada-actividades.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title">ACTIVIDADES</h4>
-                    <h5><a href="actividades.html"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
-                            actividades</a></h5>
-                    <h5><a href="actividades.html"><img src="/images/iconos/agregar-32.png" alt="..." /> Agregar
-                            actividad</a></h5>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section th:replace="/fragments/actividades :: actividades"></section>
 
     <!--****** Footer ******-->
     <footer th:replace="/fragments/footer :: footer"></footer>
