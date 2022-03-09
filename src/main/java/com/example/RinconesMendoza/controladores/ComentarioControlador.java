@@ -1,6 +1,5 @@
 package com.example.RinconesMendoza.controladores;
 
-import com.example.RinconesMendoza.entidades.Alojamiento;
 import com.example.RinconesMendoza.entidades.Comentario;
 import com.example.RinconesMendoza.entidades.Locacion;
 import com.example.RinconesMendoza.excepciones.WebException;
