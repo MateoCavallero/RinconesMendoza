@@ -18,7 +18,7 @@ public class Comentario {
     @OneToOne
     private Locacion locacion;
     @OneToOne
-    private Usuario usario;
+    private Usuario usuario;
     private Integer puntuacion;
     private String opinion;
     
