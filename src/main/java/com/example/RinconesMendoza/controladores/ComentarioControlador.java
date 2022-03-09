@@ -6,6 +6,8 @@ import com.example.RinconesMendoza.entidades.Locacion;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import com.example.RinconesMendoza.servicios.LocacionService;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -25,24 +27,32 @@ public class ComentarioControlador {
     @Autowired
     private ComentarioServicio comentarioService;
     @Autowired
-    private LocacionService locacionService; 
+    private LocacionService locacionService;
 
     @GetMapping("/form")
-    public String crearComentario(Model model, Model l,@RequestParam(required = true) String id) {
-            Comentario com = new Comentario();
-            Optional<Locacion> optional = locacionService.buscarId(id);
-            com.setLocacion(optional.get());
-            model.addAttribute("comentario", com);
+    public String crearComentario(Model model, Model l, @RequestParam(required = true) String id) {
+        Comentario com = new Comentario();
+        Optional<Locacion> optional = locacionService.buscarId(id);
+        com.setLocacion(optional.get());
+        model.addAttribute("comentario", com);
         return "comentario-form";
     }
 
     @PostMapping("/save")
     public String saveComentario(RedirectAttributes redirect, @ModelAttribute Comentario comentario) {
-        
+
         try {
-           comentarioService.crearComentario(comentario);            
+           Comentario comentarioaux = comentarioService.crearComentario(comentario);
+            
+            Locacion locacion = comentarioaux.getLocacion();
+            locacion.getComentario().add(comentarioaux);
+            System.out.println(locacion);
+            
+            
+            locacionService.crear(locacion);
+            locacionService.setEstrellas(locacion.getId());
             redirect.addFlashAttribute("success", "Comentario guardado con exito");
-            return "redirect:/alojamiento/alojamiento?id="+comentario.getLocacion().getId();
+            return "redirect:/alojamiento/alojamiento?id=" + comentario.getLocacion().getId();
         } catch (WebException e) {
             System.out.println(e.getMessage());
             redirect.addFlashAttribute("error", e.getMessage());
@@ -59,7 +69,7 @@ public class ComentarioControlador {
         }
         return "comentario-list";
     }
-    
+
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")
     public String eliminarComentario(@RequestParam(required = true) String id) {

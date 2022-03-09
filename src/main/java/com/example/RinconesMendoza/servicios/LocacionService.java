@@ -62,6 +62,7 @@ public class LocacionService {
             }
             
             locacion.setEstrellas((double)suma/i);
+            locacionRepo.save(locacion);
 
         }
 

@@ -16,9 +16,9 @@ public class ComentarioServicio {
     private ComentarioRepositorio comentarioRepositorio;
 
     @Transactional
-    public void crearComentario(Comentario comentario) throws WebException {
+    public Comentario crearComentario(Comentario comentario) throws WebException {
         //validacion(comentario);
-        comentarioRepositorio.save(comentario);
+       return comentarioRepositorio.save(comentario);
         
     }
     
