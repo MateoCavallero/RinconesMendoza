@@ -1,8 +1,10 @@
 package com.example.RinconesMendoza.servicios;
 
 import com.example.RinconesMendoza.entidades.Comentario;
+import com.example.RinconesMendoza.entidades.Locacion;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.repositorios.ComentarioRepositorio;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -14,12 +16,17 @@ public class ComentarioServicio {
 
     @Autowired
     private ComentarioRepositorio comentarioRepositorio;
+    
+    
 
     @Transactional
     public void crearComentario(Comentario comentario) throws WebException {
         //validacion(comentario);
         comentarioRepositorio.save(comentario);
-        
+        Locacion locacion = comentario.getLocacion();
+        List<Comentario> aux = new ArrayList();
+        aux.add(comentario);
+        locacion.setComentario(aux);
     }
     
     public List<Comentario> listLocacion(String id){
