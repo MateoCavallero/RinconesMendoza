@@ -50,44 +50,9 @@
         </h2>
     </div>-->
 
-    <!--****** Actividades ******-->
+<!--****** Actividades ******-->
 
-
-    <section class="actividades">
-        <div class="card-group">
-            <div class="card">
-                <img src="../images/portada-hoteles.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title">ALOJAMIENTOS</h4>
-                    <h5><a href="alojamientos.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en
-                            alojamientos</a></h5>
-                    <h5><a href="alojamientos.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar un
-                            alojamiento</a></h5>
-                </div>
-            </div>
-            <div class="card">
-                <img src="../images/portada-restaurantes.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title">GASTRONOMIA</h4>
-                    <h5><a href="gastronomia.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en
-                            gastronomia</a></h5>
-                    <h5><a href="gastronomia.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar local
-                            gastronomico</a></h5>
-                </div>
-            </div>
-            <div class="card">
-                <img src="../images/portada-actividades.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title">ACTIVIDADES</h4>
-                    <h5><a href="actividades.html"><img src="../images/iconos/ver-32.png" alt="..."> Ver todo en
-                            actividades</a></h5>
-                    <h5><a href="actividades.html"><img src="../images/iconos/agregar-32.png" alt="..."> Agregar
-                            actividad</a></h5>
-                </div>
-            </div>
-        </div>
-        
-    </section>
+<section th:replace="/fragments/actividades :: actividades"></section>
 
     <div class="descripcion titulo-Act ">
 
@@ -106,8 +71,8 @@
     </div>
 
 
-    <!--****** Populares ******-->
-    <!--******Footer ******-->
+
+    <!--****** Footer ******-->
     <footer th:replace="/fragments/footer :: footer"></footer>
 </body>
 

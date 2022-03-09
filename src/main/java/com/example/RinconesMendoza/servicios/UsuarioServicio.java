@@ -3,23 +3,70 @@ package com.example.RinconesMendoza.servicios;
 import com.example.RinconesMendoza.entidades.Usuario;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.repositorios.UsuarioRepositorio;
+import com.example.RinconesMendoza.utils.Role;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsuarioServicio {
+public class UsuarioServicio implements UserDetailsService{
 
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
-    
-    @Transactional
-    public void crearUsuario(Usuario usuario) throws WebException {
-        validacion(usuario);
-        usuarioRepositorio.save(usuario);
+    public Usuario save(Usuario usuario, String password2) throws WebException {
+        Usuario user = new Usuario();
+        Usuario usuario2 = new Usuario();
+
+        if (usuario.getDni() == null || usuario.getDni().isEmpty()) {
+            throw new WebException("El dni no puede estar vacio");
+        }
+
+        usuario2 = findByDNI(usuario.getDni());
+
+        if (usuario == null) {
+            throw new WebException("No se puede registrar un usuario con un DNI que no exista en la base de datos");
+        }
+        if (usuario.getUsername() == null || usuario.getUsername().isEmpty()) {
+            throw new WebException("El nombre de usuario no puede estar vacio");
+        }
+        if (findByUsername(usuario.getUsername()) != null) {
+            throw new WebException("El nombre de usuario ya esta registrado intente con otro");
+        }
+        if (usuario.getPassword() == null || password2 == null || usuario.getPassword().isEmpty() || password2.isEmpty()) {
+            throw new WebException("La contraseña no puede estar vacia");
+        }
+        if (!usuario.getPassword().equals(password2)) {
+            throw new WebException("Las contraseñas deben ser iguales");
+        }
+
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        user.setId(usuario.getId());
+        user.setNombre(usuario.getNombre());
+        user.setApellido(usuario.getApellido());
+        user.setDni(usuario.getDni());
+        user.setEmail(usuario.getEmail());
+        user.setUsername(usuario.getUsername());
+        user.setPassword(encoder.encode(usuario.getPassword()));
+        user.setFoto(usuario.getFoto());
+        user.setRol(Role.USER);
+//        delete(usuario2);
+
+        return usuarioRepositorio.save(user);
+    }
+
+    public Usuario findByUsername(String username) {
+        return usuarioRepositorio.findByUsername(username);
     }
 
     public List<Usuario> listAll() {
@@ -69,4 +116,21 @@ public class UsuarioServicio {
         }
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        try {
+            Usuario user0 = usuarioRepositorio.findByUsername(username);
+            User user;
+            
+            List<GrantedAuthority> authorities = new ArrayList<>();
+            authorities.add(new SimpleGrantedAuthority("ROLE_"+user0.getRol()));
+            
+            return new User(username, user0.getPassword(), authorities);
+        } catch (Exception e) {
+            throw new UsernameNotFoundException("El usuario solicitado no existe");
+        }
+        
+        
+    }
+    
 }

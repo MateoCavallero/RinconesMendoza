@@ -50,7 +50,7 @@ public class ZonaServicio {
         if (zona.getNombre() == null || zona.getNombre().length() < 3) {
             throw new WebException("El nombre no puede ser nulo o menor a 3 caracteres");
         }
-        if (zona.getProv() == null) {
+        if (zona.getProvincia() == null) {
             throw new WebException("El apellido no puede ser nulo o menor a 3 caracteres");
         }
     }

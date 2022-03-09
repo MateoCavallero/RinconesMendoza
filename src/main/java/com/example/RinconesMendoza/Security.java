@@ -1,6 +1,6 @@
 package com.example.RinconesMendoza;
 
-import com.example.RinconesMendoza.servicios.UsuarioSeguridadServicio;
+import com.example.RinconesMendoza.servicios.UsuarioServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -18,14 +18,14 @@ public class Security extends WebSecurityConfigurerAdapter {
     // autenticacion y autorizaciones
     //UserDetailService --> loadByUsername --> UsuarioSeguridadServicio
     @Autowired
-    private UsuarioSeguridadServicio userSegService;
+    private UsuarioServicio userService;
 
     //un metodo que va a configurar la autenticacion
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userSegService).passwordEncoder(new BCryptPasswordEncoder());
+        auth.userDetailsService(userService).passwordEncoder(new BCryptPasswordEncoder());
     }
-
+   
     //la configuracion de las peticiones http
     @Override
     protected void configure(HttpSecurity http) throws Exception {

@@ -1,7 +1,7 @@
 package com.example.RinconesMendoza.servicios;
 
-import com.example.RinconesMendoza.entidades.Locacion;
-import com.example.RinconesMendoza.repositorios.LocacionRepositorio;
+import com.example.RinconesMendoza.entidades.Provincia;
+import com.example.RinconesMendoza.repositorios.ProvinciaRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 public class ProvinciaServicio {
         
     @Autowired
-    private LocacionRepositorio locacionRepo;
+    private ProvinciaRepositorio provinciaRepo;
     
-    public List<Locacion> listAll() {
-        return locacionRepo.findAll();
+    public List<Provincia> listAll() {
+        return provinciaRepo.findAll();
     }
 }

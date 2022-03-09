@@ -2,6 +2,7 @@ package com.example.RinconesMendoza.controladores;
 
 import com.example.RinconesMendoza.entidades.Usuario;
 import com.example.RinconesMendoza.excepciones.WebException;
+import com.example.RinconesMendoza.servicios.MailServicio;
 import com.example.RinconesMendoza.servicios.UsuarioServicio;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -26,6 +27,9 @@ public class UsuarioControlador {
 
     @Autowired
     private UsuarioServicio usuarioService;
+    
+    @Autowired
+    private MailServicio mailService;
 
     @GetMapping("/form")
     public String crearUsuario(Model model, @RequestParam(required = false) String id) {
@@ -41,9 +45,9 @@ public class UsuarioControlador {
         }
         return "usuario-form";
     }
-
+    
     @PostMapping("/save")
-    public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen) {
+    public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen, @RequestParam String password2) {
         try {
             try {
                 if (!imagen.isEmpty()) {
@@ -57,7 +61,8 @@ public class UsuarioControlador {
             } catch (IOException e) {
                 System.out.println(e);
             }
-            usuarioService.crearUsuario(usuario);
+            usuarioService.save(usuario, password2);
+            mailService.enviarMail(usuario.getEmail(),"Bienvenido a Rincones Mendoza","Agradecemos que te hayas unido a nuestra plataforma y comiences a formar parte de esta hermosa familia de turistas para dejar tus recomendaciones, comentarios y puntuaciones :)");
             redirect.addFlashAttribute("success", "Usuario guardado con exito");
             return "redirect:/usuario/list";
         } catch (WebException e) {
