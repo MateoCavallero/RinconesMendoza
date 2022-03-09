@@ -14,6 +14,11 @@
     </head>
 
     <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" th:href="@{/}">Rincones mendoza</a>
+            </div>
+        </nav>
         <div class="container">
             <div th:if="${error}" class="alert alert-danger alert-dismissible fade show mt-auto" role="alert">
                 <span><strong th:text="${error}"> </strong> </span>
@@ -50,6 +55,8 @@
                                 <th scope="col">Nombre </th>
                                 <th scope="col">Apellido </th>
                                 <th scope="col">Email </th>
+                                <th scope="col">Username </th>
+                                <th scope="col">Imagen </th>
                                 <th sec:authorize="hasRole('ROLE_ADMIN')" scope="col">Modificar </th>
                                 <th sec:authorize="hasRole('ROLE_ADMIN')" scope="col">Eliminar </th>
                             </tr>
@@ -61,6 +68,11 @@
                                 <td th:text="${tmp.nombre}"> </td>
                                 <td th:text="${tmp.apellido}"> </td>
                                 <td th:text="${tmp.email}"> </td>
+                                <td th:text="${tmp.username}"> </td>
+                                <td <img class="img-thumbnail rounded float-left"
+                                         th:src="@{'/images/usuariosSubidas/'+ ${tmp.foto}}"
+                                         th:alt="${tmp.foto}"
+                                         style="max-width: 10%"></td>
                                 <td>
                                     <button sec:authorize="hasRole('ROLE_ADMIN')" class="btn btn-light px-5 py-2 ms-auto"><a
                                             th:href="@{/usuario/form}+'?id='+${tmp.id}">Modificar</a></button>

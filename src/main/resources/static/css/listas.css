@@ -1,11 +1,13 @@
 .carousel-lista {
     background-color: #212121;
     padding: 5% 5% 10% 5%;
-    color:white
+    color: white
 }
+
 .tabla {
     color: #740128;
 }
+
 .boton {
     margin: 0;
     position: absolute;
@@ -13,22 +15,66 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
 .tabla p {
     color: #000000;
     font-weight: 500;
     line-height: 7px;
 }
-.tabla .container{
-    min-height: 350px;
+
+.tabla .container {
+    min-height: 250px;
 }
-.imag{
+
+.imag {
     border-radius: 25px;
     -webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
     box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.79);
+    max-height: 220px;
 }
+
 .container .card {
     padding: 5%;
 }
-.vermas{
-    padding-top: 15px;
+
+.vermas {
+    padding-top: 205px;
+    padding-bottom: 15px;
+}
+
+.bann-listaalojamiento {
+    background-image: url(../images/banner-1.png);
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 20% 10% 20% 10%;
+    color: white;
+}
+
+.titub {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+
+
+.espacios {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.place {
+    min-width: 1150px;
+}
+
+.listalugar {
+    max-width: 1080px;
+}
+
+.crearlugar {
+    display: -ms-flexbox!important;
+    display: flex!important;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }

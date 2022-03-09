@@ -1,3 +1,36 @@
-.banner-backround {
-    background-image: url(../images/);
+.banner-form {
+  background-image: url(../images/banner-2.png);
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+}
+
+.titulo-banner-form {
+  display: flex;
+  color: #ffffff;
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0px auto 0;
+  padding: auto;
+}
+
+.descripcion {
+  background-color: #777772;
+  padding: 120px 30px;
+}
+
+.escrito-descripcion {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 1441px) {
+  .escrito-descripcion {
+    font-size: 1.5rem;
+  }
 }

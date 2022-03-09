@@ -31,12 +31,12 @@
         <div class="card ms-auto">
             <div class="card-header d-flex">
                 <h1>Listado de zonas</h1>
-                <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/usuario/form}"> ir a zona
+                <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/zona/form}"> ir a zona
                         form</a></button>
             </div>
             <div class="card-body">
                 <div>
-                    <form class="row g-3" th:action="@{/usuario/list}" method="GET">
+                    <form class="row g-3" th:action="@{/zona/list}" method="GET">
                         <div class="col">
                             <input type="text"
                                 style="width: 100%; height: 100%; background-color:#212529 ; color: white;" name="q"
@@ -54,17 +54,14 @@
                             <th scope="col">N° </th>
                             <th scope="col">Nombre </th>
                             <th scope="col">Provincia </th>
-                            <th scope="col">Modificar </th>
-                            <th scope="col">Eliminar </th>
+                            <th scope="col"> </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="tmp, iterator :${zonas}">
                             <th th:text="${iterator.index+1}" scope="row"></th>
                             <td th:text="${tmp.nombre}"> </td>
-                            <td th:text="${tmp.provincia.}"> </td>
-                            <td th:text="${tmp.dni}"> </td>
-                            <td th:text="${tmp.email}"> </td>
+                            <td th:text="${tmp.provincia}"> </td>
                             <td>
                                 <button class="btn btn-light px-5 py-2 ms-auto"><a
                                         th:href="@{/zona/form}+'?id='+${tmp.id}">Modificar</a></button>

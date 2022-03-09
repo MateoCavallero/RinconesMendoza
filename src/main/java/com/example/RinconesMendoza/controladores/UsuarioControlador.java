@@ -41,9 +41,9 @@ public class UsuarioControlador {
         }
         return "usuario-form";
     }
-
+    
     @PostMapping("/save")
-    public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen) {
+    public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen, @RequestParam String password2) {
         try {
             try {
                 if (!imagen.isEmpty()) {
@@ -57,7 +57,7 @@ public class UsuarioControlador {
             } catch (IOException e) {
                 System.out.println(e);
             }
-            usuarioService.crearUsuario(usuario);
+            usuarioService.save(usuario, password2);
             redirect.addFlashAttribute("success", "Usuario guardado con exito");
             return "redirect:/usuario/list";
         } catch (WebException e) {

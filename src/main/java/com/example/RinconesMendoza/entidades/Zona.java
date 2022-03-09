@@ -16,5 +16,5 @@ public class Zona {
     private String id;
     private String nombre;
     @OneToOne
-    private Provincia prov;
+    private Provincia provincia;
 }
