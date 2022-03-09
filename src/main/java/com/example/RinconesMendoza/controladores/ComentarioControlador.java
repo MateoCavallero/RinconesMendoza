@@ -32,6 +32,7 @@ public class ComentarioControlador {
             Comentario com = new Comentario();
             Optional<Locacion> optional = locacionService.buscarId(id);
             com.setLocacion(optional.get());
+           
             model.addAttribute("comentario", com);
         return "comentario-form";
     }
@@ -42,6 +43,7 @@ public class ComentarioControlador {
         try {
            comentarioService.crearComentario(comentario);            
             redirect.addFlashAttribute("success", "Comentario guardado con exito");
+            comentario.getLocacion().setEstrellas(locacionService.setEstrellas(comentario.getLocacion().getId()));
             return "redirect:/alojamiento/alojamiento?id="+comentario.getLocacion().getId();
         } catch (WebException e) {
             System.out.println(e.getMessage());
