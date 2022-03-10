@@ -7,12 +7,68 @@
             <tbody class="tabla">
                 <tr th:each=" c : ${alojamiento} ">
 
+<<<<<<< HEAD
                     <!--****** Banner Principal ******-->
                     <!--****** Banner Principal ******
                     <div class="bann-detalle">
                         <div class="carousel-item active">
                             <div class="titulobanner">
                                 <h1 th:text="${c.nombre}"></h1>
+=======
+<head th:replace="/fragments/head :: head"></head>
+
+<body>
+    <header th:replace="/fragments/navbar :: navbar"></header>
+
+
+    <table class="table table-dark table-striped">
+        <tbody class="tabla">
+            <tr th:each=" c : ${alojamiento} ">
+
+                <!--****** Banner Principal ******
+                <div class="bann-detalle">
+                    <div class="carousel-item active">
+                        <div class="titulobanner">
+                            <h1 th:text="${c.nombre}"></h1>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div style="background-image: url('img_girl.jpg');">
+                    <img class="" th:src="@{'../images/locacion/' + ${c.foto}}">
+                    <h1 th:text="${c.nombre}"></h1>
+                </div>
+                <!--****** Banner Principal ******-->
+
+                <div class="tabla detalles" id="secwrapper">
+                    <section>
+                        <div class="ubidetalle">
+                            <div class="row">
+                                <div class="col">
+                                    <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
+                                </div>
+                                <div class="col">
+                                    <p th:text="'Zona: ' + ${c.zona}"></p>
+                                    <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
+                                    <p th:text="'Teléfono: ' + ${c.telefono}"></p>
+                                    <p th:text="'Web: ' + ${c.web}"></p>
+                                    <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
+                                    <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
+                                </div>
+                                <div class="col">
+                                    <p th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'"></p>
+                                    <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
+                                    <p th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'">
+                                    </p>
+                                    <p th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'"></p>
+                                    <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
+                                    <p th:text="'Estrellas: ' + ${c.estrellas}"></p>
+                                </div>
+                                <div class="crearcomment">
+                                    <a th:href="@{/comentario/form}+'?id='+${c.id}"><button
+                                            class="boton btn btn-primary">Crear Comentario</button></a><br>
+                                </div>
+>>>>>>> 69db75d7cf5ebf1678ddce2c21b662ab7c80307b
                             </div>
                         </div>
                     </div>-->
