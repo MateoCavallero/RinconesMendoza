@@ -7,18 +7,62 @@
 <body>
     <!--****** Navbar ******-->
     <header th:replace="/fragments/navbar :: navbar"></header>
+
     <!--****** Banner Principal ******-->
-    <section class="banner-zona-1">
-        <img src="../images/banner-zona-2.jpg">
-        <h1>Zona Este</h1>
-        <p> texto zona</p>
-    </section>
+    <div id=" carouselExampleSlidesOnly" class="carousel-slide" data-bs-ride="carousel">
+        <div class=" carousel-uco">
+            <div class="carousel-item active">
+                <div class="banner">
+                    <h1 class="titulo-banner-zona">Zona Este</h1>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!--****** Actividades ******-->
+    <div class="descripcion">
+        <div class="container">
+            <p class="escrito-descripcion">Zona Este
 
-<section th:replace="/fragments/actividades :: actividades"></section>
+                Los impactantes trazados geométricos de fincas, chacras y viñedos de los departamentos de San Martín,
+                Junín, Rivadavia, Santa Rosa y La Paz son el paisaje característico de esta zona que, además, es la de
+                mayor extensión de viñedos de Mendoza.
+                El Este es uno de los más extensos oasis de Mendoza, que va desde el río Mendoza hasta el río
+                Desaguadero, límite con la provincia vecina de San Luis.
 
-<!--****** Footer ******-->
-<footer th:replace="/fragments/footer :: footer"></footer>
+                Esta zona, puede ser dividida en dos sectores. Por un lado, el que ocupa el Oasis Mendoza Norte, que al
+                extenderse hacia el Este, (villa cabecera de La Paz), dibuja un mapa de colmenares, viñedos, bodegas y
+                agroindustrias, entre otras. El otro sector, está compuesto en su mayoría por un desierto, llamado
+                Llanura de la Travesía, siendo algunas zonas ricas en yacimientos petrolíferos.
+                Fue ésta la tierra que eligió el General San Martín para construir su chacra y hogar rural, anhelando a
+                su retorno el merecido reposo del guerrero.
+                El encuentro con la naturaleza asombra por su virginidad en Santa Rosa en la Reserva de la Biosfera de
+                Ñacuñan, en Las Catitas, permitiendo recrearse con la fauna y la flora típica del monte, para
+                experiencias de ecoturismo. Es un área mundial protegida por la UNESCO con miles hectáreas de bosques de
+                algarrobo y jarilla junto a puesteros con sus típicos usos y costumbres.
+                Sin duda es el espejo de agua del Embalse El Carrizal el punto de reunión veraniega con actividades de
+                motonáutica, esquí acuático, navegación a vela y pesca deportiva.
+
+                Imperdible gastronomía típica con nombres que aún perduran como el cadillo de charqui, locro, pastel de
+                papas, humita en chala o la olla, patitas aliñadas, mazamorra dulzona, arrope de uva, sapaipillas, dulce
+                de alcayota, tortitas con chicharrones, carne a la masa, asado criollo o ternera con cuero, por supuesto
+                acompañados con el mejor vino.
+                Diversos festivales, componen una interesante agenda:
+                A principios de Febrero, “Rivadavia le canta al país”, festival de canto folclórico a nivel nacional.
+                En la segunda quincena de Marzo, “Festival de la Cueca y el Damasco” en La Dormida, Santa Rosa.
+                Folclórico.
+                En la segunda quincena de Abril, “La pisada del Vino de las Reinas” en Junín, que consta en la obtención
+                de vino casero por parte de las Reinas Vendimiales, llamado vino patero o “Cabernet de las Reinas”.
+                En Noviembre, en Luján de Cuyo, “Feriagro”, exposición de productos agrícolo-ganaderos y música.
+            </p>
+        </div>
+    </div>
+
+    <!--****** Actividades ******-->
+
+    <section th:replace="/fragments/actividades :: actividades"></section>
+
+    <!--****** Footer ******-->
+    <footer th:replace="/fragments/footer :: footer"></footer>
 </body>
+
 </html>
