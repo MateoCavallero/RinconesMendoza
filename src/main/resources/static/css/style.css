@@ -41,7 +41,7 @@ a {
 .actividades {
   margin: 5% 10% 3% 10%;
 }
- 
+
 .row {
   margin-top: 1%;
   margin-bottom: 2%;
@@ -64,7 +64,7 @@ a {
 .card-title {
   font-size: 30px;
   font-weight: 700;
-  color: #740128;
+  color: #292828;
   text-align: center;
   text-transform: uppercase;
 }
@@ -92,31 +92,29 @@ a {
 }
 
 /*Pie de pagina*/
-footer{
+footer {
   background-color: #222;
   padding: 3rem;
-  color:white;
+  color: white;
 }
 
-footer section{
+footer section {
   float: right;
 }
-  
+
 footer p {
   margin: 0;
-
 }
 /*Aca le estamos cambiando el color a nuestro link*/
-footer a{
+footer a {
   /*con el transition estamos dandole una animacion mas suave al link */
   transition: color 0.3s ease;
-  color:white;
+  color: white;
   text-decoration: none;
-
 }
 /*aca le estamos dando la transicion*/
-footer a:hover{
-  color:rgb(6, 86, 233) ;
+footer a:hover {
+  color: rgb(6, 86, 233);
 }
 
 .footer-link-list {
@@ -124,6 +122,6 @@ footer a:hover{
   align-items: center;
 }
 
-.footer-link-list > * + *{
-  margin-left: 20px ; 
+.footer-link-list > * + * {
+  margin-left: 20px;
 }
