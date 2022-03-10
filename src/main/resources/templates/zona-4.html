@@ -4,50 +4,66 @@
 
 <head th:replace="/fragments/head :: head"></head>
 
-
 <body>
     <!--****** Navbar ******-->
     <header th:replace="/fragments/navbar :: navbar"></header>
+
     <!--****** Banner Principal ******-->
-<section class="banner-zonas">
-    <img src="../images/banner-zona-2.jpg">
-    <h1>Zona Sur</h1>
-    <p> texto sobre la zona</p>
-</section>
-        
-
-        <!--****** Actividades ******-->
-
-        <section class="actividades">
-            <div class="card-group">
-                <div class="card">
-                    <img src="../images/portada-hoteles.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">ALOJAMIENTOS</h4>
-                        <h5><a href="alojamientos.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en alojamientos</a></h5>
-                        <h5><a href="alojamientos.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar un alojamiento</a></h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/portada-restaurantes.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">GASTRONOMIA</h4>
-                        <h5><a href="gastronomia.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en gastronomia</a></h5>
-                        <h5><a href="gastronomia.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar local gastronomico</a></h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/portada-actividades.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">ACTIVIDADES</h4>
-                        <h5><a href="actividades.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en actividades></h5>
-                        <h5><a href="actividades.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar actividad</a></h5>
-                    </div>
+    <div id=" carouselExampleSlidesOnly" class="carousel-slide" data-bs-ride="carousel">
+        <div class=" carousel-uco">
+            <div class="carousel-item active">
+                <div class="banner">
+                    <h1 class="titulo-banner-zona">Zona Sur</h1>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!--****** Actividades ******-->
+    <div class="descripcion">
+        <div class="container">
+            <p class="escrito-descripcion">Zona Sur
+
+                Los departamentos de San Rafael, General Alvear y Malargüe reflejan los contrastes de la naturaleza y el
+                bagaje cultural, industrial e histórico, y cargan a esta zona de memorias de aguerridos pehuenches,
+                leyendas milenarias, esforzados crianceros y mineros, incansables agricultores y hacedores del vino, a
+                los que hoy se suman calificados científicos.
+
+                San Rafael y sus bellos escenarios naturales como los ríos Diamante y Atuel, sus complejos
+                hidroeléctricos y diques embalses de Los Reyunos, Agua del Toro o el fabuloso Cañón del Atuel, enmarcado
+                por los espejos de agua del Nihuil y Valle Grande, son los escenarios propicios para disfrutar de la
+                aventura a pleno practicando rafting, kayak, canotaje, windsurf, mountain bike, pesca, navegación y
+                ecoturismo. El Sosneado y el Volcán Overo son sitios para la aventura o el esquí salvaje o de travesía.
+                General Alvear es una transición exquisita entre el oasis cuyano y el paisaje pampeano. Balnearios y
+                campings permiten una especial recreación con sus clubes en torno a sus ríos. La Laguna El Trapal es un
+                refugio de la naturaleza donde una rica avifauna puebla sus aguas y costas.
+                Mesetas de lava y volcanes, cavernas y cañones definen el marco ideal para el desarrollo del turismo de
+                naturaleza. La historia de la tierra se expone a cada paso en diferentes y coloridos mantos de rocas,
+                yacimientos ricos en fósiles que delatan un pasado de vida marina o el perezoso paso de dinosaurios.
+                Inmensas reservas de fauna y flora con los emblemáticos flamencos y cisnes de cuello negro de la Laguna
+                de Llancanelo y las manadas de guanacos de La Payunia permiten que la naturaleza se aprecie en su
+                totalidad.
+                Extrañas oquedades plenas de estalactitas y estalagmitas en la Caverna de las Brujas, geoformas en
+                dolinas en el Pozo de las Ánimas, el entorno de Laguna de la Niña Encantada y la escultura natural de
+                los Castillos de Pincheira son reflejo de los caprichos de la naturaleza.
+                Las fuentes minerales termales del Valle de Los Molles – Lahuen-Có con su tradicional hotel termal
+                invitan al relax en un entorno montañés.
+                La nieve juega un rol excepcional por la calidad de las pistas y servicios, con todas las opciones para
+                los deportes blancos y el esparcimiento que ofrece el Centro de esquí internacional Las Leñas, enmarcado
+                entre montañas, vegas y lagunas.
+                El turismo científico tiene su máxima expresión en Malargüe, con el Centro de Rayos Cósmicos Pierre
+                Auger y un moderno Planetario, situados en las inmediaciones del Parque del Ayer.
+                La ruta de los dinosaurios se encuentra en yacimientos milenarios que muestran pisadas fósiles de estos
+                grandiosos exponentes de la era secundaria.
+                Entre las festividades típicas se destacan la Fiesta Nacional del Chivo y Provincial del Cordero que se
+                realiza en Malargüe en el mes de enero, son 3 días de música, comidas típicas y vinos mendocinos. Fiesta
+                Nacional de la Ganadería de Zonas Áridas en General Alvear durante el mes de mayo, son 5 días de
+                festejos folclóricos, destreza criolla, comidas típicas, bailes, fogones, entre otras actividades.
+
+
+            </p>
+        </div>
+    </div>
+    <!--****** Actividades ******-->
 
     <section th:replace="/fragments/actividades :: actividades"></section>
 

@@ -57,7 +57,7 @@ public class AlojamientoControlador {
         try {
             try {
                 if (!imagen.isEmpty()) {
-                    Path directorioImagenes = Paths.get(".//src/main/resources/images/locacion/");
+                    Path directorioImagenes = Paths.get(".//src/main/resources/static/images/locacion/");
                     String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
                     byte[] bytesImg = imagen.getBytes();
                     Path rutaCompleta = Paths.get(rutaAbsoluta + "/" + imagen.getOriginalFilename());
