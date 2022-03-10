@@ -1,0 +1,5 @@
+<html>
+<body>
+         <h3> Hola, $ {username}, este es un correo electrónico de plantilla </h3>
+</body>
+</html>
