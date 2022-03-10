@@ -46,30 +46,25 @@ public class LocacionService {
             locacionRepo.delete(optional.get());
         }
     }
-    
-    @Transactional
-    public void agregarComentario(Comentario coemtario){
-        
-    }
 
     @Transactional
-    public Double setEstrellas(String id) {
+    public void setEstrellas(String id) {
         Optional<Locacion> optional = locacionRepo.findById(id);
         Integer i = 0;
         Integer suma = 0;
 
         if (optional.isPresent()) {
-
+            
             Locacion locacion = optional.get();
             for (Comentario aux : locacion.getComentario()) {
                 suma += aux.getPuntuacion();
                 i++;
-                System.out.println("suma"+suma+" i"+i);
             }
+            
+            locacion.setEstrellas((double)suma/i);
+            locacionRepo.save(locacion);
 
         }
-        System.out.println(suma/i);
-        return ((double) suma / i);
 
     }
 
