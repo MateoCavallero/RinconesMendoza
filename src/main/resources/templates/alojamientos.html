@@ -11,13 +11,18 @@
         <tbody class="tabla">
             <tr th:each=" c : ${alojamiento} ">
 
-                <!--****** Banner Principal ******-->
+                <!--****** Banner Principal ******
                 <div class="bann-detalle">
                     <div class="carousel-item active">
                         <div class="titulobanner">
                             <h1 th:text="${c.nombre}"></h1>
                         </div>
                     </div>
+                </div>-->
+
+                <div style="background-image: url('img_girl.jpg');">
+                    <img class="" th:src="@{'../images/locacion/' + ${c.foto}}">
+                    <h1 th:text="${c.nombre}"></h1>
                 </div>
                 <!--****** Banner Principal ******-->
 
