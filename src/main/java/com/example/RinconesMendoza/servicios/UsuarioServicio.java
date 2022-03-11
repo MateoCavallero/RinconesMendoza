@@ -7,6 +7,7 @@ import com.example.RinconesMendoza.utils.Role;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,6 +18,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
 
 @Service
 public class UsuarioServicio implements UserDetailsService{
@@ -73,6 +77,7 @@ public class UsuarioServicio implements UserDetailsService{
         return usuarioRepositorio.findAll();
     }
 
+    
     public Optional<Usuario> findAllByQ(String id) {
         return usuarioRepositorio.findById(id);
     }
@@ -124,6 +129,10 @@ public class UsuarioServicio implements UserDetailsService{
             
             List<GrantedAuthority> authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority("ROLE_"+user0.getRol()));
+            
+            ServletRequestAttributes attr = (ServletRequestAttributes)RequestContextHolder.currentRequestAttributes();
+            HttpSession sesion = attr.getRequest().getSession(true);
+            sesion.setAttribute("usuariosesion", user0);
             
             return new User(username, user0.getPassword(), authorities);
         } catch (Exception e) {

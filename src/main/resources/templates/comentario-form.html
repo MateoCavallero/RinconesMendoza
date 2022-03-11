@@ -23,6 +23,7 @@
                     <form th:action="@{/comentario/save}" method="POST" th:object="${comentario}" class="col-6 mx-auto">
                         <input hidden th:field="*{id}"> </input>
                         <input hidden th:field="*{locacion}"> </input>
+                        <input hidden th:if="${sesion.usuariosesion != null" th:field="*{usuario}"> </input>
                         <div class="form-floating">
                             <textarea th:field="*{opinion}" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" maxlength="100"></textarea>
                             <label for="floatingTextarea2">Comentarios</label>
