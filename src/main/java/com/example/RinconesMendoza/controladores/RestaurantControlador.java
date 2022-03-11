@@ -2,7 +2,9 @@ package com.example.RinconesMendoza.controladores;
 
 import com.example.RinconesMendoza.entidades.Restaurant;
 import com.example.RinconesMendoza.excepciones.WebException;
+import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import com.example.RinconesMendoza.servicios.RestaurantServicio;
+import com.example.RinconesMendoza.servicios.ZonaServicio;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,9 +28,16 @@ public class RestaurantControlador {
 
     @Autowired
     private RestaurantServicio restoService;
+    
+    @Autowired
+    private ComentarioServicio comentarioService;
+
+    @Autowired
+    private ZonaServicio zonaService;
 
     @GetMapping("/form")
-    public String crearRestaurant(Model model, @RequestParam(required = false) String id) {
+    public String crearRestaurant(Model model, Model modelz, @RequestParam(required = false) String id) {
+        modelz.addAttribute("zonas", zonaService.listAll());
         if (id != null) {
             Optional<Restaurant> optional = restoService.listById(id);
             if (optional.isPresent()) {

@@ -46,8 +46,6 @@ public class ComentarioControlador {
             
             Locacion locacion = comentarioaux.getLocacion();
             locacion.getComentario().add(comentarioaux);
-            System.out.println(locacion);
-            
             
             locacionService.crear(locacion);
             locacionService.setEstrellas(locacion.getId());
