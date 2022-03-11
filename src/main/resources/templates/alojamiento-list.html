@@ -56,7 +56,7 @@
                                             </div>
                                             <div class="col">
                                                 <h1 class="titub" th:text="${c.nombre}"></h1>
-                                                <p th:text="${c.zona}"></p>
+                                                <p th:text="'Zona: ' + ${c.zona.nombre}"></p>
                                                 <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
                                                 <p th:text="'Teléfono: ' + ${c.telefono}"></p>
                                                 <p th:text="'Web: ' + ${c.web}"></p>
