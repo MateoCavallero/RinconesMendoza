@@ -1,7 +1,5 @@
 package com.example.RinconesMendoza.controladores;
-
 import com.example.RinconesMendoza.entidades.Restaurant;
-import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.RestaurantServicio;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 @Controller
 @RequestMapping("/restaurant")
 public class RestaurantControlador {
@@ -27,6 +24,8 @@ public class RestaurantControlador {
     @Autowired
     private RestaurantServicio restoService;
 
+
+    @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @GetMapping("/form")
     public String crearRestaurant(Model model, @RequestParam(required = false) String id) {
         if (id != null) {
@@ -42,6 +41,7 @@ public class RestaurantControlador {
         return "restaurant-form";
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @PostMapping("/save")
     public String saveUsuario(RedirectAttributes redirect, @ModelAttribute Restaurant restaurant, @RequestParam("file") MultipartFile imagen) {
         try {
@@ -64,9 +64,7 @@ public class RestaurantControlador {
             redirect.addFlashAttribute("error", e.getMessage());
             return "redirect:/restaurant/list";
         }
-
     }
-
     @GetMapping("/list")
     public String listRestaurant(Model model, @RequestParam(required = false) String q) {
         if (q != null) {
@@ -76,12 +74,10 @@ public class RestaurantControlador {
         }
         return "restaurant-list";
     }
-
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")
     public String deleteRestaurant(@RequestParam(required = true) String id) {
         restoService.eliminarResto(id);
         return "redirect:/restaurant/list";
     }
-
 }
