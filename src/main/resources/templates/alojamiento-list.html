@@ -56,7 +56,7 @@
                                             </div>
                                             <div class="col">
                                                 <h1 class="titub" th:text="${c.nombre}"></h1>
-                                                <p th:text="${c.zona}"></p>
+                                                <p th:text="'Zona: ' + ${c.zona.nombre}"></p>
                                                 <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
                                                 <p th:text="'Teléfono: ' + ${c.telefono}"></p>
                                                 <p th:text="'Web: ' + ${c.web}"></p>
@@ -66,8 +66,7 @@
                                             </div>
 
                                             <div class="col">
-                                                </br>
-                                                </br>
+                                                <h1 class="titub"></h1>
                                                 <p th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'"></p>
                                                 <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
                                                 <p th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'"></p>

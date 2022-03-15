@@ -3,9 +3,11 @@ package com.example.RinconesMendoza.controladores;
 import com.example.RinconesMendoza.entidades.Alojamiento;
 import com.example.RinconesMendoza.entidades.Comentario;
 import com.example.RinconesMendoza.entidades.Locacion;
+import com.example.RinconesMendoza.entidades.Usuario;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import com.example.RinconesMendoza.servicios.LocacionService;
+import com.example.RinconesMendoza.servicios.UsuarioServicio;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -28,25 +30,37 @@ public class ComentarioControlador {
     private ComentarioServicio comentarioService;
     @Autowired
     private LocacionService locacionService;
+    @Autowired
+    private UsuarioServicio usuarioService;
 
+    @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @GetMapping("/form")
-    public String crearComentario(Model model, Model l, @RequestParam(required = true) String id) {
+    public String crearComentario(Model model, Model l, @RequestParam(required = true) String id, @RequestParam(required = true) Usuario usuario) {
         Comentario com = new Comentario();
         Optional<Locacion> optional = locacionService.buscarId(id);
         com.setLocacion(optional.get());
+        System.out.println(usuario);
+        com.setUsuario(usuario);
         model.addAttribute("comentario", com);
         return "comentario-form";
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @PostMapping("/save")
     public String saveComentario(RedirectAttributes redirect, @ModelAttribute Comentario comentario) {
 
         try {
-           Comentario comentarioaux = comentarioService.crearComentario(comentario);
-            
+            Comentario comentarioaux = comentarioService.crearComentario(comentario);
+
             Locacion locacion = comentarioaux.getLocacion();
             locacion.getComentario().add(comentarioaux);
+<<<<<<< HEAD
             
+=======
+            System.out.println(locacion);
+            
+
+>>>>>>> aa857ad457b70b8869dc90355e4eb75c818ba874
             locacionService.crear(locacion);
             locacionService.setEstrellas(locacion.getId());
             redirect.addFlashAttribute("success", "Comentario guardado con exito");

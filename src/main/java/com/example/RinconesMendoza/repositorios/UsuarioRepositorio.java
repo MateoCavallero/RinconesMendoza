@@ -12,6 +12,7 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, String> {
 
     @Query("SELECT u FROM Usuario u WHERE u.nombre LIKE :q")
     List<Usuario> findAllByQ(@Param("q") String q);
+    
 
     @Query("SELECT u FROM Usuario u WHERE u.dni LIKE :dni")
     Usuario findAllByDNI(@Param("dni") String dni);
