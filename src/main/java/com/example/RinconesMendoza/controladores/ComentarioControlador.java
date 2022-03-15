@@ -6,11 +6,6 @@ import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import com.example.RinconesMendoza.servicios.LocacionService;
 import com.example.RinconesMendoza.servicios.UsuarioServicio;
-<<<<<<< HEAD
-=======
-import java.util.ArrayList;
-import java.util.List;
->>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -22,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 @Controller
 @RequestMapping("/comentario")
 public class ComentarioControlador {
@@ -49,20 +45,10 @@ public class ComentarioControlador {
     public String saveComentario(RedirectAttributes redirect, @ModelAttribute Comentario comentario) {
 
         try {
-<<<<<<< HEAD
            Comentario comentarioaux = comentarioService.crearComentario(comentario);
             Locacion locacion = comentarioaux.getLocacion();
             locacion.getComentario().add(comentarioaux);
-            System.out.println(locacion);
-=======
-            Comentario comentarioaux = comentarioService.crearComentario(comentario);
-
-            Locacion locacion = comentarioaux.getLocacion();
-            locacion.getComentario().add(comentarioaux);
-            System.out.println(locacion);
-            
-
->>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
+            System.out.println(locacion);            
             locacionService.crear(locacion);
             locacionService.setEstrellas(locacion.getId());
             redirect.addFlashAttribute("success", "Comentario guardado con exito");
