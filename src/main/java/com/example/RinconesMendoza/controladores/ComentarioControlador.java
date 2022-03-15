@@ -1,6 +1,5 @@
 package com.example.RinconesMendoza.controladores;
 
-import com.example.RinconesMendoza.entidades.Alojamiento;
 import com.example.RinconesMendoza.entidades.Comentario;
 import com.example.RinconesMendoza.entidades.Locacion;
 import com.example.RinconesMendoza.entidades.Usuario;
@@ -8,8 +7,6 @@ import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import com.example.RinconesMendoza.servicios.LocacionService;
 import com.example.RinconesMendoza.servicios.UsuarioServicio;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -54,13 +51,8 @@ public class ComentarioControlador {
 
             Locacion locacion = comentarioaux.getLocacion();
             locacion.getComentario().add(comentarioaux);
-<<<<<<< HEAD
             
-=======
             System.out.println(locacion);
-            
-
->>>>>>> aa857ad457b70b8869dc90355e4eb75c818ba874
             locacionService.crear(locacion);
             locacionService.setEstrellas(locacion.getId());
             redirect.addFlashAttribute("success", "Comentario guardado con exito");

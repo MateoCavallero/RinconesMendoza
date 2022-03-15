@@ -29,16 +29,13 @@ public class RestaurantControlador {
     @Autowired
     private RestaurantServicio restoService;
     
-<<<<<<< HEAD
     @Autowired
     private ComentarioServicio comentarioService;
 
     @Autowired
     private ZonaServicio zonaService;
 
-=======
     @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
->>>>>>> aa857ad457b70b8869dc90355e4eb75c818ba874
     @GetMapping("/form")
     public String crearRestaurant(Model model, Model modelz, @RequestParam(required = false) String id) {
         modelz.addAttribute("zonas", zonaService.listAll());
