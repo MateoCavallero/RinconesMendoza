@@ -1,10 +1,7 @@
 package com.example.RinconesMendoza.controladores;
 import com.example.RinconesMendoza.entidades.Restaurant;
-<<<<<<< HEAD
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
-=======
->>>>>>> c205470bead5d24cd84a1a944ed0c1317941872a
 import com.example.RinconesMendoza.servicios.RestaurantServicio;
 import com.example.RinconesMendoza.servicios.ZonaServicio;
 import java.io.IOException;
@@ -29,21 +26,13 @@ public class RestaurantControlador {
 
     @Autowired
     private RestaurantServicio restoService;
-<<<<<<< HEAD
-
-
-=======
     
-<<<<<<< HEAD
     @Autowired
     private ComentarioServicio comentarioService;
 
     @Autowired
     private ZonaServicio zonaService;
 
-=======
->>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
->>>>>>> c205470bead5d24cd84a1a944ed0c1317941872a
     @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @GetMapping("/form")
     public String crearRestaurant(Model model, Model modelz, @RequestParam(required = false) String id) {
