@@ -39,7 +39,10 @@
                                     <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
                                     <p th:text="'Estrellas: ' + ${c.estrellas}"></p>
                                 </div>
+<<<<<<< HEAD
                                 <div class="crearcomment">
+=======
+>>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
                                 <div class="crearcomment" sec:authorize="isAuthenticated">
                                     <a th:href="@{/comentario/form}+'?id='+${c.id}"><button
                                             class="boton btn btn-primary">Crear Comentario</button></a><br>

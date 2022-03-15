@@ -67,7 +67,11 @@ public class UsuarioServicio implements UserDetailsService{
         return usuarioRepositorio.findAll();
     }
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
     public Optional<Usuario> findAllByQ(String id) {
         return usuarioRepositorio.findById(id);
     }
@@ -113,11 +117,19 @@ public class UsuarioServicio implements UserDetailsService{
             
             List<GrantedAuthority> authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority("ROLE_"+user0.getRol()));
+<<<<<<< HEAD
 
             ServletRequestAttributes attr = (ServletRequestAttributes)RequestContextHolder.currentRequestAttributes();
             HttpSession sesion = attr.getRequest().getSession(true);
             sesion.setAttribute("usuariosesion", user0);
 
+=======
+            
+            ServletRequestAttributes attr = (ServletRequestAttributes)RequestContextHolder.currentRequestAttributes();
+            HttpSession sesion = attr.getRequest().getSession(true);
+            sesion.setAttribute("usuariosesion", user0);
+            
+>>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
             return new User(username, user0.getPassword(), authorities);
         } catch (Exception e) {
             throw new UsernameNotFoundException("El usuario solicitado no existe");

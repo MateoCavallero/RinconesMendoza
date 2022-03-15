@@ -23,8 +23,12 @@ public class RestaurantControlador {
 
     @Autowired
     private RestaurantServicio restoService;
+<<<<<<< HEAD
 
 
+=======
+    
+>>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
     @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @GetMapping("/form")
     public String crearRestaurant(Model model, @RequestParam(required = false) String id) {
