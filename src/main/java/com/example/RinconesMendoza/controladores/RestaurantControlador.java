@@ -26,7 +26,8 @@ public class RestaurantControlador {
 
     @Autowired
     private RestaurantServicio restoService;
-
+    
+    @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @GetMapping("/form")
     public String crearRestaurant(Model model, @RequestParam(required = false) String id) {
         if (id != null) {
@@ -42,6 +43,7 @@ public class RestaurantControlador {
         return "restaurant-form";
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @PostMapping("/save")
     public String saveUsuario(RedirectAttributes redirect, @ModelAttribute Restaurant restaurant, @RequestParam("file") MultipartFile imagen) {
         try {

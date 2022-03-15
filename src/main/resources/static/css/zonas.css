@@ -1,7 +1,7 @@
 /****** Banner zonas ******/
 
-.carousel-slide {
-  background-image: url(../images/banner-2.png);
+.carousel-slide-1 {
+  background-image: url(../images/zonas/viñedo\ montaña.jpg);
   opacity: 0.9;
   background-repeat: round;
   background-size: 100%;
@@ -11,7 +11,50 @@
   justify-content: center;
   align-items: center;
 }
-
+.carousel-slide-2 {
+  background-image: url(../images/zonas/puente\ del\ inca.jpg);
+  opacity: 0.9;
+  background-repeat: round;
+  background-size: 100%;
+  padding: 20% 10% 20% 10%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-slide-3{
+  background-image: url(../images/zonas/parque\ central.jpg);
+  opacity: 0.9;
+  background-repeat: round;
+  background-size: 100%;
+  padding: 20% 10% 20% 10%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-slide-4 {
+  background-image: url(../images/zonas/valle\ grande\ -\ sur.jpg);
+  opacity: 0.9;
+  background-repeat: round;
+  background-size: 100%;
+  padding: 20% 10% 20% 10%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-slide-5 {
+  background-image: url(../images/);
+  opacity: 0.9;
+  background-repeat: round;
+  background-size: 100%;
+  padding: 20% 10% 20% 10%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .banner {
   display: flex;
 }

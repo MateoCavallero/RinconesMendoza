@@ -28,13 +28,14 @@ public class AlojamientoControlador {
 
     @Autowired
     private AlojamientoServicio alojamientoServis;
-    
+
     @Autowired
     private ComentarioServicio comentarioService;
 
     @Autowired
     private ZonaServicio zonaService;
 
+    @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @GetMapping("/form")
     public String crearAlojaiento(Model model, Model modelz, @RequestParam(required = false) String id) {
         modelz.addAttribute("zonas", zonaService.listAll());
@@ -52,12 +53,13 @@ public class AlojamientoControlador {
 
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @PostMapping("/save")
     public String saveUsuario(RedirectAttributes redirect, @ModelAttribute Alojamiento alojamiento, @RequestParam("file") MultipartFile imagen) {
         try {
             try {
                 if (!imagen.isEmpty()) {
-                    Path directorioImagenes = Paths.get(".//src/main/resources/images/locacion/");
+                    Path directorioImagenes = Paths.get(".//src/main/resources/static/images/locacion/");
                     String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
                     byte[] bytesImg = imagen.getBytes();
                     Path rutaCompleta = Paths.get(rutaAbsoluta + "/" + imagen.getOriginalFilename());
@@ -91,12 +93,12 @@ public class AlojamientoControlador {
     }
 
     @GetMapping("/alojamiento")
-    public String vistaAlojamiento(Model model, Model modelcomentario, @RequestParam (required = true)  String id) {
+    public String vistaAlojamiento(Model model, Model modelcomentario, @RequestParam(required = true) String id) {
         Optional<Alojamiento> optional = alojamientoServis.findById(id);
         model.addAttribute("alojamiento", optional.get());
-        
+
         modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
-        
+
         return "alojamientos";
     }
 }

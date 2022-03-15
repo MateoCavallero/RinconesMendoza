@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="/fragments/head :: head"></head>
@@ -6,45 +7,37 @@
 <body>
     <!--****** Navbar ******-->
     <header th:replace="/fragments/navbar :: navbar"></header>
+
+
+
     <!--****** Banner Principal ******-->
-                <section class="banner-zonas">
-                    <img src="../images/banner-zona-2.jpg">
-                    <h1>Precordillera y Alta Montaña</h1>
-                    <p> texto sobre la zona</p>
-                </section>
-
-        <!--****** Actividades ******-->
-
-        <section class="actividades">
-            <div class="card-group">
-                <div class="card">
-                    <img src="../images/portada-hoteles.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">ALOJAMIENTOS</h4>
-                        <h5><a href="alojamientos.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en alojamientos</a></h5>
-                        <h5><a href="alojamientos.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar un alojamiento</a></h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/portada-restaurantes.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">GASTRONOMIA</h4>
-                        <h5><a href="gastronomia.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en gastronomia</a></h5>
-                        <h5><a href="gastronomia.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar local gastronomico</a></h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/portada-actividades.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">ACTIVIDADES</h4>
-                        <h5><a href="actividades.html"><img src="../images/iconos/ver-32.png" alt="..." /> Ver todo en actividades></h5>
-                        <h5><a href="actividades.html"><img src="../images/iconos/agregar-32.png" alt="..." /> Agregar actividad</a></h5>
-                    </div>
+    <div id=" carouselExampleSlidesOnly" class="carousel-slide-2" data-bs-ride="carousel">
+        <div class=" carousel-uco">
+            <div class="carousel-item active">
+                <div class="banner">
+                    <h1 class="titulo-banner-zona">Precordillera y Alta Montaña</h1>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-       <!--****** Actividades ******-->
+
+    <div class="descripcion">
+        <div class="container">
+            <p class="escrito-descripcion"> Con una gran variedad de paisajes, actividades y servicios; la zona de
+            <strong>Precordillera y Alta Montaña</strong> brinda a sus visitantes la posibilidad de conocer lugares emblemáticos con
+                gran valor histórico como la <strong>cordillera de los Andes, el Cerro Aconcagua, el Puente del Inca, el Parque
+                Provincial Aconcagua o el monumento Cristo Redentor</strong> que marca los límites entre Argentina y Chile; entre
+                tantos otros atractivos de esta zona privilegiada con aguas termales, manantiales, arroyos y rios.<br>
+                Las actividades protagonistas de esta zona son el trekking, rafting, canopy y las cabalgatas, sin
+                olvidar los deportes de invierno que pueden desarrollarse en el <strong>centro de esquí Los Penitentes,</strong> que
+                alcanza mayor protagonismo durante el periodo invernal y durante el resto del año funciona como sitio de
+                esparcimiento.
+            </p>
+        </div>
+    </div>
+
+    <!--****** Actividades ******-->
 
     <section th:replace="/fragments/actividades :: actividades"></section>
 

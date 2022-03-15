@@ -17,34 +17,36 @@
             <div class="card ms-auto">
                 <div class="card-header d-flex">
                     <h1>Crear Comentario</h1>
+                    <div>
 
-                </div>
-                <div class="card-body">
-                    <form th:action="@{/comentario/save}" method="POST" th:object="${comentario}" class="col-6 mx-auto">
-                        <input hidden th:field="*{id}"> </input>
-                        <input hidden th:field="*{locacion}"> </input>
-                        <div class="form-floating">
-                            <textarea th:field="*{opinion}" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" maxlength="100"></textarea>
-                            <label for="floatingTextarea2">Comentarios</label>
-                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/comentario/save}" method="POST" th:object="${comentario}" class="col-6 mx-auto">
+                            <input hidden th:field="*{id}"> </input>
+                            <input hidden th:field="*{locacion}"> </input>
+                            <input hidden th:if="${sesion.usuariosesion != null" th:field="*{usuario}"> </input>
+                            <div class="form-floating">
+                                <textarea th:field="*{opinion}" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" maxlength="100"></textarea>
+                                <label for="floatingTextarea2">Comentarios</label>
+                            </div>
 
-                        <div>
-                            <label>Puntuación</label>
-                            <select th:field="*{puntuacion}">                                
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
+                            <div>
+                                <label>Puntuación</label>
+                                <select th:field="*{puntuacion}">                                
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
 
-                        <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                        </div>
+                            <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                    </div>
                 </div>
             </div>
-        </div>
     </body>
 
 </html>
