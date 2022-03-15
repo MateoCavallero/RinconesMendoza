@@ -47,7 +47,7 @@ public class UsuarioControlador {
     }
     
     @PostMapping("/save")
-    public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen, @RequestParam String password2) {
+    public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen, @RequestParam String password2) throws Exception {
         try {
             try {
                 if (!imagen.isEmpty()) {

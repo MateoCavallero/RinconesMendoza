@@ -21,9 +21,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-
 @Service
-public class UsuarioServicio implements UserDetailsService{
+public class UsuarioServicio implements UserDetailsService {
 
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
@@ -31,13 +30,10 @@ public class UsuarioServicio implements UserDetailsService{
     public Usuario save(Usuario usuario, String password2) throws WebException {
         Usuario user = new Usuario();
         Usuario usuario2 = new Usuario();
-
         if (usuario.getDni() == null || usuario.getDni().isEmpty()) {
             throw new WebException("El dni no puede estar vacio");
         }
-
         usuario2 = findByDNI(usuario.getDni());
-
         if (usuario == null) {
             throw new WebException("No se puede registrar un usuario con un DNI que no exista en la base de datos");
         }
@@ -53,7 +49,6 @@ public class UsuarioServicio implements UserDetailsService{
         if (!usuario.getPassword().equals(password2)) {
             throw new WebException("Las contraseñas deben ser iguales");
         }
-
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         user.setId(usuario.getId());
         user.setNombre(usuario.getNombre());
@@ -65,7 +60,6 @@ public class UsuarioServicio implements UserDetailsService{
         user.setFoto(usuario.getFoto());
         user.setRol(Role.USER);
 //        delete(usuario2);
-
         return usuarioRepositorio.save(user);
     }
 
@@ -77,7 +71,6 @@ public class UsuarioServicio implements UserDetailsService{
         return usuarioRepositorio.findAll();
     }
 
-    
     public Optional<Usuario> findAllByQ(String id) {
         return usuarioRepositorio.findById(id);
     }
@@ -125,21 +118,18 @@ public class UsuarioServicio implements UserDetailsService{
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
             Usuario user0 = usuarioRepositorio.findByUsername(username);
-            User user;
-            
+
             List<GrantedAuthority> authorities = new ArrayList<>();
-            authorities.add(new SimpleGrantedAuthority("ROLE_"+user0.getRol()));
-            
-            ServletRequestAttributes attr = (ServletRequestAttributes)RequestContextHolder.currentRequestAttributes();
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + user0.getRol()));
+
+            ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
             HttpSession sesion = attr.getRequest().getSession(true);
             sesion.setAttribute("usuariosesion", user0);
-            
+
             return new User(username, user0.getPassword(), authorities);
         } catch (Exception e) {
             throw new UsernameNotFoundException("El usuario solicitado no existe");
         }
-        
-        
     }
-    
+
 }

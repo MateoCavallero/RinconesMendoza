@@ -76,7 +76,6 @@ public class AlojamientoControlador {
             redirect.addFlashAttribute("error", e.getMessage());
             return "redirect:/alojamiento/list";
         }
-
     }
 
     @GetMapping("/list")
@@ -96,6 +95,7 @@ public class AlojamientoControlador {
     public String vistaAlojamiento(Model model, Model modelcomentario, @RequestParam(required = true) String id) {
         Optional<Alojamiento> optional = alojamientoServis.findById(id);
         model.addAttribute("alojamiento", optional.get());
+        modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
 
         modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
 

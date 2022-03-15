@@ -1,6 +1,4 @@
 package com.example.RinconesMendoza.controladores;
-
-import com.example.RinconesMendoza.entidades.Alojamiento;
 import com.example.RinconesMendoza.entidades.Comentario;
 import com.example.RinconesMendoza.entidades.Locacion;
 import com.example.RinconesMendoza.entidades.Usuario;
@@ -25,7 +23,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @RequestMapping("/comentario")
 public class ComentarioControlador {
-
     @Autowired
     private ComentarioServicio comentarioService;
     @Autowired
@@ -50,13 +47,10 @@ public class ComentarioControlador {
     public String saveComentario(RedirectAttributes redirect, @ModelAttribute Comentario comentario) {
 
         try {
-            Comentario comentarioaux = comentarioService.crearComentario(comentario);
-
+           Comentario comentarioaux = comentarioService.crearComentario(comentario);
             Locacion locacion = comentarioaux.getLocacion();
             locacion.getComentario().add(comentarioaux);
-            System.out.println(locacion);
             
-
             locacionService.crear(locacion);
             locacionService.setEstrellas(locacion.getId());
             redirect.addFlashAttribute("success", "Comentario guardado con exito");
@@ -67,7 +61,6 @@ public class ComentarioControlador {
             return "redirect:/comentario/list";
         }
     }
-
     @GetMapping("/list")
     public String listComentario(Model model, @RequestParam(required = false) String q) {
         if (q != null) {
@@ -77,12 +70,10 @@ public class ComentarioControlador {
         }
         return "comentario-list";
     }
-
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")
     public String eliminarComentario(@RequestParam(required = true) String id) {
         comentarioService.deleteById(id);
         return "redirect:/comentario/list";
     }
-
 }

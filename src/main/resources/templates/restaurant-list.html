@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/fragments/head :: head"></head>
+
+<body>
+
+    <header th:replace="/fragments/navbar :: navbar"></header>
+
+    <!--****** Banner Principal ******-->
+
+        <div class="bann-listaalojamiento">
+            <div class="carousel-item active">
+                <div class="banner">
+                    <h1 class="titulo-banner-zona">LISTA DE RESTAURANTS</h1>
+                </div>
+            </div>
+        </div>
+
+
+    <!--****** Lista de Restaurants ******-->
+
+
+    <div class="container listalugar">
+        <div th:if="${error}" class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            <span th:text="${error}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div th:if="${success}" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+            <span th:text="${success}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div class="carta mt-3">
+            <div class="crearlugar">
+                <button class="boton btn btn-primary"><a th:href="@{/alojamiento/form}">Crear Alojamiento</a></button>
+            </div>
+            <div class="card-body">
+                <form class="row g-3" th:action="@{/restaurant/list}" method="GET">
+                    <div class="col">
+                        <input type="text" style="width: 100%;" name="q" placeholder="Buscar...">
+                    </div>
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </div>
+                </form>
+
+                <table class="table table-dark table-striped">
+                    <tbody class="tabla">
+                        <tr th:each=" c : ${restaurant} ">
+                            <div class="tabla espacios" id="secwrapper">
+                                <section>
+                                    <div class="place">
+                                        <div class="row">
+                                            <div class="col">
+                                                <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
+                                            </div>
+                                            <div class="col">
+                                                <h1 class="titub" th:text="${c.nombre}"></h1>
+                                                <p th:text="${c.zona}"></p>
+                                                <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
+                                                <p th:text="'Teléfono: ' + ${c.telefono}"></p>
+                                                <p th:text="'Web: ' + ${c.web}"></p>
+                                                <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
+                                                <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
+                                                
+                                            </div>
+
+                                            <div class="col">
+                                                </br>
+                                                </br>
+                                                <p th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'"></p>
+                                                <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
+                                                <p th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'"></p>
+                                                <p th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'"></p>
+                                                <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
+                                            </div>
+                                            <div class="vermas">
+                                                <a th:href="@{/restaurant/alojamiento}+'?id='+${c.id}" class="boton btn btn-primary">Ver Más</a>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </section>
+                            </div>
+                        </tr>
+                    </tbody>
+                    <p th:if="${alojamiento.isEmpty}">No hay alojamientos para mostrar</p>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--****** Actividades ******-->
+    <section th:replace="/fragments/actividades :: actividades"></section>
+
+    <!--****** Footer ******-->
+    <footer th:replace="/fragments/footer :: footer"></footer>
+</body>
+
+</html>

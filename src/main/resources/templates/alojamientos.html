@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.thymeleaf.org">
-
 <head th:replace="/fragments/head :: head"></head>
-
 <body>
     <header th:replace="/fragments/navbar :: navbar"></header>
-
-
     <table class="table table-dark table-striped">
         <tbody class="tabla">
             <tr th:each=" c : ${alojamiento} ">
-
                 <!--****** Banner Principal ******-->
                 <div class="bann-detalle">
                     <div class="carousel-item active">
@@ -19,9 +14,7 @@
                         </div>
                     </div>
                 </div>
-
                 <!--****** Banner Principal ******-->
-
                 <div class="tabla detalles" id="secwrapper">
                     <section>
                         <div class="ubidetalle">
@@ -46,6 +39,10 @@
                                     <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
                                     <p th:text="'Estrellas: ' + ${c.estrellas}"></p>
                                 </div>
+<<<<<<< HEAD
+                                <div class="crearcomment">
+=======
+>>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
                                 <div class="crearcomment" sec:authorize="isAuthenticated">
                                     <a th:href="@{/comentario/form}+'?id='+${c.id}"><button
                                             class="boton btn btn-primary">Crear Comentario</button></a><br>
@@ -57,20 +54,13 @@
             </tr>
         </tbody>
     </table>
-
-
-
     <table>
         <tr th:each="p : ${comentarios}">
-
             <p th:text="${p.opinion}"></p>
-
         </tr>
     </table>
-
     <!--****** Actividades ******-->
     <section th:replace="/fragments/actividades :: actividades"></section>
-
     <!--****** Footer ******-->
     <footer th:replace="/fragments/footer :: footer"></footer>
 </body>
