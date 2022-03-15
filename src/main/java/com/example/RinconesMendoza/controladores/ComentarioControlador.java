@@ -1,5 +1,8 @@
 package com.example.RinconesMendoza.controladores;
+<<<<<<< HEAD
 
+=======
+>>>>>>> c205470bead5d24cd84a1a944ed0c1317941872a
 import com.example.RinconesMendoza.entidades.Comentario;
 import com.example.RinconesMendoza.entidades.Locacion;
 import com.example.RinconesMendoza.entidades.Usuario;
@@ -7,6 +10,14 @@ import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import com.example.RinconesMendoza.servicios.LocacionService;
 import com.example.RinconesMendoza.servicios.UsuarioServicio;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
+>>>>>>> c205470bead5d24cd84a1a944ed0c1317941872a
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,11 +29,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 @Controller
 @RequestMapping("/comentario")
 public class ComentarioControlador {
-
     @Autowired
     private ComentarioServicio comentarioService;
     @Autowired
@@ -47,12 +56,23 @@ public class ComentarioControlador {
     public String saveComentario(RedirectAttributes redirect, @ModelAttribute Comentario comentario) {
 
         try {
+<<<<<<< HEAD
+           Comentario comentarioaux = comentarioService.crearComentario(comentario);
+            Locacion locacion = comentarioaux.getLocacion();
+            locacion.getComentario().add(comentarioaux);
+            System.out.println(locacion);
+=======
             Comentario comentarioaux = comentarioService.crearComentario(comentario);
 
             Locacion locacion = comentarioaux.getLocacion();
             locacion.getComentario().add(comentarioaux);
             
+<<<<<<< HEAD
             System.out.println(locacion);
+=======
+
+>>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
+>>>>>>> c205470bead5d24cd84a1a944ed0c1317941872a
             locacionService.crear(locacion);
             locacionService.setEstrellas(locacion.getId());
             redirect.addFlashAttribute("success", "Comentario guardado con exito");
@@ -63,7 +83,6 @@ public class ComentarioControlador {
             return "redirect:/comentario/list";
         }
     }
-
     @GetMapping("/list")
     public String listComentario(Model model, @RequestParam(required = false) String q) {
         if (q != null) {
@@ -73,12 +92,10 @@ public class ComentarioControlador {
         }
         return "comentario-list";
     }
-
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")
     public String eliminarComentario(@RequestParam(required = true) String id) {
         comentarioService.deleteById(id);
         return "redirect:/comentario/list";
     }
-
 }

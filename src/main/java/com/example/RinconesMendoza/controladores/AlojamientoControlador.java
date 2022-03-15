@@ -76,7 +76,6 @@ public class AlojamientoControlador {
             redirect.addFlashAttribute("error", e.getMessage());
             return "redirect:/alojamiento/list";
         }
-
     }
 
     @GetMapping("/list")
@@ -96,9 +95,13 @@ public class AlojamientoControlador {
     public String vistaAlojamiento(Model model, Model modelcomentario, @RequestParam(required = true) String id) {
         Optional<Alojamiento> optional = alojamientoServis.findById(id);
         model.addAttribute("alojamiento", optional.get());
+<<<<<<< HEAD
+        modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
+=======
 
         modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
 
+>>>>>>> 290d6b32dbd84f284344e6cba3a11c48cdbb8a2a
         return "alojamientos";
     }
 }
