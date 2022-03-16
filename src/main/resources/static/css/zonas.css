@@ -76,7 +76,7 @@
 
 .descripcion {
   background-color: #777772;
-  padding: 100px 30px;
+  padding: 80px 30px;
 }
 
 .titulo-Act {
@@ -97,7 +97,8 @@
 .titulo-3 {
   font-size: 4rem;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 100;
+  text-decoration: dotted;
 }
 
 .list {
@@ -105,6 +106,7 @@
   display: inline-block;
 }
 .mapa {
-  padding: 100px auto;
+  padding: 500px auto;
+  border-radius: 10px;
   display: inline;
 }
