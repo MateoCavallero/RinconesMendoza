@@ -1,4 +1,5 @@
 package com.example.RinconesMendoza.servicios;
+
 import com.example.RinconesMendoza.entidades.Usuario;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.repositorios.UsuarioRepositorio;
@@ -20,11 +21,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-
 @Service
-public class UsuarioServicio implements UserDetailsService{
+public class UsuarioServicio implements UserDetailsService {
+
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
+
     public Usuario save(Usuario usuario, String password2) throws WebException {
         Usuario user = new Usuario();
         Usuario usuario2 = new Usuario();
@@ -60,9 +62,15 @@ public class UsuarioServicio implements UserDetailsService{
 //        delete(usuario2);
         return usuarioRepositorio.save(user);
     }
-    public Usuario findByUsername(String username) {
+
+    public Optional<Usuario> findByUsername(String username) {
         return usuarioRepositorio.findByUsername(username);
     }
+
+    public Usuario findByName(String username) {
+        return usuarioRepositorio.findByName(username);
+    }
+
     public List<Usuario> listAll() {
         return usuarioRepositorio.findAll();
     }
@@ -70,16 +78,20 @@ public class UsuarioServicio implements UserDetailsService{
     public Optional<Usuario> findAllByQ(String id) {
         return usuarioRepositorio.findById(id);
     }
+
     public Usuario findByDNI(String dni) {
         return usuarioRepositorio.findAllByDNI(dni);
     }
+
     public List<Usuario> listAllByQ(String q) {
         return usuarioRepositorio.findAllByQ("%" + q + "%");
     }
+
     @Transactional
     public void delete(Usuario usuario) {
         usuarioRepositorio.delete(usuario);
     }
+
     @Transactional
     public void deleteById(String id) {
         Optional<Usuario> optional = usuarioRepositorio.findById(id);
@@ -87,6 +99,7 @@ public class UsuarioServicio implements UserDetailsService{
             usuarioRepositorio.delete(optional.get());
         }
     }
+
     private void validacion(Usuario usuario) throws WebException {
         if (findByDNI(usuario.getDni()) != null) {
             throw new WebException("El DNI ya existe no se puede registrar con el mismo DNI");
@@ -104,23 +117,24 @@ public class UsuarioServicio implements UserDetailsService{
             throw new WebException("El nombre no puede ser nulo o menor a 3 caracteres");
         }
     }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
-            Usuario user0 = usuarioRepositorio.findByUsername(username);
+            Usuario user0 = usuarioRepositorio.findByName(username);
             User user;
-            
-            List<GrantedAuthority> authorities = new ArrayList<>();
-            authorities.add(new SimpleGrantedAuthority("ROLE_"+user0.getRol()));
 
-            ServletRequestAttributes attr = (ServletRequestAttributes)RequestContextHolder.currentRequestAttributes();
+            List<GrantedAuthority> authorities = new ArrayList<>();
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + user0.getRol()));
+
+            ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
             HttpSession sesion = attr.getRequest().getSession(true);
             sesion.setAttribute("usuariosesion", user0);
-            
+
             return new User(username, user0.getPassword(), authorities);
         } catch (Exception e) {
             throw new UsernameNotFoundException("El usuario solicitado no existe");
         }
     }
-    
+
 }
