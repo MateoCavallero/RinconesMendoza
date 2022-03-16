@@ -96,9 +96,6 @@ public class AlojamientoControlador {
         Optional<Alojamiento> optional = alojamientoServis.findById(id);
         model.addAttribute("alojamiento", optional.get());
         modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
-
-        modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
-
         return "alojamientos";
     }
 }

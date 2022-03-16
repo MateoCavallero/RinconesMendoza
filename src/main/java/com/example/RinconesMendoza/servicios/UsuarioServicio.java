@@ -63,8 +63,12 @@ public class UsuarioServicio implements UserDetailsService {
         return usuarioRepositorio.save(user);
     }
 
-    public Usuario findByUsername(String username) {
+    public Optional<Usuario> findByUsername(String username) {
         return usuarioRepositorio.findByUsername(username);
+    }
+
+    public Usuario findByName(String username) {
+        return usuarioRepositorio.findByName(username);
     }
 
     public List<Usuario> listAll() {
@@ -117,7 +121,8 @@ public class UsuarioServicio implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
-            Usuario user0 = usuarioRepositorio.findByUsername(username);
+            Usuario user0 = usuarioRepositorio.findByName(username);
+            User user;
 
             List<GrantedAuthority> authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority("ROLE_" + user0.getRol()));
