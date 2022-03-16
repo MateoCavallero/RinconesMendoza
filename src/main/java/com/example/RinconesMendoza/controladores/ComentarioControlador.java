@@ -65,7 +65,7 @@ public class ComentarioControlador {
 //            System.out.println(userName);
 
             Optional<Usuario> optUser = usuarioService.findByUsername(userName);
-            System.out.println(optUser);
+//            System.out.println(optUser);
             comentarioaux.setUsuario(optUser.get());
             comentarioService.crearComentario(comentarioaux);
 

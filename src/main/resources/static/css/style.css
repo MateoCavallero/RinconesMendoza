@@ -11,6 +11,7 @@ a {
 }
 
 /****** Banner Principal ******/
+
 .carousel-inner {
   background-image: url(../images/banner-1.png);
   opacity: 0.9;
@@ -40,6 +41,9 @@ a {
 .zonas,
 .actividades {
   margin: 5% 10% 3% 10%;
+}
+.banner-secundario{
+  background-color: ;
 }
 
 .row {
