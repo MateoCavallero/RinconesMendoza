@@ -9,13 +9,13 @@
 
     <!--****** Banner Principal ******-->
 
-        <div class="bann-listaalojamiento">
-            <div class="carousel-item active">
-                <div class="banner">
-                    <h1 class="titulo-banner-zona">LISTA DE ALOJAMIENTOS</h1>
-                </div>
+    <div class="bann-listaalojamiento">
+        <div class="carousel-item active">
+            <div class="banner">
+                <h1 class="titulo-banner-zona">ALOJAMIENTOS</h1>
             </div>
         </div>
+    </div>
 
 
     <!--****** Lista de Alojamientos ******-->
@@ -62,22 +62,25 @@
                                                 <p th:text="'Web: ' + ${c.web}"></p>
                                                 <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
                                                 <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
-                                                
+
                                             </div>
 
                                             <div class="col">
                                                 <h1 class="titub"></h1>
                                                 <p th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'"></p>
                                                 <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
-                                                <p th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'"></p>
+                                                <p
+                                                    th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'">
+                                                </p>
                                                 <p th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'"></p>
                                                 <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
                                             </div>
                                             <div class="vermas">
-                                                <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}" class="boton btn btn-primary">Ver Más</a>
+                                                <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
+                                                    class="boton btn btn-primary">Ver Más</a>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </section>
                             </div>

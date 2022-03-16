@@ -9,13 +9,13 @@
 
     <!--****** Banner Principal ******-->
 
-        <div class="bann-listaalojamiento">
-            <div class="carousel-item active">
-                <div class="banner">
-                    <h1 class="titulo-banner-zona">LISTA DE RESTAURANTS</h1>
-                </div>
+    <div class="bann-listaalojamiento">
+        <div class="carousel-item active">
+            <div class="banner">
+                <h1 class="titulo-banner-zona">GASTRONOMÍA</h1>
             </div>
         </div>
+    </div>
 
 
     <!--****** Lista de Restaurants ******-->
@@ -62,7 +62,7 @@
                                                 <p th:text="'Web: ' + ${c.web}"></p>
                                                 <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
                                                 <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
-                                                
+
                                             </div>
 
                                             <div class="col">
@@ -70,15 +70,18 @@
                                                 </br>
                                                 <p th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'"></p>
                                                 <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
-                                                <p th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'"></p>
+                                                <p
+                                                    th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'">
+                                                </p>
                                                 <p th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'"></p>
                                                 <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
                                             </div>
                                             <div class="vermas">
-                                                <a th:href="@{/restaurant/alojamiento}+'?id='+${c.id}" class="boton btn btn-primary">Ver Más</a>
+                                                <a th:href="@{/restaurant/alojamiento}+'?id='+${c.id}"
+                                                    class="boton btn btn-primary">Ver Más</a>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </section>
                             </div>
@@ -98,3 +101,5 @@
 </body>
 
 </html>
+
+<!-- 
