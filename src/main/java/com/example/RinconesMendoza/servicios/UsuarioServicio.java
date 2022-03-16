@@ -40,9 +40,9 @@ public class UsuarioServicio implements UserDetailsService {
         if (usuario.getUsername() == null || usuario.getUsername().isEmpty()) {
             throw new WebException("El nombre de usuario no puede estar vacio");
         }
-        if (findByUsername(usuario.getUsername()) != null) {
-            throw new WebException("El nombre de usuario ya esta registrado intente con otro");
-        }
+//        if (findByUsername(usuario.getUsername()) != null) {
+//            throw new WebException("El nombre de usuario ya esta registrado intente con otro");
+//        }
         if (usuario.getPassword() == null || password2 == null || usuario.getPassword().isEmpty() || password2.isEmpty()) {
             throw new WebException("La contraseña no puede estar vacia");
         }
@@ -60,7 +60,8 @@ public class UsuarioServicio implements UserDetailsService {
         user.setFoto(usuario.getFoto());
         user.setRol(Role.USER);
 //        delete(usuario2);
-        return usuarioRepositorio.save(user);
+        usuario2 = usuarioRepositorio.save(user);
+        return usuario2;
     }
 
     public Optional<Usuario> findByUsername(String username) {

@@ -50,8 +50,8 @@ public class UsuarioControlador {
     public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen, @RequestParam String password2) throws Exception {
         try {
             try {
-                if (!imagen.isEmpty()) {
-                    Path directorioImagenes = Paths.get(".//src/main/resources/images/usuariosSubidas/");
+                if (!imagen.isEmpty()){
+                    Path directorioImagenes = Paths.get(".//src/main/resources/static/images/locacion/");
                     String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
                     byte[] bytesImg = imagen.getBytes();
                     Path rutaCompleta = Paths.get(rutaAbsoluta + "/" + imagen.getOriginalFilename());
