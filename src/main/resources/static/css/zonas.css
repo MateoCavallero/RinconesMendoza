@@ -22,7 +22,7 @@
   justify-content: center;
   align-items: center;
 }
-.carousel-slide-3{
+.carousel-slide-3 {
   background-image: url(../images/zonas/parque\ central.jpg);
   opacity: 0.9;
   background-repeat: round;
@@ -68,12 +68,6 @@
   margin: 0px auto 0;
 }
 
-.escrito-descripcion {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
 @media (min-width: 1441px) {
   .escrito-descripcion {
     font-size: 1.5rem;
@@ -82,7 +76,7 @@
 
 .descripcion {
   background-color: #777772;
-  padding: 120px 30px;
+  padding: 80px 30px;
 }
 
 .titulo-Act {
@@ -102,13 +96,17 @@
 }
 .titulo-3 {
   font-size: 4rem;
+  color: #ffffff;
+  font-weight: 100;
+  text-decoration: dotted;
 }
-.titulo-4 {
-  font-size: 1.5rem;
-}
-.ubicacion {
-  /*background-color:#fffbf3;*/
+
+.list {
+  background-color: rgb(105, 105, 105);
+  display: inline-block;
 }
 .mapa {
-  padding: 100px 500px;
+  padding: 500px auto;
+  border-radius: 10px;
+  display: inline;
 }
