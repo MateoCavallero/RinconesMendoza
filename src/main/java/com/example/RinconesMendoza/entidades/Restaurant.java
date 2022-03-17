@@ -12,5 +12,5 @@ public class Restaurant extends Locacion{
     @Enumerated(value = EnumType.STRING)
     private TipoComida tipoDeComida;
     private Boolean menuCeliaco;
-    private String foto;
+   
 }

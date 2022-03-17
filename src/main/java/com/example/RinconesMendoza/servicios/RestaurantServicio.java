@@ -1,6 +1,7 @@
 package com.example.RinconesMendoza.servicios;
 
 import com.example.RinconesMendoza.entidades.Restaurant;
+import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.repositorios.RestaurantRepositorio;
 import java.util.List;
 import java.util.Optional;
@@ -14,30 +15,44 @@ public class RestaurantServicio {
     @Autowired
     private RestaurantRepositorio restaurantRepo;
 
-    @Transactional
-    public void crearResto(Restaurant resto) {
-        restaurantRepo.save(resto);
+     @Transactional
+    public void crearRestaurant(Restaurant restaurant) throws WebException{
+        validacion(restaurant);
+        System.out.println(restaurant.getRangoDePrecios());
+        restaurantRepo.save(restaurant);
     }
-
-    public List<Restaurant> listarResto() {
+    
+    public List<Restaurant> listAll(){
         return restaurantRepo.findAll();
     }
     
-    public Optional<Restaurant> listById(String id){
+    public Optional<Restaurant> findById(String id){
         return restaurantRepo.findById(id);
     }
-
-    public List<Restaurant> listAllByQ(String q) {
-        return restaurantRepo.findAllByQ("%" + q + "%");
-    }
-
+    
     @Transactional
-    public void eliminarResto(String id) {
-        Optional<Restaurant> optional = restaurantRepo.findById(id);
-
+    public void deletefinById(String id){
+         Optional<Restaurant> optional = restaurantRepo.findById(id);
+        
         if (optional.isPresent()) {
-            Restaurant resto = optional.get();
-            restaurantRepo.delete(resto);
+            Restaurant restaurant = optional.get();
+            restaurantRepo.delete(restaurant);
         }
+    }
+    
+    private void validacion(Restaurant restaurant) throws WebException {
+        if (restaurant.getNombre() == null || restaurant.getNombre().isEmpty()) {
+            throw new WebException("El nombre no puede ser nulo");
+        }
+        if (restaurant.getDomicilio() == null || restaurant.getDomicilio().isEmpty()) {
+            throw new WebException("El domicilio no puede ser vacío");
+        }
+        if (restaurant.getTelefono() == null ||restaurant.getTelefono().isEmpty() ||restaurant.getTelefono().length() < 10) {
+            throw new WebException("El Telefono no puede ser nulo o menor a 10 caracteres y debe contener solo numeros");
+        }
+        if (restaurant.getWeb() == null || restaurant.getWeb().isEmpty()) {
+            throw new WebException("La direccion web no puede estar vacía");
+        }
+       
     }
 }
