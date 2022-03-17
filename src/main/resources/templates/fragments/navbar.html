@@ -29,10 +29,9 @@
                                 <li><a th:href="@{/alojamiento/form}"> alojamientos form</a></li>
                                 <li><a th:href="@{/restaurant/form}"> restaurantes form</a></li>
                                 <li><a th:href="@{/actividad/form}"> actividades form</a></li>
-
-
                             </ul>
                         </li>
+
                         <li class="has-children">
                             <a href="#">Zonas</a>
                             <ul class="dropdown">
@@ -41,22 +40,21 @@
                                 <li><a th:href="@{/zona/zona3}">Gran Mendoza</a></li>
                                 <li><a th:href="@{/zona/zona4}">Zona Sur</a></li>
                                 <li><a th:href="@{/zona/zona5}">Zona Este</a></li>
-
                             </ul>
-
+                        </li>
                         <li class="has-children">
                             <a href="#">Actividades</a>
                             <ul class="dropdown">
                                 <li><a th:href="@{/alojamiento/list}">Alojamiento</a></li>
                                 <li><a th:href="@{/restaurant/list}">Gastronomía</a></li>
                                 <li><a th:href="@{/actividades/list}">Actividades</a></li>
-
                             </ul>
                         </li>
+
                         <li>
-                            <a class="navbar-brand" th:href="@{/login}">Ingresar</a>
-                            <a class="navbar-brand" th:href="@{/usuario/form}">Registrarse</a>
-                            <a class="navbar-brand" th:href="@{/logout}">Cerrar Sesion</a>
+                            <a th:href="@{/login}">Ingresar</a>
+                            <a th:href="@{/usuario/form}">Registrarse</a>
+                            <a th:href="@{/logout}">Cerrar Sesion</a>
                         </li>
 
                     </ul>

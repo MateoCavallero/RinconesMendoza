@@ -8,38 +8,53 @@
     <nav th:replace="/fragments/navbar :: navbar"></nav>
 
     <body>
-        <div class="container">
-            <div th:if="${error}" class="alert alert-danger alert-dismissible fade show mt-auto" role="alert">
-                <span><strong th:text="${error}"> </strong> </span>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <div th:if="${param.logout}" class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
-                <span> <strong> "Ha finalizado la sesion con exito." </strong> </span>
-                <!--<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
-            </div>
-            <div class="card ms-auto">
-                <div class="card-header d-flex">
-                    <h1>Ingresar</h1>
-                    <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/}"> Volver </a></button>
-                </div>
-                <div class="card-body">
-                    <form th:action="@{/logincheck}" method="POST" class="col-6 mx-auto">
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Nombre de usuario</label>
-                            <input type="text" class="form-control" th:value="${username}" name="username"
-                                placeholder="nick"></input>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña </label>
-                            <input type="password" class="form-control" name="password"
-                                placeholder="***********"></input>
-                        </div>
-                        <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-primary">Ingresar</button>
-                        </div>
-                </div>
-            </div>
+
+        <div class="contenido-form">
+            <table class="registro" style="border-collapse: collapse; width: 100%;" border="0">
+                <tbody>
+                    <tr>
+                        <td class="coluno" style="width: 50%;">
+                            <h1 class="titulo-registro">INGRESAR</h1>
+                        </td>
+                        <td class="coldos" style="width: 50%;">
+                            <div class="container">
+                                <div th:if="${error}" class="alert alert-danger alert-dismissible fade show mt-auto"
+                                    role="alert">
+                                    <span><strong th:text="${error}"> </strong> </span>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div th:if="${param.logout}"
+                                    class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
+                                    <span> <strong> "Ha finalizado la sesion con exito." </strong> </span>
+                                    <!--<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+                                </div>
+                                <div class="card ms-auto">
+
+                                    <div class="cuerpotabla">
+                                        <form th:action="@{/logincheck}" method="POST" class="col-6 mx-auto">
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Nombre de usuario</label>
+                                                <input type="text" class="form-control" th:value="${username}"
+                                                    name="username" placeholder="nick"></input>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password" class="form-label">Contraseña </label>
+                                                <input type="password" class="form-control" name="password"
+                                                    placeholder="***********"></input>
+                                            </div>
+                                            <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
+                                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
 
         <!--****** Footer ******-->
         <footer th:replace="/fragments/footer :: footer"></footer>

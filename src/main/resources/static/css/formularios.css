@@ -37,3 +37,33 @@
 label, .textos-form{
   color: #292828;
 }
+
+.coluno {
+  background-image: url(../images/Registro.jpg);
+  height: 100%;
+  display: table-cell;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+}
+
+.titulo-registro {
+  display: flex;
+  color: #ffffff;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0px auto 0;
+  padding: auto;
+  text-shadow: 2px 2px 4px #000000;
+  padding-left: 33%;
+}
+.cuerpotabla{
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  padding-top: 10%;
+  padding-bottom: 40%;
+}
