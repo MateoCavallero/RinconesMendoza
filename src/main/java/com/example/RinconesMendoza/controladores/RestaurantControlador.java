@@ -36,7 +36,7 @@ public class RestaurantControlador {
     @GetMapping("/form")
     public String crearRestaurant(Model model, @RequestParam(required = false) String id) {
         if (id != null) {
-            Optional<Restaurant> optional = restoService.listById(id);
+            Optional<Restaurant> optional = restoService.findById(id);
             if (optional.isPresent()) {
                 model.addAttribute("restaurant", optional.get());
             } else {
@@ -64,7 +64,7 @@ public class RestaurantControlador {
             } catch (IOException e) {
                 System.out.println(e);
             }
-            restoService.crearResto(restaurant);
+            restoService.crearRestaurant(restaurant);
             redirect.addFlashAttribute("success", "Restaurant guardado con exito");
             return "redirect:/restaurant/list";
         } catch (Exception e) {
@@ -82,13 +82,13 @@ public class RestaurantControlador {
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")
     public String deleteRestaurant(@RequestParam(required = true) String id) {
-        restoService.eliminarResto(id);
+        restoService.deletefinById(id);
         return "redirect:/restaurant/list";
     }
     
     @GetMapping("/alojamiento")
     public String vistaAlojamiento(Model model, Model modelcomentario, @RequestParam(required = true) String id) {
-        Optional<Restaurant> optional = restoService.listById(id);
+        Optional<Restaurant> optional = restoService.findById(id);
         model.addAttribute("restaurant", optional.get());
         modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
         return "alojamientos";
