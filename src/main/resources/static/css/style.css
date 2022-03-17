@@ -41,6 +41,7 @@ a {
 .zonas,
 .actividades {
   margin: 5% 10% 3% 10%;
+  align-items: center;
 }
 /*.banner-secundario{
   background-color: ;
