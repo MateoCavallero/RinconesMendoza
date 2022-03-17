@@ -18,7 +18,7 @@ public class RestaurantServicio {
     public void crearResto(Restaurant resto) {
         restaurantRepo.save(resto);
     }
-
+    
     public List<Restaurant> listarResto() {
         return restaurantRepo.findAll();
     }
