@@ -86,11 +86,11 @@ public class RestaurantControlador {
         return "redirect:/restaurant/list";
     }
     
-    @GetMapping("/alojamiento")
+    @GetMapping("/restaurant")
     public String vistaAlojamiento(Model model, Model modelcomentario, @RequestParam(required = true) String id) {
         Optional<Restaurant> optional = restoService.findById(id);
         model.addAttribute("restaurant", optional.get());
         modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
-        return "alojamientos";
+        return "restaurantes";
     }
 }
