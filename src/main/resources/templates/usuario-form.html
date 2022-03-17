@@ -6,9 +6,6 @@
 <body>
 
     <nav th:replace="/fragments/navbar :: navbar"></nav>
-    <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/}">Rincones mendoza</a>
-    </div>
     </nav>
     <div class="container">
         <div th:if="${error}" class="alert alert-danger alert-dismissible fade show mt-auto" role="alert">
@@ -21,7 +18,7 @@
         </div>
         <div class="card ms-auto">
             <div class="card-header d-flex">
-                <h1>Creacion de usuario registro</h1>
+                <h1>Registrarse en el sitio</h1>
                 <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/usuario/list}"> Ver lista de usuarios
                     </a></button>
             </div>
@@ -30,21 +27,22 @@
                     enctype="multipart/form-data">
                     <input hidden th:field="*{id}"> </input>
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre </label>
-                        <input type="text" class="form-control" th:field="*{nombre}" placeholder="Mateo"></input>
+                        <label for="nombre" class="form-label">Nombres </label>
+                        <input type="text" class="form-control" th:field="*{nombre}" placeholder="Ej.: Pedro"></input>
                     </div>
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Apellido </label>
-                        <input type="text" class="form-control" th:field="*{apellido}" placeholder="Cavallero"></input>
+                        <label for="nombre" class="form-label">Apellidos </label>
+                        <input type="text" class="form-control" th:field="*{apellido}"
+                            placeholder="Ej.: Gonzales"></input>
                     </div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">DNI </label>
-                        <input type="number" class="form-control" th:field="*{dni}" placeholder="43675857"></input>
+                        <input type="number" class="form-control" th:field="*{dni}" placeholder="Ej.: 43675857"></input>
                     </div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Email </label>
                         <input type="text" class="form-control" th:field="*{email}"
-                            placeholder="mateo543@gmail.com"></input>
+                            placeholder="Ej.: pedrogonz@gmail.com"></input>
                     </div>
                     <div class="mb-3">
                         <label for="imagen" class="form-label">Foto</label>

@@ -1,6 +1,8 @@
 package com.example.RinconesMendoza.controladores;
 import com.example.RinconesMendoza.entidades.Restaurant;
+import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import com.example.RinconesMendoza.servicios.RestaurantServicio;
+import com.example.RinconesMendoza.servicios.ZonaServicio;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,6 +25,12 @@ public class RestaurantControlador {
 
     @Autowired
     private RestaurantServicio restoService;
+    
+     @Autowired
+    private ComentarioServicio comentarioService;
+
+    @Autowired
+    private ZonaServicio zonaService;
     
     @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @GetMapping("/form")
@@ -64,19 +72,25 @@ public class RestaurantControlador {
             return "redirect:/restaurant/list";
         }
     }
+    
     @GetMapping("/list")
-    public String listRestaurant(Model model, @RequestParam(required = false) String q) {
-        if (q != null) {
-            model.addAttribute("restaurant", restoService.listAllByQ(q));
-        } else {
-            model.addAttribute("restaurant", restoService.listarResto());
-        }
+    public String listRestaurant(Model model) {
+        model.addAttribute("restaurant", restoService.listAll());
         return "restaurant-list";
     }
+    
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")
     public String deleteRestaurant(@RequestParam(required = true) String id) {
         restoService.eliminarResto(id);
         return "redirect:/restaurant/list";
+    }
+    
+    @GetMapping("/alojamiento")
+    public String vistaAlojamiento(Model model, Model modelcomentario, @RequestParam(required = true) String id) {
+        Optional<Restaurant> optional = restoService.listById(id);
+        model.addAttribute("restaurant", optional.get());
+        modelcomentario.addAttribute("comentarios", comentarioService.listLocacion(id));
+        return "alojamientos";
     }
 }
