@@ -33,7 +33,7 @@
             </div>
 
             <div class="card-body">
-                <form th:action="@{/restaurant/save}" method="POST" th:object="${restaurant}" class="col-6 mx-auto">
+                <form th:action="@{/restaurant/save}" method="POST" th:object="${restaurant}" class="col-6 mx-auto" enctype="multipart/form-data">
                     <input hidden th:field="*{id}"> </input>
                     <div class="mb-3">
                         <label for="nombre" class="form-label"> Nombre del lugar </label>
