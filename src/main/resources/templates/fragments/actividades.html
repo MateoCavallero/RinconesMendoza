@@ -1,7 +1,7 @@
 <section th:fragment="actividades" class="actividades">
     <div class="card-group">
         <div class="card">
-            <img src="/images/portada-hoteles.jpg" class="card-img-top" alt="...">
+            <a th:href="@{/alojamiento/list}"><img src="/images/portada-hoteles.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <h4 class="card-title">ALOJAMIENTOS</h4>
                 <h5><a th:href="@{/alojamiento/list}"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
@@ -12,22 +12,22 @@
 
         </div>
         <div class="card">
-            <img src="/images/portada-restaurantes.jpg" class="card-img-top" alt="...">
+            <a th:href="@{/restaurant/list}"><img src="/images/portada-restaurantes.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <h4 class="card-title">GASTRONOMIA</h4>
-                <h5><a href="gastronomia.html"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
+                <h5><a th:href="@{/restaurant/list}"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
                         gastronomia</a></h5>
-                <h5><a href="gastronomia.html"><img src="/images/iconos/agregar-32.png" alt="..." /> Agregar local
+                <h5><a th:href="@{/restaurant/form}"><img src="/images/iconos/agregar-32.png" alt="..." /> Agregar local
                         gastronomico</a></h5>
             </div>
         </div>
         <div class="card">
-            <img src="/images/portada-actividades.jpg" class="card-img-top" alt="...">
+            <a th:href="@{/actividades/list}"><img src="/images/portada-actividades.jpg" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <h4 class="card-title">ACTIVIDADES</h4>
-                <h5><a href="actividades.html"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
+                <h5><a th:href="@{/actividades/list}"><img src="/images/iconos/ver-32.png" alt="..." /> Ver todo en
                         actividades</a></h5>
-                <h5><a href="actividades.html"><img src="/images/iconos/agregar-32.png" alt="..." /> Agregar
+                <h5><a th:href="@{/actividades/form}"><img src="/images/iconos/agregar-32.png" alt="..." /> Agregar
                         actividad</a></h5>
             </div>
         </div>
