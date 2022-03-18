@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+body{
+  font-family: 'Poppins', sans-serif;
+  gap: 2em;
+}
+
 a {
   color: #000000;
   text-decoration: none;
@@ -84,16 +91,15 @@ a {
 }
 
 /* Banner Secundario */
-#testimonials {
-  color: white;
-  font-size: 5rem;
+#testimonials{
+  color: #020202;
+  font-size: 8rem;
   text-align: center;
   background-image: url(../images/banner-2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 100%;
-  position: relative;
-  padding: 180px;
+  padding: 150px;
 }
 
 /*Pie de pagina*/
@@ -129,4 +135,14 @@ footer a:hover {
 
 .footer-link-list > * + * {
   margin-left: 20px;
+}
+.nuevoton {
+  color: #fff;
+  background-color: #740128;
+  border-color: #740128;
+}
+.nuevoton:hover {
+  color: #000;
+  background-color: #ffa400;
+  border-color: #ffa400;
 }

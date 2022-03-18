@@ -28,7 +28,7 @@
 
     <div class="tabla">
         <div class="boton">
-            <button class="btn btn-primary"><a th:href="@{/alojamiento/list}"> Ver lista de locales gastronomicos
+            <button class="btn btn-primary"><a th:href="@{/restaurant/list}"> Locales gastronómicos Disponibles
                 </a></button>
         </div>
 
@@ -60,11 +60,10 @@
                     <input type="text" class="form-control" th:field="*{web}"
                         placeholder="Ej.: www.parrillaelmendocino.com.ar"></input>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                        th:field="*{menuCeliaco}">
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{menuCeliaco}">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Menú Celìaco
+                       Menú Celiaco
                     </label>
                 </div>
 
@@ -74,11 +73,6 @@
                         <option th:each="tc : ${T(com.example.RinconesMendoza.utils.TipoComida).values()}"
                             th:value="${tc}" th:text="${tc}"></option>
                     </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="imagen" class="form-label">Foto</label>
-                    <input type="file" class="form-control" name="file" id="imagen"></input>
                 </div>
 
                 <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
