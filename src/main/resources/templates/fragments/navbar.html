@@ -29,8 +29,14 @@
                                 <li><a th:href="@{/alojamiento/form}"> alojamientos form</a></li>
                                 <li><a th:href="@{/restaurant/form}"> restaurantes form</a></li>
                                 <li><a th:href="@{/actividad/form}"> actividades form</a></li>
+
+
                             </ul>
                         </li>
+
+
+                        <!-- <li><a href="#home-section" class="nav-link">Inicio</a></li>
+                        <li><a href="#services-section" class="nav-link">Nosotros</a></li>-->
 
                         <li class="has-children">
                             <a href="#">Zonas</a>
@@ -40,28 +46,36 @@
                                 <li><a th:href="@{/zona/zona3}">Gran Mendoza</a></li>
                                 <li><a th:href="@{/zona/zona4}">Zona Sur</a></li>
                                 <li><a th:href="@{/zona/zona5}">Zona Este</a></li>
+
                             </ul>
-                        </li>
+
                         <li class="has-children">
                             <a href="#">Actividades</a>
                             <ul class="dropdown">
                                 <li><a th:href="@{/alojamiento/list}">Alojamiento</a></li>
                                 <li><a th:href="@{/restaurant/list}">Gastronomía</a></li>
                                 <li><a th:href="@{/actividades/list}">Actividades</a></li>
+
                             </ul>
                         </li>
 
-                        <li>
-                            <a sec:authorize="!(isAuthenticated())" th:href="@{/login}">Ingresar</a>
-                            <a sec:authorize="!(isAuthenticated())" th:href="@{/usuario/form}">Registrarse</a>
-                            <a sec:authorize="(isAuthenticated())" th:href="@{/logout}">Salir</a>
+                        <li class="has-children">
+                            <a href="#" sec:authorize="!isAuthenticated()">Ingresar</a>
+                            <a href="#" sec:authorize="isAuthenticated()">Salir</a>
+                            <ul class="dropdown">
+                                <li sec:authorize="!isAuthenticated()"> <a class="navbar-brand"
+                                        th:href="@{/login}">Ingresar</a></li>
+                                <li sec:authorize="!isAuthenticated()"> <a class="navbar-brand"
+                                        th:href="@{/usuario/form}">Registrarse</a></li>
+                                <li sec:authorize="isAuthenticated()"> <a class="navbar-brand"
+                                        th:href="@{/logout}">Cerrar sesion</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
             </div>
             <div class="toggle-button d-inline-block d-lg-none"><a href="#"
                     class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
         </div>
     </div>
 </header>
