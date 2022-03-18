@@ -50,7 +50,6 @@ public class AlojamientoControlador {
             model.addAttribute("alojamiento", new Alojamiento());
         }
         return "alojamiento-form";
-
     }
 
     @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")

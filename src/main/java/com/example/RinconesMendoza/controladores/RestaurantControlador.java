@@ -1,5 +1,7 @@
 package com.example.RinconesMendoza.controladores;
+
 import com.example.RinconesMendoza.entidades.Restaurant;
+import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
 import com.example.RinconesMendoza.servicios.RestaurantServicio;
 import com.example.RinconesMendoza.servicios.ZonaServicio;
@@ -19,22 +21,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 @Controller
 @RequestMapping("/restaurant")
 public class RestaurantControlador {
 
     @Autowired
     private RestaurantServicio restoService;
-    
-     @Autowired
+
+    @Autowired
     private ComentarioServicio comentarioService;
 
     @Autowired
     private ZonaServicio zonaService;
-    
+
     @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @GetMapping("/form")
-    public String crearRestaurant(Model model, @RequestParam(required = false) String id) {
+    public String crearRestaurant(Model model, Model modelz, @RequestParam(required = false) String id) {
+        modelz.addAttribute("zonas", zonaService.listAll());
         if (id != null) {
             Optional<Restaurant> optional = restoService.findById(id);
             if (optional.isPresent()) {
@@ -50,11 +54,11 @@ public class RestaurantControlador {
 
     @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
     @PostMapping("/save")
-    public String saveUsuario(RedirectAttributes redirect, @ModelAttribute Restaurant restaurant, @RequestParam("file") MultipartFile imagen) {
+    public String saveRestaurant(RedirectAttributes redirect, @ModelAttribute Restaurant restaurant, @RequestParam("file") MultipartFile imagen) {
         try {
             try {
                 if (!imagen.isEmpty()) {
-                    Path directorioImagenes = Paths.get(".//src/main/resources/images/locacion/");
+                    Path directorioImagenes = Paths.get(".//src/main/resources/static/images/locacion/");
                     String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
                     byte[] bytesImg = imagen.getBytes();
                     Path rutaCompleta = Paths.get(rutaAbsoluta + "/" + imagen.getOriginalFilename());
@@ -67,25 +71,25 @@ public class RestaurantControlador {
             restoService.crearRestaurant(restaurant);
             redirect.addFlashAttribute("success", "Restaurant guardado con exito");
             return "redirect:/restaurant/list";
-        } catch (Exception e) {
+        } catch (WebException e) {
             redirect.addFlashAttribute("error", e.getMessage());
             return "redirect:/restaurant/list";
         }
     }
-    
+
     @GetMapping("/list")
     public String listRestaurant(Model model) {
         model.addAttribute("restaurant", restoService.listAll());
         return "restaurant-list";
     }
-    
+
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/delete")
     public String deleteRestaurant(@RequestParam(required = true) String id) {
         restoService.deletefinById(id);
         return "redirect:/restaurant/list";
     }
-    
+
     @GetMapping("/restaurant")
     public String vistaAlojamiento(Model model, Model modelcomentario, @RequestParam(required = true) String id) {
         Optional<Restaurant> optional = restoService.findById(id);

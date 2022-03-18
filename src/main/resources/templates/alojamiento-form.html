@@ -1,142 +1,142 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="/fragments/head :: head"></head>
+    <head th:replace="/fragments/head :: head"></head>
 
-<body>
+    <body>
 
-    <!-- ***Navbar*** -->
-    <header th:replace="/fragments/navbar :: navbar"></header>
+        <!-- ***Navbar*** -->
+        <header th:replace="/fragments/navbar :: navbar"></header>
 
-    <!--****** Banner Principal ******-->
+        <!--****** Banner Principal ******-->
 
-    <div class=" carousel-lista banner-form ">
-        <div class="carousel-item active">
-            <div class="banner">
-                <h1 class="titulo-banner-form">RECOMENDAR ALOJAMIENTO</h1>
+        <div class=" carousel-lista banner-form ">
+            <div class="carousel-item active">
+                <div class="banner">
+                    <h1 class="titulo-banner-form">RECOMENDAR ALOJAMIENTO</h1>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="descripcion">
-        <div class="container">
-            <p class="escrito-descripcion">En esta sección podes subir lugares que quieras recomendar a otros usuarios.
-                Recordá que deben
-                ser lugares ubicados dentro de la Provincia de Mendoza, en cualquiera de sus cinco zonas.
-            </p>
+        <div class="descripcion">
+            <div class="container">
+                <p class="escrito-descripcion">En esta sección podes subir lugares que quieras recomendar a otros usuarios.
+                    Recordá que deben
+                    ser lugares ubicados dentro de la Provincia de Mendoza, en cualquiera de sus cinco zonas.
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="tabla">
-        <div class="boton">
-            <button class="btn btn-primary nuevoton"><a th:href="@{/alojamiento/list}"> Alojamientos Disponibles
-                </a></button>
+        <div class="tabla">
+            <div class="boton">
+                <button class="btn btn-primary nuevoton"><a th:href="@{/alojamiento/list}"> Alojamientos Disponibles
+                    </a></button>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/alojamiento/save}" method="POST" th:object="${alojamiento}" class="col-6 mx-auto"
+                      enctype="multipart/form-data">
+                    <input hidden th:field="*{id}"> </input>
+
+
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"> Nombre del lugar </label>
+                        <input type="text" class="form-control" th:field="*{nombre}"
+                               placeholder="Ej.: Hostal Mendoza"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"> Dirección</label>
+                        <input type="text" class="form-control" th:field="*{domicilio}"
+                               placeholder="Ej.: Avenida Los Arroyos N° 300"></input>
+                    </div>
+                    <div>
+                        <label>Zona a la que pertenece</label>
+                        <select th:field="*{zona.id}">
+                            <option th:each="tc : ${zonas}" th:value="${tc.id}" th:text="${tc.nombre}"></option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"> Teléfono </label>
+                        <input type="tel" class="form-control" th:field="*{telefono}" placeholder="+542613025478"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Sitio Web</label>
+                        <input type="text" class="form-control" th:field="*{web}"
+                               placeholder="Ej.: www.hostalmendoza.com.ar"></input>
+                    </div>
+                    <div>
+                        <label>Rango de Precios del Lugar</label>
+                        <select th:field="*{rangoDePrecios}">
+                            <option th:each="tc : ${T(com.example.RinconesMendoza.utils.RangoDePrecio).values()}"
+                                    th:value="${tc}" th:text="${tc}"></option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Tipo de Alojamiento</label>
+                        <select name="TipoAlojamiento" th:field="*{tipoAlojamiento}">
+                            <option th:each="tc : ${T(com.example.RinconesMendoza.utils.TipoAlojamiento).values()}"
+                                    th:value="${tc}" th:text="${tc}"></option>
+                        </select>
+                    </div>
+                    <div class="form-check">
+                        <h2 class="textos-form">Selecciona los servicios que brinda el lugar</h2>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                               th:field="*{aireAcondicionado}">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Aire acondicionado
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{wifi}">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Wifi
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{pileta}">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Pileta
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                               th:field="*{estacionamiento}">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Estacionamiento
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                               th:field="*{desayuno}">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Desayuno incluido
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                               th:field="*{bar_restaurant}">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Restaurante/Bar en el lugar
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="imagen" class="form-label">Foto</label>
+                        <input type="file" class="form-control" name="file" id="imagen"></input>
+                    </div>
+
+                    <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" class="btn btn-primary nuevoton">Guardar</button>
+                    </div>
+            </div>
         </div>
-        <div class="card-body">
-            <form th:action="@{/alojamiento/save}" method="POST" th:object="${alojamiento}" class="col-6 mx-auto"
-                enctype="multipart/form-data">
-                <input hidden th:field="*{id}"> </input>
 
+        <!--****** Actividades ******-->
 
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"> Nombre del lugar </label>
-                    <input type="text" class="form-control" th:field="*{nombre}"
-                        placeholder="Ej.: Hostal Mendoza"></input>
-                </div>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"> Dirección</label>
-                    <input type="text" class="form-control" th:field="*{domicilio}"
-                        placeholder="Ej.: Avenida Los Arroyos N° 300"></input>
-                </div>
-                <div>
-                    <label>Zona a la que pertenece</label>
-                    <select th:field="*{zona.id}">
-                        <option th:each="tc : ${zonas}" th:value="${tc.id}" th:text="${tc.nombre}"></option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"> Teléfono </label>
-                    <input type="tel" class="form-control" th:field="*{telefono}" placeholder="+542613025478"></input>
-                </div>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Sitio Web</label>
-                    <input type="text" class="form-control" th:field="*{web}"
-                        placeholder="Ej.: www.hostalmendoza.com.ar"></input>
-                </div>
-                <div>
-                    <label>Rango de Precios del Lugar</label>
-                    <select th:field="*{rangoDePrecios}">
-                        <option th:each="tc : ${T(com.example.RinconesMendoza.utils.RangoDePrecio).values()}"
-                            th:value="${tc}" th:text="${tc}"></option>
-                    </select>
-                </div>
-                <div>
-                    <label>Tipo de Alojamiento</label>
-                    <select name="TipoAlojamiento" th:field="*{tipoAlojamiento}">
-                        <option th:each="tc : ${T(com.example.RinconesMendoza.utils.TipoAlojamiento).values()}"
-                            th:value="${tc}" th:text="${tc}"></option>
-                    </select>
-                </div>
-                <div class="form-check">
-                    <h2 class="textos-form">Selecciona los servicios que brinda el lugar</h2>
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                        th:field="*{aireAcondicionado}">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Aire acondicionado
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{wifi}">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Wifi
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{pileta}">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Pileta
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                        th:field="*{estacionamiento}">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Estacionamiento
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                        th:field="*{desayuno}">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Desayuno incluido
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                        th:field="*{bar_restaurant}">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Restaurante/Bar en el lugar
-                    </label>
-                </div>
+        <section th:replace="/fragments/actividades :: actividades"></section>
 
-                <div class="mb-3">
-                    <label for="imagen" class="form-label">Foto</label>
-                    <input type="file" class="form-control" name="file" id="imagen"></input>
-                </div>
+        <!--****** Footer ******-->
+        <footer th:replace="/fragments/footer :: footer"></footer>
 
-                <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
-                    <button type="submit" class="btn btn-primary nuevoton">Guardar</button>
-                </div>
-        </div>
-    </div>
-
-    <!--****** Actividades ******-->
-
-    <section th:replace="/fragments/actividades :: actividades"></section>
-
-    <!--****** Footer ******-->
-    <footer th:replace="/fragments/footer :: footer"></footer>
-
-</body>
+    </body>
 
 </html>

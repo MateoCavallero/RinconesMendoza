@@ -1,93 +1,93 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="/fragments/head :: head"></head>
+    <head th:replace="/fragments/head :: head"></head>
 
-<body>
-    <!-- ***Navbar*** -->
-    <nav th:replace="/fragments/navbar :: navbar"></nav>
+    <body>
+        <!-- ***Navbar*** -->
+        <nav th:replace="/fragments/navbar :: navbar"></nav>
 
-    <!--****** Banner Principal ******-->
+        <!--****** Banner Principal ******-->
 
-    <div class=" carousel-lista banner-form ">
-        <div class="carousel-item active">
-            <div class="banner">
-                <h1 class="titulo-banner-form">RECOMENDAR LOCAL GASTRONOMICO</h1>
+        <div class=" carousel-lista banner-form ">
+            <div class="carousel-item active">
+                <div class="banner">
+                    <h1 class="titulo-banner-form">RECOMENDAR LOCAL GASTRONOMICO</h1>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="descripcion">
-        <div class="container">
-            <p class="escrito-descripcion">En esta sección podes subir lugares que quieras recomendar a otros usuarios.
-                Recordá que deben
-                ser lugares ubicados dentro de la Provincia de Mendoza, en cualquiera de sus cinco zonas.
-            </p>
-        </div>
-    </div>
-
-    <div class="tabla">
-        <div class="boton">
-            <button class="btn btn-primary nuevoton"><a th:href="@{/restaurant/list}"> Locales gastronómicos Disponibles
-                </a></button>
+        <div class="descripcion">
+            <div class="container">
+                <p class="escrito-descripcion">En esta sección podes subir lugares que quieras recomendar a otros usuarios.
+                    Recordá que deben
+                    ser lugares ubicados dentro de la Provincia de Mendoza, en cualquiera de sus cinco zonas.
+                </p>
+            </div>
         </div>
 
-        <div class="card-body">
-            <form th:action="@{/restaurant/save}" method="POST" th:object="${restaurant}" class="col-6 mx-auto">
-                <input hidden th:field="*{id}"> </input>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"> Nombre del lugar </label>
-                    <input type="text" class="form-control" th:field="*{nombre}"
-                        placeholder="ej.: Parrilla El Mendocino"></input>
-                </div>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"> Dirección </label>
-                    <input type="text" class="form-control" th:field="*{domicilio}"
-                        placeholder="Ej.: Avenida Los Arroyos N° 300"></input>
-                </div>
-                <div>
-                    <label>Zona a la que pertenece</label>
-                    <select th:field="*{zona.id}">
-                        <option th:each="tc : ${zonas}" th:value="${tc.id}" th:text="${tc.nombre}"></option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"> Telefono </label>
-                    <input type="text" class="form-control" th:field="*{telefono}" placeholder="+542613025478"></input>
-                </div>
-                <div <div class="mb-3">
-                    <label for="nombre" class="form-label">Sitio Web</label>
-                    <input type="text" class="form-control" th:field="*{web}"
-                        placeholder="Ej.: www.parrillaelmendocino.com.ar"></input>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                        th:field="*{menuCeliaco}">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Menú Celiaco
-                    </label>
-                </div>
+        <div class="tabla">
+            <div class="boton">
+                <button class="btn btn-primary nuevoton"><a th:href="@{/restaurant/list}"> Locales gastronómicos Disponibles
+                    </a></button>
+            </div>
 
-                <div>
-                    <label>Tipos de Comida</label>
-                    <select name="tipoDeComida" th:field="*{tipoDeComida}">
-                        <option th:each="tc : ${T(com.example.RinconesMendoza.utils.TipoComida).values()}"
-                            th:value="${tc}" th:text="${tc}"></option>
-                    </select>
-                </div>
+            <div class="card-body">
+                <form th:action="@{/restaurant/save}" method="POST" th:object="${restaurant}" class="col-6 mx-auto">
+                    <input hidden th:field="*{id}"> </input>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"> Nombre del lugar </label>
+                        <input type="text" class="form-control" th:field="*{nombre}"
+                               placeholder="ej.: Parrilla El Mendocino"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"> Dirección </label>
+                        <input type="text" class="form-control" th:field="*{domicilio}"
+                               placeholder="Ej.: Avenida Los Arroyos N° 300"></input>
+                    </div>
+                    <div>
+                        <label>Zona a la que pertenece</label>
+                        <select th:field="*{zona.id}">
+                            <option th:each="tc : ${zonas}" th:value="${tc.id}" th:text="${tc.nombre}"></option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"> Telefono </label>
+                        <input type="text" class="form-control" th:field="*{telefono}" placeholder="+542613025478"></input>
+                    </div>
+                    <div <div class="mb-3">
+                            <label for="nombre" class="form-label">Sitio Web</label>
+                            <input type="text" class="form-control" th:field="*{web}"
+                                   placeholder="Ej.: www.parrillaelmendocino.com.ar"></input>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                   th:field="*{menuCeliaco}">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Menú Celiaco
+                            </label>
+                        </div>
 
-                <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
-                    <button type="submit" class="btn btn-primary nuevoton">Guardar</button>
-                </div>
-        </div>
-    </div>
+                        <div>
+                            <label>Tipos de Comida</label>
+                            <select name="tipoDeComida" th:field="*{tipoDeComida}">
+                                <option th:each="tc : ${T(com.example.RinconesMendoza.utils.TipoComida).values()}"
+                                        th:value="${tc}" th:text="${tc}"></option>
+                            </select>
+                        </div>
 
-    <!--****** Actividades ******-->
+                        <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-primary nuevoton">Guardar</button>
+                        </div>
+                    </div>
+            </div>
 
-    <section th:replace="/fragments/actividades :: actividades"></section>
+            <!--****** Actividades ******-->
 
-    <!--****** Footer ******-->
-    <footer th:replace="/fragments/footer :: footer"></footer>
-</body>
+            <section th:replace="/fragments/actividades :: actividades"></section>
+
+            <!--****** Footer ******-->
+            <footer th:replace="/fragments/footer :: footer"></footer>
+    </body>
 
 </html>
