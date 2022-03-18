@@ -1,29 +1,39 @@
 .bann-detalle {
-    background-image: url(../images/banner-1.png);
-    opacity: 1;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    padding: 170px 0px 170px 0px;
-    color: white;
-    background-position: center;
+  background-image: url(../images/banner-1.png);
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 170px 0px 170px 0px;
+  color: white;
+  background-position: center;
 }
 
 .titulobanner h1 {
-    box-sizing: border-box;
-    align-content: center;
-    text-align: center;
-    font-size: 60px;
+  box-sizing: border-box;
+  align-content: center;
+  text-align: center;
+  font-size: 60px;
 }
 
-.crearcomment{
-    padding-top: 250px;
+.crearcomment {
+  padding-top: 250px;
 }
-.ubidetalle{
-    min-width: 1150px;
-    padding-left: 15%;
+.ubidetalle {
+  min-width: 1150px;
+  padding-left: 15%;
 }
-.detalles{
-    max-width: 1920px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+.detalles {
+  max-width: 1920px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.nuevoton {
+  color: #fff;
+  background-color: #740128;
+  border-color: #740128;
+}
+.nuevoton:hover {
+  color: #000;
+  background-color: #ffa400;
+  border-color: #ffa400;
 }

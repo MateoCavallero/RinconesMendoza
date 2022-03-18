@@ -32,7 +32,8 @@
         </div>
         <div class="carta mt-3">
             <div class="crearlugar">
-                <button class="boton btn btn-primary"><a th:href="@{/alojamiento/form}">Crear Alojamiento</a></button>
+                <button class="boton btn btn-primary nuevoton"><a th:href="@{/alojamiento/form}">Crear
+                        Alojamiento</a></button>
             </div>
             <div class="card-body">
                 <form class="row g-3" th:action="@{/restaurant/list}" method="GET">
@@ -40,7 +41,7 @@
                         <input type="text" style="width: 100%;" name="q" placeholder="Buscar...">
                     </div>
                     <div class="col-2">
-                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <button type="submit" class="btn btn-primary nuevoton">Buscar</button>
                     </div>
                 </form>
 
@@ -78,7 +79,7 @@
                                             </div>
                                             <div class="vermas">
                                                 <a th:href="@{/restaurant/alojamiento}+'?id='+${c.id}"
-                                                    class="boton btn btn-primary">Ver Más</a>
+                                                    class="boton btn btn-primary nuevoton">Ver Más</a>
                                             </div>
                                         </div>
 
