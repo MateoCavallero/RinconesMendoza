@@ -6,68 +6,107 @@
 <body>
 
     <nav th:replace="/fragments/navbar :: navbar"></nav>
-    </nav>
-    <div class="container">
-        <div th:if="${error}" class="alert alert-danger alert-dismissible fade show mt-auto" role="alert">
-            <span><strong th:text="${error}"> </strong> </span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <div th:if="${success}" class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
-            <span><strong th:text="${success}"> </strong> </span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        <div class="card ms-auto">
-            <div class="card-header d-flex">
-                <h1>Registrarse en el sitio</h1>
-                <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/usuario/list}"> Ver lista de usuarios
-                    </a></button>
-            </div>
-            <div class="card-body">
-                <form th:action="@{/usuario/save}" method="POST" th:object="${usuario}" class="col-6 mx-auto"
-                    enctype="multipart/form-data">
-                    <input hidden th:field="*{id}"> </input>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombres </label>
-                        <input type="text" class="form-control" th:field="*{nombre}" placeholder="Ej.: Pedro"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Apellidos </label>
-                        <input type="text" class="form-control" th:field="*{apellido}"
-                            placeholder="Ej.: Gonzales"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">DNI </label>
-                        <input type="number" class="form-control" th:field="*{dni}" placeholder="Ej.: 43675857"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Email </label>
-                        <input type="text" class="form-control" th:field="*{email}"
-                            placeholder="Ej.: pedrogonz@gmail.com"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label for="imagen" class="form-label">Foto</label>
-                        <input type="file" class="form-control" name="file" id="imagen"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Nombre de usuario</label>
-                        <input type="text" class="form-control" th:value="${username}" name="username"
-                            placeholder="nick"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Contraseña </label>
-                        <input type="password" class="form-control" th:field="*{password}"
-                            placeholder="***********"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password2" class="form-label">Repita la contraseña </label>
-                        <input type="password" class="form-control" name="password2" placeholder="***********"></input>
-                    </div>
-                    <div style="text-align:center" class="d-grid gap-2 col-6 mx-auto">
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                    </div>
-            </div>
-        </div>
+
+
+
+    <div class="contenido-form">
+        <table class="registro" style="border-collapse: collapse; width: 100%;" border="0">
+            <tbody>
+                <tr>
+                    <td class="coluno" style="width: 50%;">
+                        <h1 class="titulo-registro">INGRESAR</h1>
+                    </td>
+                    <td class="coldos" style="width: 50%;">
+                        <div class="container">
+                            <div th:if="${error}" class="alert alert-danger alert-dismissible fade show mt-auto"
+                                role="alert">
+                                <span><strong th:text="${error}"> </strong> </span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div th:if="${success}" class="alert alert-success alert-dismissible fade show mt-auto"
+                                role="alert">
+                                <span><strong th:text="${success}"> </strong> </span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="card ms-auto">
+                                <div class="card-body">
+                                    <form th:action="@{/usuario/save}" method="POST" th:object="${usuario}"
+                                        class="col-6 mx-auto" enctype="multipart/form-data">
+                                        <input hidden th:field="*{id}"> </input>
+                                        <div class="mb-3">
+                                            <label for="nombre" class="form-label">Nombre</label>
+                                            <input type="text" class="form-control" th:field="*{nombre}"
+                                                placeholder="Ej.: Pedro"></input>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="nombre" class="form-label">Apellido</label>
+                                            <input type="text" class="form-control" th:field="*{apellido}"
+                                                placeholder="Ej.: Gonzales"></input>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="nombre" class="form-label">DNI</label>
+                                            <input type="number" class="form-control" th:field="*{dni}"
+                                                placeholder="Ej.: 43675857"></input>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="nombre" class="form-label">Email</label>
+                                            <input type="text" class="form-control" th:field="*{email}"
+                                                placeholder="Ej.: pedrogonz@gmail.com"></input>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="imagen" class="form-label">Foto</label>
+                                            <input type="file" class="form-control" name="file" id="imagen"></input>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">Nombre de usuario</label>
+                                            <input type="text" class="form-control" th:value="${username}"
+                                                name="username" placeholder="nick"></input>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Contraseña</label>
+                                            <input type="password" class="form-control" th:field="*{password}"
+                                                placeholder="***********"></input>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password2" class="form-label">Repita la contraseña</label>
+                                            <input type="password" class="form-control" name="password2"
+                                                placeholder="***********"></input>
+                                        </div>
+                                        <div style="text-align:center" class="d-grid gap-2 col-6 mx-auto">
+                                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!--****** Footer ******-->
     <footer th:replace="/fragments/footer :: footer"></footer>
