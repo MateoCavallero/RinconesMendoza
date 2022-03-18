@@ -31,7 +31,7 @@
         <div class="card ms-auto">
             <div class="card-header d-flex">
                 <h1>Listado de zonas</h1>
-                <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/zona/form}"> ir a zona
+                <button class="btn btn-dark px-5 py-2 ms-auto nuevoton"><a th:href="@{/zona/form}"> ir a zona
                         form</a></button>
             </div>
             <div class="card-body">
@@ -43,7 +43,7 @@
                                 placeholder="Buscar...">
                         </div>
                         <div class="col-2">
-                            <button type="submit" class="btn btn-dark px-5 py-2 ms-auto">Buscar</button>
+                            <button type="submit" class="btn btn-dark px-5 py-2 ms-auto nuevoton">Buscar</button>
                         </div>
                     </form>
                 </div>
@@ -63,11 +63,11 @@
                             <td th:text="${tmp.nombre}"> </td>
                             <td th:text="${tmp.provincia}"> </td>
                             <td>
-                                <button class="btn btn-light px-5 py-2 ms-auto"><a
+                                <button class="btn btn-light px-5 py-2 ms-auto nuevoton"><a
                                         th:href="@{/zona/form}+'?id='+${tmp.id}">Modificar</a></button>
                             </td>
                             <td>
-                                <button class="btn btn-danger px-5 py-2 ms-auto"><a
+                                <button class="btn btn-danger px-5 py-2 ms-auto nuevoton"><a
                                         th:href="@{/zona/delete}+'?id='+${tmp.id}">Eliminar</a></button>
                             </td>
                         </tr>

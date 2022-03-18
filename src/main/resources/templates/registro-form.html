@@ -18,7 +18,7 @@
         <div class="card ms-auto">
             <div class="card-header d-flex">
                 <h1>Registro de usuario</h1>
-                <button class="btn btn-dark px-5 py-2 ms-auto"><a th:href="@{/}"> Volvesr </a></button>
+                <button class="btn btn-dark px-5 py-2 ms-auto nuevoton"><a th:href="@{/}"> Volver </a></button>
             </div>
             <div class="card-body">
                 <form th:action="@{/registro}" method="POST" class="col-6 mx-auto">
@@ -40,14 +40,14 @@
                         <input type="text" class="form-control" name="dni" placeholder="43675643"></input>
                     </div>
                     <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-primary nuevoton">Guardar</button>
                     </div>
             </div>
         </div>
     </div>
 
-   <!--****** Footer ******-->
-   <footer th:replace="/fragments/footer :: footer"></footer>
+    <!--****** Footer ******-->
+    <footer th:replace="/fragments/footer :: footer"></footer>
 </body>
 
 </html>

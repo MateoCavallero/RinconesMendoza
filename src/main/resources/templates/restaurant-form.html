@@ -28,7 +28,7 @@
 
     <div class="tabla">
         <div class="boton">
-            <button class="btn btn-primary"><a th:href="@{/restaurant/list}"> Locales gastronómicos Disponibles
+            <button class="btn btn-primary nuevoton"><a th:href="@{/restaurant/list}"> Locales gastronómicos Disponibles
                 </a></button>
         </div>
 
@@ -60,10 +60,11 @@
                     <input type="text" class="form-control" th:field="*{web}"
                         placeholder="Ej.: www.parrillaelmendocino.com.ar"></input>
                 </div>
-                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" th:field="*{menuCeliaco}">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                        th:field="*{menuCeliaco}">
                     <label class="form-check-label" for="flexCheckDefault">
-                       Menú Celiaco
+                        Menú Celiaco
                     </label>
                 </div>
 
@@ -76,7 +77,7 @@
                 </div>
 
                 <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" class="btn btn-primary nuevoton">Guardar</button>
                 </div>
         </div>
     </div>

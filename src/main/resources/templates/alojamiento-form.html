@@ -29,7 +29,8 @@
 
     <div class="tabla">
         <div class="boton">
-            <button class="btn btn-primary"><a th:href="@{/alojamiento/list}"> Alojamientos Disponibles </a></button>
+            <button class="btn btn-primary nuevoton"><a th:href="@{/alojamiento/list}"> Alojamientos Disponibles
+                </a></button>
         </div>
         <div class="card-body">
             <form th:action="@{/alojamiento/save}" method="POST" th:object="${alojamiento}" class="col-6 mx-auto"
@@ -124,7 +125,7 @@
                 </div>
 
                 <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" class="btn btn-primary nuevoton">Guardar</button>
                 </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;700&family=Poppins:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;700&family=Poppins:wght@300;400;600;700&display=swap");
 
-body{
-  font-family: 'Poppins', sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
   gap: 2em;
 }
 
@@ -91,7 +91,7 @@ a {
 }
 
 /* Banner Secundario */
-#testimonials{
+#testimonials {
   color: #020202;
   font-size: 8rem;
   text-align: center;
