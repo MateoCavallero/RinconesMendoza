@@ -136,3 +136,13 @@ footer a:hover {
 .footer-link-list > * + * {
   margin-left: 20px;
 }
+.nuevoton {
+  color: #fff;
+  background-color: #740128;
+  border-color: #740128;
+}
+.nuevoton:hover {
+  color: #000;
+  background-color: #ffa400;
+  border-color: #ffa400;
+}
