@@ -67,3 +67,12 @@ label, .textos-form{
   padding-top: 10%;
   padding-bottom: 40%;
 }
+.coluno-registro {
+  background-image: url(../images/Registrar.jpg);
+  height: 100%;
+  display: table-cell;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+}
