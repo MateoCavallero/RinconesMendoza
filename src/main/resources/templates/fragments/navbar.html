@@ -52,16 +52,13 @@
                         </li>
 
                         <li>
-                            <a th:href="@{/login}">Ingresar</a>
-                            <a th:href="@{/usuario/form}">Registrarse</a>
-                            <a th:href="@{/logout}">Cerrar Sesion</a>
+                            <a sec:authorize="!(isAuthenticated())" th:href="@{/login}">Ingresar</a>
+                            <a sec:authorize="!(isAuthenticated())" th:href="@{/usuario/form}">Registrarse</a>
+                            <a sec:authorize="(isAuthenticated())" th:href="@{/logout}">Salir</a>
                         </li>
-
                     </ul>
                 </nav>
-
             </div>
-
             <div class="toggle-button d-inline-block d-lg-none"><a href="#"
                     class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
