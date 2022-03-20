@@ -1,7 +1,7 @@
 /****** Banner zonas ******/
 
 .carousel-slide-1 {
-  background-image: url(../images/zonas/valle-de-uco.jpg);
+  background-image: url(../images/zonas/bodega.vuco.jpg);
   opacity: 0.9;
   background-repeat: round;
   background-size: 100%;
@@ -23,7 +23,7 @@
   align-items: center;
 }
 .carousel-slide-3 {
-  background-image: url(../images/zonas/granmendoza.jpg);
+  background-image: url(../images/zonas/porton.jpg);
   opacity: 0.9;
   background-repeat: round;
   background-size: 100%;
@@ -45,7 +45,7 @@
   align-items: center;
 }
 .carousel-slide-5 {
-  background-image: url(../images/zonas/zona-este.jpg);
+  background-image: url(../images/zonas/junin.jpg);
   opacity: 0.9;
   background-repeat: round;
   background-size: 100%;
@@ -76,7 +76,7 @@
 
 .descripcion {
   background-color: #777772;
-  padding: 80px 30px;
+  padding: 100px 30px;
 }
 
 .titulo-Act {
@@ -97,8 +97,7 @@
 .titulo-3 {
   font-size: 4rem;
   color: #ffffff;
-  font-weight: 100;
-  text-decoration: dotted;
+  font-weight: 600;
 }
 
 .list {
@@ -106,18 +105,6 @@
   display: inline-block;
 }
 .mapa {
-  padding: 500px auto;
-  border-radius: 10px;
+  padding: 100px auto;
   display: inline;
-}
-
-.nuevoton {
-  color: #fff;
-  background-color: #740128;
-  border-color: #740128;
-}
-.nuevoton:hover {
-  color: #000;
-  background-color: #ffa400;
-  border-color: #ffa400;
 }
