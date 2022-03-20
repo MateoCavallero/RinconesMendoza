@@ -2,6 +2,7 @@ package com.example.RinconesMendoza.controladores;
 
 import com.example.RinconesMendoza.entidades.Zona;
 import com.example.RinconesMendoza.excepciones.WebException;
+import com.example.RinconesMendoza.servicios.AlojamientoServicio;
 import com.example.RinconesMendoza.servicios.ProvinciaServicio;
 import com.example.RinconesMendoza.servicios.ZonaServicio;
 import java.util.Optional;
@@ -25,6 +26,9 @@ public class ZonaControlador {
     
     @Autowired
     private ProvinciaServicio provinciaService;
+    
+    @Autowired
+    private AlojamientoServicio alojamientoService;
 
     @GetMapping("/form")
     public String crearZona(Model model, Model modelP, @RequestParam(required = false) String id) {
@@ -73,26 +77,31 @@ public class ZonaControlador {
 
     @GetMapping("/zona1")
     public String zona1(Model model) {
+        model.addAttribute("alojamiento", alojamientoService.listAllUco());
         return "zona-1";
     }
 
     @GetMapping("/zona2")
-    public String zona2() {
+    public String zona2(Model model) {
+        model.addAttribute("alojamiento", alojamientoService.listAllMontana());
         return "zona-2";
     }
 
     @GetMapping("/zona3")
-    public String zona3() {
+    public String zona3(Model model) {
+        model.addAttribute("alojamiento", alojamientoService.listAllGranMendoza());
         return "zona-3";
     }
 
     @GetMapping("/zona4")
-    public String zona4() {
+    public String zona4(Model model) {
+        model.addAttribute("alojamiento", alojamientoService.listAllZonaSur());
         return "zona-4";
     }
 
     @GetMapping("/zona5")
-    public String zona5() {
+    public String zona5(Model model) {
+        model.addAttribute("alojamiento", alojamientoService.listAllZonaEste());
         return "zona-5";
     }
 

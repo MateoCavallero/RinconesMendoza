@@ -33,7 +33,7 @@ public class LocacionService {
     public List<Locacion> listAllByQ(String q) {
         return locacionRepo.findAllByQ("%" + q + "%");
     }
-
+    
     @Transactional
     public void delete(Locacion locacion) {
         locacionRepo.delete(locacion);

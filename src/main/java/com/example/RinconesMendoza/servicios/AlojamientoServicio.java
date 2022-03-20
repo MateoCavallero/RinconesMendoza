@@ -31,6 +31,27 @@ public class AlojamientoServicio {
         return alojamientoRepo.findById(id);
     }
     
+    public List<Alojamiento> listAllUco(){
+        return alojamientoRepo.findAllUco();
+    }
+    
+    public List<Alojamiento> listAllGranMendoza(){
+        return alojamientoRepo.findAllGranMendoza();
+    }
+    
+    public List<Alojamiento> listAllZonaEste(){
+        return alojamientoRepo.findAllZonaEste();
+    }
+    
+    public List<Alojamiento> listAllZonaSur(){
+        return alojamientoRepo.findAllZonaSur();
+    }
+    
+    public List<Alojamiento> listAllMontana(){
+        return alojamientoRepo.findAllAltaMontana();
+    }
+    
+    
     @Transactional
     public void deletefinById(String id){
          Optional<Alojamiento> optional = alojamientoRepo.findById(id);
