@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 2px 2px 4px #000000;
 }
 .carousel-slide-2 {
   background-image: url(../images/zonas/precordillera.jpg);
@@ -21,6 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 2px 2px 4px #000000;
 }
 .carousel-slide-3 {
   background-image: url(../images/zonas/porton.jpg);
@@ -32,6 +34,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 2px 2px 4px #000000;
 }
 .carousel-slide-4 {
   background-image: url(../images/zonas/valle\ grande\ -\ sur.jpg);
@@ -43,6 +46,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 2px 2px 4px #000000;
 }
 .carousel-slide-5 {
   background-image: url(../images/zonas/junin.jpg);
@@ -54,6 +58,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 2px 2px 4px #000000;
 }
 .banner {
   display: flex;
