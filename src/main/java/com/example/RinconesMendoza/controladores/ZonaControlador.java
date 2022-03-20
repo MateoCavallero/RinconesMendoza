@@ -72,7 +72,7 @@ public class ZonaControlador {
     }
 
     @GetMapping("/zona1")
-    public String zona1() {
+    public String zona1(Model model) {
         return "zona-1";
     }
 
