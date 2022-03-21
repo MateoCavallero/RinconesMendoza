@@ -6,7 +6,6 @@ body {
 }
 
 a {
-  color: #000000;
   text-decoration: none;
   background-color: transparent;
 }
@@ -24,7 +23,7 @@ a {
   opacity: 0.9;
   background-repeat: no-repeat;
   background-size: 100%;
-  padding: 20% 10% 20% 10%;
+  padding: 20% 10% 5% 10%;
   color: white;
   text-shadow: 2px 2px 4px #000000;
 }
@@ -150,6 +149,6 @@ footer a:hover {
   border-color: #ffa400;
 }
 
-a:hover{
+a:hover {
   color: #740128;
 }

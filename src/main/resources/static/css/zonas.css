@@ -1,7 +1,7 @@
 /****** Banner zonas ******/
 
 .carousel-slide-1 {
-  background-image: url(../images/zonas/bodega.vuco.jpg);
+  background-image: url(../images/zonas/bodega-uco.jpg);
   opacity: 0.9;
   background-repeat: round;
   background-size: 100%;
@@ -27,7 +27,7 @@
 }
 
 .carousel-slide-3 {
-  background-image: url(../images/zonas/porton.jpg);
+  background-image: url(../images/zonas/mendoza-city.jpg);
   opacity: 0.9;
   background-repeat: round;
   background-size: 100%;
@@ -53,7 +53,7 @@
 }
 
 .carousel-slide-5 {
-  background-image: url(../images/zonas/junin.jpg);
+  background-image: url(../images/zonas/junin-globo.jpg);
   opacity: 0.9;
   background-repeat: round;
   background-size: 100%;
