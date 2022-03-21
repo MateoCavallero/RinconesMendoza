@@ -51,6 +51,7 @@ a {
   margin: 5% 10% 3% 10%;
   align-items: center;
 }
+
 /*.banner-secundario{
   background-color: ;
 }*/
@@ -147,4 +148,8 @@ footer a:hover {
   color: #000;
   background-color: #ffa400;
   border-color: #ffa400;
+}
+
+a:hover {
+  color: #740128;
 }
