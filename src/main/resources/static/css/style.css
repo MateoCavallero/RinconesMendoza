@@ -6,7 +6,6 @@ body {
 }
 
 a {
-  color: #000000;
   text-decoration: none;
   background-color: transparent;
 }
@@ -152,4 +151,8 @@ footer a:hover {
 
 a:hover {
   color: #740128;
+}
+
+.crearboton a {
+  color: #ffffff;
 }
