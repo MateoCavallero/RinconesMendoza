@@ -1,7 +1,9 @@
 package com.example.RinconesMendoza.controladores;
 
+import com.example.RinconesMendoza.entidades.Alojamiento;
 import com.example.RinconesMendoza.entidades.Comentario;
 import com.example.RinconesMendoza.entidades.Locacion;
+import com.example.RinconesMendoza.entidades.Restaurant;
 import com.example.RinconesMendoza.entidades.Usuario;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
@@ -70,7 +72,15 @@ public class ComentarioControlador {
             comentarioService.crearComentario(comentarioaux);
 
             redirect.addFlashAttribute("success", "Comentario guardado con exito");
-            return "redirect:/alojamiento/alojamiento?id=" + comentario.getLocacion().getId();
+
+//            Alojamiento aloj = (Alojamiento) comentario.getLocacion();
+
+            if (locacion instanceof Alojamiento) {
+                return "redirect:/alojamiento/alojamiento?id=" + comentario.getLocacion().getId();
+            }else{
+                return "redirect:/restaurant/restaurant?id=" + comentario.getLocacion().getId();
+            }
+
         } catch (WebException e) {
             System.out.println(e.getMessage());
             redirect.addFlashAttribute("error", e.getMessage());

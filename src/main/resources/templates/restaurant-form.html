@@ -55,39 +55,51 @@
                         <label for="nombre" class="form-label"> Telefono </label>
                         <input type="text" class="form-control" th:field="*{telefono}" placeholder="+542613025478"></input>
                     </div>
-                    <div <div class="mb-3">
-                            <label for="nombre" class="form-label">Sitio Web</label>
-                            <input type="text" class="form-control" th:field="*{web}"
-                                   placeholder="Ej.: www.parrillaelmendocino.com.ar"></input>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                                   th:field="*{menuCeliaco}">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Menú Celiaco
-                            </label>
-                        </div>
+                    <div class="mb-3">
+                        <label>Rango de Precios del Lugar</label>
+                        <select th:field="*{rangoDePrecios}">
+                            <option th:each="tc : ${T(com.example.RinconesMendoza.utils.RangoDePrecio).values()}"
+                                    th:value="${tc}" th:text="${tc}"></option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Sitio Web</label>
+                        <input type="text" class="form-control" th:field="*{web}"
+                               placeholder="Ej.: www.parrillaelmendocino.com.ar"></input>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                               th:field="*{menuCeliaco}">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Menú Celiaco
+                        </label>
+                    </div>
 
-                        <div>
-                            <label>Tipos de Comida</label>
-                            <select name="tipoDeComida" th:field="*{tipoDeComida}">
-                                <option th:each="tc : ${T(com.example.RinconesMendoza.utils.TipoComida).values()}"
-                                        th:value="${tc}" th:text="${tc}"></option>
-                            </select>
-                        </div>
+                    <div>
+                        <label>Tipos de Comida</label>
+                        <select name="tipoDeComida" th:field="*{tipoDeComida}">
+                            <option th:each="tc : ${T(com.example.RinconesMendoza.utils.TipoComida).values()}"
+                                    th:value="${tc}" th:text="${tc}"></option>
+                        </select>
+                    </div>
 
-                        <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-primary nuevoton">Guardar</button>
-                        </div>
+                    <div class="mb-3">
+                        <label for="imagen" class="form-label">Foto</label>
+                        <input type="file" class="form-control" name="file" id="imagen"></input>
+                    </div>
+
+                    <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" class="btn btn-primary nuevoton">Guardar</button>
                     </div>
             </div>
+        </div>
 
-            <!--****** Actividades ******-->
+        <!--****** Actividades ******-->
 
-            <section th:replace="/fragments/actividades :: actividades"></section>
+        <section th:replace="/fragments/actividades :: actividades"></section>
 
-            <!--****** Footer ******-->
-            <footer th:replace="/fragments/footer :: footer"></footer>
+        <!--****** Footer ******-->
+        <footer th:replace="/fragments/footer :: footer"></footer>
     </body>
 
 </html>
