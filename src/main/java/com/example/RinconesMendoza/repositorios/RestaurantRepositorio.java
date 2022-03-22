@@ -24,7 +24,7 @@ public interface RestaurantRepositorio extends JpaRepository<Restaurant, String>
     @Query("SELECT l FROM Restaurant l WHERE l.zona.id = '66dc0dbc-bf96-4261-8442-f6b8ff468136'")
     List<Restaurant> findAllAltaMontana();
     
-    @Query("SELECT l FROM Restaurant l WHERE l.nombre LIKE :q")
+    @Query("SELECT l FROM Restaurant l WHERE l.nombre LIKE :q OR l.zona.nombre LIKE :q")
     List<Restaurant> findAllByQ(@Param("q") String q);
     
 }

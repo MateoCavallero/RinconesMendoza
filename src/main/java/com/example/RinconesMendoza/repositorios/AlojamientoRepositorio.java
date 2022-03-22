@@ -25,7 +25,7 @@ public interface AlojamientoRepositorio extends JpaRepository<Alojamiento, Strin
     @Query("SELECT l FROM Alojamiento l WHERE l.zona.id = '66dc0dbc-bf96-4261-8442-f6b8ff468136'")
     List<Alojamiento> findAllAltaMontana();
 
-    @Query("SELECT l FROM Alojamiento l WHERE l.nombre LIKE :q")
+    @Query("SELECT l FROM Alojamiento l WHERE l.nombre LIKE :q OR l.zona.nombre LIKE :q")
     List<Alojamiento> findAllByQ(@Param("q") String q);
 
 }

@@ -1,6 +1,7 @@
 package com.example.RinconesMendoza.controladores;
 
 import com.example.RinconesMendoza.entidades.Alojamiento;
+import com.example.RinconesMendoza.entidades.Zona;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.AlojamientoServicio;
 import com.example.RinconesMendoza.servicios.ComentarioServicio;
@@ -79,10 +80,11 @@ public class AlojamientoControlador {
     }
 
     @GetMapping("/list")
-    public String listAlojamiento(Model model, @RequestParam(required = false) String q) {
+    public String listAlojamiento(Model model, Model modelz, @RequestParam(required = false) String q) {
+        modelz.addAttribute("zonas", zonaService.listAll());
         if (q != null) {
             model.addAttribute("alojamiento", alojamientoServis.findAllByQ(q));
-        }else{
+        } else{
             model.addAttribute("alojamiento", alojamientoServis.listAll());
         }
         return "alojamiento-list";
