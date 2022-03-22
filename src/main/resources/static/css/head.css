@@ -110,10 +110,10 @@ a, a:hover {
 .site-navbar .site-navigation .site-menu {
 	margin-bottom: 0;
 }
-
+/*
 .site-navbar .site-navigation .site-menu .active {
 	color: #007bff !important;
-}
+}*/
 
 .site-navbar .site-navigation .site-menu a {
 	text-decoration: none !important;
@@ -207,12 +207,12 @@ a, a:hover {
 	transition: 0s all;
 	color: #000 !important;
 }
-
+/*
 .site-navbar .site-navigation .site-menu .has-children .dropdown a.active {
 	color: #007bff !important;
 	background: #f8f9fa;
 }
-
+*/
 .site-navbar .site-navigation .site-menu .has-children .dropdown>li {
 	list-style: none;
 	padding: 0;
