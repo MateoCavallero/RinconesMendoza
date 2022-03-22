@@ -77,22 +77,22 @@
         </div>
         <div class="list">
 
-                <table class="tabla-ultimas table-striped">
-                    <tbody class="tabla">
-                        <tr>
-                            <td th:each=" c : ${alojamiento} ">
-                                <div class="col">
-                                    <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
-                                    <h1 class="titub titubzona" th:text="${c.nombre}"></h1>
-                                </div>
-                                <div class="vermaszona">
-                                    <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
-                                        class="nuevoton btn btn-primary">Ver Más</a>
-                                </div>
-                            </td>
-                    </tbody>
-                    <p th:if="${alojamiento.isEmpty}">No hay alojamientos para mostrar</p>
-                </table>
+            <table class="tabla-ultimas table-striped">
+                <tbody class="tabla">
+                    <tr>
+                        <td th:each=" c : ${alojamiento} ">
+                            <div class="col">
+                                <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
+                                <h1 class="titub titubzona" th:text="${c.nombre}"></h1>
+                            </div>
+                            <div class="vermaszona">
+                                <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
+                                    class="nuevoton btn btn-primary">Ver Más</a>
+                            </div>
+                        </td>
+                </tbody>
+                <p th:if="${alojamiento.isEmpty}">No hay alojamientos para mostrar</p>
+            </table>
 
         </div>
     </div>

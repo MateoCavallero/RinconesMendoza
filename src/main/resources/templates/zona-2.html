@@ -25,12 +25,16 @@
     <div class="descripcion">
         <div class="container">
             <p class="escrito-descripcion"> Con una gran variedad de paisajes, actividades y servicios; la zona de
-            <strong>Precordillera y Alta Montaña</strong> brinda a sus visitantes la posibilidad de conocer lugares emblemáticos con
-                gran valor histórico como la <strong>cordillera de los Andes, el Cerro Aconcagua, el Puente del Inca, el Parque
-                Provincial Aconcagua o el monumento Cristo Redentor</strong> que marca los límites entre Argentina y Chile; entre
+                <strong>Precordillera y Alta Montaña</strong> brinda a sus visitantes la posibilidad de conocer lugares
+                emblemáticos con
+                gran valor histórico como la <strong>cordillera de los Andes, el Cerro Aconcagua, el Puente del Inca, el
+                    Parque
+                    Provincial Aconcagua o el monumento Cristo Redentor</strong> que marca los límites entre Argentina y
+                Chile; entre
                 tantos otros atractivos de esta zona privilegiada con aguas termales, manantiales, arroyos y rios.<br>
                 Las actividades protagonistas de esta zona son el trekking, rafting, canopy y las cabalgatas, sin
-                olvidar los deportes de invierno que pueden desarrollarse en el <strong>centro de esquí Los Penitentes,</strong> que
+                olvidar los deportes de invierno que pueden desarrollarse en el <strong>centro de esquí Los
+                    Penitentes,</strong> que
                 alcanza mayor protagonismo durante el periodo invernal y durante el resto del año funciona como sitio de
                 esparcimiento.
             </p>
@@ -41,7 +45,7 @@
 
     <section th:replace="/fragments/actividades :: actividades"></section>
 
-    
+
     <div class="descripcion titulo-Act ">
         <h3 class="titulo-3">
             Ultimas recomendaciones en la zona
@@ -49,58 +53,57 @@
     </div>
     <div class="container-ultimos">
         <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d107269.49879656314!2d-68.92677452743375!3d-32.84070161728298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sprecordilera%20mendoza!5e0!3m2!1ses-419!2scl!4v1647471870598!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d107269.49879656314!2d-68.92677452743375!3d-32.84070161728298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sprecordilera%20mendoza!5e0!3m2!1ses-419!2scl!4v1647471870598!5m2!1ses-419!2scl"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-        <div class="list">
-            <img src="../images/zonas/vino-copas.jpg" alt="...">
-            <h6 class="nombre-lugar">Nombre del Lugar con enlace</h6>
-        </div>
-        <div class="list">
-                <table class="table table-dark table-striped">
-                    <tbody class="tabla">
-                        <tr th:each=" c : ${alojamiento} ">
-                    <div class="tabla espacios" id="secwrapper">
-                        <section>
-                            <div class="place">
-                                <div class="row">
-                                    <div class="col">
-                                        <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
-                                    </div>
-                                    <div class="col">
-                                        <h1 class="titub" th:text="${c.nombre}"></h1>
-                                        <!--<p th:text="'Zona: ' + ${c.zona.nombre}"></p>-->
-                                        <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
-                                        <p th:text="'Teléfono: ' + ${c.telefono}"></p>
-                                        <p th:text="'Web: ' + ${c.web}"></p>
-                                        <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
-                                        <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
 
+        <div class="list">
+            <table class="table table-dark table-striped">
+                <tbody class="tabla">
+                    <tr th:each=" c : ${alojamiento} ">
+                        <div class="tabla espacios" id="secwrapper">
+                            <section>
+                                <div class="place">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
+                                        </div>
+                                        <div class="col">
+                                            <h1 class="titub" th:text="${c.nombre}"></h1>
+                                            <!--<p th:text="'Zona: ' + ${c.zona.nombre}"></p>-->
+                                            <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
+                                            <p th:text="'Teléfono: ' + ${c.telefono}"></p>
+                                            <p th:text="'Web: ' + ${c.web}"></p>
+                                            <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
+                                            <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
+
+                                        </div>
+
+                                        <div class="col">
+                                            <h1 class="titub"></h1>
+                                            <p th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'"></p>
+                                            <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
+                                            <p
+                                                th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'">
+                                            </p>
+                                            <p th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'"></p>
+                                            <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
+                                        </div>
+                                        <div class="vermas">
+                                            <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
+                                                class="boton btn btn-primary">Ver Más</a>
+                                        </div>
                                     </div>
 
-                                    <div class="col">
-                                        <h1 class="titub"></h1>
-                                        <p th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'"></p>
-                                        <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
-                                        <p
-                                            th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'">
-                                        </p>
-                                        <p th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'"></p>
-                                        <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
-                                    </div>
-                                    <div class="vermas">
-                                        <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
-                                           class="boton btn btn-primary">Ver Más</a>
-                                    </div>
                                 </div>
-
-                            </div>
-                        </section>
-                    </div>
+                            </section>
+                        </div>
                     </tr>
-                    </tbody>
-                    <p th:if="${alojamiento.isEmpty}">No hay alojamientos para mostrar</p>
-                </table>
-            </div>
+                </tbody>
+                <p th:if="${alojamiento.isEmpty}">No hay alojamientos para mostrar</p>
+            </table>
+        </div>
     </div>
 
     <!--****** Footer ******-->
