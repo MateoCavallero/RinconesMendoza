@@ -6,7 +6,6 @@ body {
 }
 
 a {
-  color: #000000;
   text-decoration: none;
   background-color: transparent;
 }
@@ -24,8 +23,9 @@ a {
   opacity: 0.9;
   background-repeat: no-repeat;
   background-size: 100%;
-  padding: 20% 10% 20% 10%;
+  padding: 20% 10% 5% 10%;
   color: white;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .titulo-banner-1 {
@@ -50,6 +50,7 @@ a {
   margin: 5% 10% 3% 10%;
   align-items: center;
 }
+
 /*.banner-secundario{
   background-color: ;
 }*/
@@ -92,9 +93,10 @@ a {
 
 /* Banner Secundario */
 #testimonials {
-  color: #020202;
+  color: #ffffff;
   font-size: 8rem;
   text-align: center;
+  text-shadow: 2px 2px 4px #000000;
   background-image: url(../images/banner-2.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -125,7 +127,7 @@ footer a {
 }
 /*aca le estamos dando la transicion*/
 footer a:hover {
-  color: rgb(6, 86, 233);
+  color: #740128;
 }
 
 .footer-link-list {
@@ -145,4 +147,8 @@ footer a:hover {
   color: #000;
   background-color: #ffa400;
   border-color: #ffa400;
+}
+
+a:hover {
+  color: #740128;
 }
