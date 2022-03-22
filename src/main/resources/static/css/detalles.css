@@ -21,22 +21,43 @@
 .crearcomment {
   padding-top: 20%;
 }
+
 .ubidetalle {
   min-width: 1150px;
   padding-left: 15%;
 }
+
 .detalles {
   max-width: 1920px;
   padding-top: 80px;
   padding-bottom: 80px;
 }
+
 .nuevoton {
   color: #fff;
   background-color: #740128;
   border-color: #740128;
 }
+
 .nuevoton:hover {
   color: #000;
   background-color: #ffa400;
   border-color: #ffa400;
+}
+
+.comentimag {
+  max-width: 75px;
+  border-radius: 100%;
+}
+
+.colcomuno {
+  min-width: 150px;
+}
+
+.colcomdos {
+  min-width: 250px;
+}
+.divtabla {
+  margin-left: 30%;
+  margin-right: 30%;
 }
