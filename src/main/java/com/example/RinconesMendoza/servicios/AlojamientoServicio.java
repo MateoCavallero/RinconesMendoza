@@ -27,7 +27,7 @@ public class AlojamientoServicio {
     }
 
     public List<Alojamiento> findAllByQ(String q) {
-        return alojamientoRepo.findAllByQ("%"+q+"%");
+        return alojamientoRepo.findAllByQ("%" + q + "%");
     }
 
     public Optional<Alojamiento> findById(String id) {
