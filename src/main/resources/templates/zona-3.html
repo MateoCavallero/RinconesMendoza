@@ -2,117 +2,15 @@
 
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
-    <head th:replace="/fragments/head :: head"></head>
+<head th:replace="/fragments/head :: head"></head>
 
-    <body>
-        <!--****** Navbar ******-->
-        <header th:replace="/fragments/navbar :: navbar"></header>
-
-        <!--****** Banner Principal ******-->
-        <div id=" carouselExampleSlidesOnly" class="carousel-slide-3" data-bs-ride="carousel">
-            <div class=" carousel-uco">
-                <div class="carousel-item active">
-                    <div class="banner">
-                        <h1 class="titulo-banner-zona">Gran Mendoza</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="descripcion">
-            <div class="container">
-                <p class="escrito-descripcion">El <strong>Gran Mendoza</strong> es la ciudad más importante de la región de
-                    Cuyo y la cuarta
-                    en población de la República Argentina.
-                    <br>
-                    Los espacios verdes son uno de los mayores orgullos de los mendocinos, que demuestran el
-                    valor del trabajo humano combatiendo el desierto. La bulliciosa y dinámica ciudad encuentra descanso en
-                    sus hermosas plazas. Entre los atractivos de esta zona encontramos el <strong>Parque General San
-                        Martín,</strong> con sus
-                    característicos Portones de Entrada que fueron importados de Francia a principios del siglo pasado, el
-                    <strong>cerro de la Gloria,</strong> donde está enclavado el Monumento homónimo, que rememora la gesta
-                    sanmartiniana; el
-                    <strong>Zoológico,</strong> único en su tipo, por la amplitud del paseo y el aire puro en el que viven
-                    los animales; el
-                    <strong>Teatro Griego Frank Romero Day,</strong> incomparable escenario donde se celebra el Acto Central
-                    de <strong>La Fiesta
-                        Nacional de la Vendimia.</strong>
-                    <br>
-                    Una variedad de iglesias testimonian estilos y épocas de construcción. Varios museos dan cuenta del
-                    pasado de la Provincia o exhiben colecciones de ciencias naturales y antropológicas.
-                    <br>
-                    La extensa y variada agenda cultural está representada principalmente por:<br>
-                    <strong>Fiesta Nacional de la Vendimia,</strong> cuya culminación se realiza la noche del primer fin de
-                    semana de marzo,
-                    pero desde enero que se realizan actividades culturales, artísticas y deportivas.<br>
-                    <strong>Cantapueblo,</strong> encuentro de coros con representantes de todo el mundo, que se realiza en
-                    Octubre.
-                    Para los amantes del fútbol, importantes encuentros de los mejores clubes de Argentina, se realizan en
-                    los meses de enero y febrero, en el <strong>Estadio Mundialista “Islas Malvinas”.</strong><br>
-                    Bien conectado y a pocos minutos en auto u ómnibus del Gran Mendoza está el departamento de
-                    <strong>Lavalle</strong>,
-                    ubicado al noroeste de la provincia. Allí se aprecia el contraste de paisajes entre el oasis y grandes
-                    espacios áridos vivos y ondulantes dunas de arena. Lavalle encanta a los turistas con su desierto, sus
-                    hacedores culturales e identidad.
-
-                </p>
-            </div>
-        </div>
-
-        <!--****** Actividades ******-->
-
-        <section th:replace="/fragments/actividades :: actividades"></section>
+<body>
+    <!--****** Navbar ******-->
+    <header th:replace="/fragments/navbar :: navbar"></header>
 
 
-        <div class="descripcion titulo-Act ">
-            <h3 class="titulo-3">
-                Ultimas recomendaciones en la zona
-            </h3>
-        </div>
-        <div class="container-ultimos">
-            <div class="mapa">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26804.487639090727!2d-68.87602872341388!3d-32.883333980141664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e093ec45179bf%3A0x205a78f6d20efa3a!2sMendoza%2C%20Capital%2C%20Mendoza%2C%20Argentina!5e0!3m2!1ses-419!2scl!4v1647471489699!5m2!1ses-419!2scl"
-                    width="600" height="520" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="list">
-                <table class="tabla-ultimas table-striped">
-                    <tbody class="tabla">
-                        <tr>
-                            <td th:each=" c, iterador : ${alojamiento} " th:if="${iterador.index} <= 1">
-                                <div class="col">
-                                    <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
-                                    <h1 class="titub titubzona" th:text="${c.nombre}"></h1>
-                                </div>
-                                <div class="vermaszona">
-                                    <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
-                                       class="nuevoton btn btn-primary">Ver Más</a>
-                                </div>
-                            </td>
-                    </tbody>
-                    <p th:if="${alojamiento.isEmpty}">No hay alojamientos para mostrar</p>
-                </table>
-                <table class="tabla-ultimas table-striped">
-                    <tbody class="tabla">
-                        <tr>
-                            <td th:each=" r, iterador : ${restaurant} " th:if="${iterador.index} <= 1">
-                                <div class="col">
-                                    <img class="imag" th:src="@{'../images/locacion/' + ${r.foto}}">
-                                    <h1 class="titub titubzona" th:text="${r.nombre}"></h1>
-                                </div>
-                                <div class="vermaszona">
-                                    <a th:href="@{/restaurant/restaurant}+'?id='+${r.id}"
-                                       class="nuevoton btn btn-primary">Ver Más</a>
-                                </div>
-                            </td>
-                    </tbody>
-                    <p th:if="${restaurant.isEmpty}">No hay alojamientos para mostrar</p>
-                </table>
-            </div>
-        </div>
-
-        <!--****** Footer ******-->
-        <footer th:replace="/fragments/footer :: footer"></footer>
-    </body>
+    <!--****** Footer ******-->
+    <footer th:replace="/fragments/footer :: footer"></footer>
+</body>
 
 </html>
