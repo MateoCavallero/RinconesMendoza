@@ -80,7 +80,7 @@ public class ZonaControlador {
 
     @GetMapping("/zona1")
     public String zona1(Model model) {
-       List<Alojamiento> alojamiento = alojamientoService.listAllGranMendoza();
+       List<Alojamiento> alojamiento = alojamientoService.listAllUco();
         
         Comparator<Alojamiento> compareEstrellas = (Alojamiento a1, Alojamiento a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
         
@@ -91,7 +91,7 @@ public class ZonaControlador {
 
     @GetMapping("/zona2")
     public String zona2(Model model) {
-        List<Alojamiento> alojamiento = alojamientoService.listAllGranMendoza();
+        List<Alojamiento> alojamiento = alojamientoService.listAllMontana();
         
         Comparator<Alojamiento> compareEstrellas = (Alojamiento a1, Alojamiento a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
         
@@ -113,7 +113,7 @@ public class ZonaControlador {
 
     @GetMapping("/zona4")
     public String zona4(Model model) {
-        List<Alojamiento> alojamiento = alojamientoService.listAllGranMendoza();
+        List<Alojamiento> alojamiento = alojamientoService.listAllZonaSur();
         
         Comparator<Alojamiento> compareEstrellas = (Alojamiento a1, Alojamiento a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
         
@@ -124,7 +124,7 @@ public class ZonaControlador {
 
     @GetMapping("/zona5")
     public String zona5(Model model) {
-        List<Alojamiento> alojamiento = alojamientoService.listAllGranMendoza();
+        List<Alojamiento> alojamiento = alojamientoService.listAllZonaEste();
         
         Comparator<Alojamiento> compareEstrellas = (Alojamiento a1, Alojamiento a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
         

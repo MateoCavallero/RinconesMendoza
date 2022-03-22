@@ -87,8 +87,7 @@
             <div class="list">
                 <table class="table table-dark table-striped">
                     <tbody class="tabla">
-<<<<<<< HEAD
-                        <tr th:each=" c : ${alojamiento} ">
+                        <tr th:each=" c, iterador : ${alojamiento} " th:if="${iterador.index} <= 1">
                             <div class="tabla espacios" id="secwrapper">
                                 <section>
                                     <div class="place">
@@ -122,8 +121,7 @@
                                                     class="boton btn btn-primary">Ver Más</a>
                                             </div>
                                         </div>
-=======
-                        <tr th:each=" c : ${alojamiento}" th:if="${iterador.index} <= 1">
+                        <tr th:each=" c, iterador : ${alojamiento} " th:if="${iterador.index} <= 1">
                     <div class="tabla espacios" id="secwrapper">
                         <section>
                             <div class="place">
@@ -139,8 +137,6 @@
                                         <p th:text="'Web: ' + ${c.web}"></p>
                                         <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
                                         <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
->>>>>>> ba24569f9ba7355d26295f269c62477dbcddb329
-
                                     </div>
                                 </section>
                             </div>
