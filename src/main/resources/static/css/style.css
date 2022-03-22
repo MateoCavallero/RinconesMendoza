@@ -159,3 +159,7 @@ h4 {
 a:hover h4 {
   color: #740128;
 }
+
+a {
+  color: #740128!important
+}
