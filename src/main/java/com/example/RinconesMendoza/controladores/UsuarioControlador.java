@@ -64,11 +64,11 @@ public class UsuarioControlador {
             usuarioService.save(usuario, password2);
             mailService.enviarMail(usuario.getEmail(),"Bienvenido a Rincones Mendoza","Agradecemos que te hayas unido a nuestra plataforma y comiences a formar parte de esta hermosa familia de turistas para dejar tus recomendaciones, comentarios y puntuaciones :)");
             redirect.addFlashAttribute("success", "Usuario guardado con exito");
-            return "redirect:/usuario/list";
+            return "redirect:/login";
         } catch (WebException e) {
             model.addAttribute("error", e.getMessage());
             model.addAttribute("persona", usuario);
-            return "usuario-form";
+            return "redirect:/usuario/form";
         }
     }
 
