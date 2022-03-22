@@ -26,6 +26,11 @@ public class RestaurantServicio {
         return restaurantRepo.findAll();
     }
     
+    public List<Restaurant> findAllByQ(String q) {
+        return restaurantRepo.findAllByQ("%"+q+"%");
+    }
+    
+    
     public Optional<Restaurant> findById(String id){
         return restaurantRepo.findById(id);
     }
