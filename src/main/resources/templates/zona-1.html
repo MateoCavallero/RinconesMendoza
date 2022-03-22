@@ -57,7 +57,7 @@
             <div class="list">
                 <table class="table table-dark table-striped">
                     <tbody class="tabla">
-                        <tr th:each=" c : ${alojamiento} ">
+                        <tr th:each=" c : ${alojamiento}" th:if="${iterador.index} <= 1">
                     <div class="tabla espacios" id="secwrapper">
                         <section>
                             <div class="place">
