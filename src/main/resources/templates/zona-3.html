@@ -80,7 +80,7 @@
                 <table class="tabla-ultimas table-striped">
                     <tbody class="tabla">
                         <tr>
-                            <td th:each=" c : ${alojamiento} ">
+                            <td th:each=" c, iterador : ${alojamiento} " th:if="${iterador.index} <= 1">
                                 <div class="col">
                                     <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
                                     <h1 class="titub titubzona" th:text="${c.nombre}"></h1>

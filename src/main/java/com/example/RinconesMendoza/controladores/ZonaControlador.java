@@ -1,10 +1,13 @@
 package com.example.RinconesMendoza.controladores;
 
+import com.example.RinconesMendoza.entidades.Alojamiento;
 import com.example.RinconesMendoza.entidades.Zona;
 import com.example.RinconesMendoza.excepciones.WebException;
 import com.example.RinconesMendoza.servicios.AlojamientoServicio;
 import com.example.RinconesMendoza.servicios.ProvinciaServicio;
 import com.example.RinconesMendoza.servicios.ZonaServicio;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -77,31 +80,56 @@ public class ZonaControlador {
 
     @GetMapping("/zona1")
     public String zona1(Model model) {
-        model.addAttribute("alojamiento", alojamientoService.listAllUco());
+       List<Alojamiento> alojamiento = alojamientoService.listAllGranMendoza();
+        
+        Comparator<Alojamiento> compareEstrellas = (Alojamiento a1, Alojamiento a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
+        
+        alojamiento.sort(compareEstrellas);
+        model.addAttribute("alojamiento", alojamiento);
         return "zona-1";
     }
 
     @GetMapping("/zona2")
     public String zona2(Model model) {
-        model.addAttribute("alojamiento", alojamientoService.listAllMontana());
+        List<Alojamiento> alojamiento = alojamientoService.listAllGranMendoza();
+        
+        Comparator<Alojamiento> compareEstrellas = (Alojamiento a1, Alojamiento a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
+        
+        alojamiento.sort(compareEstrellas);
+        model.addAttribute("alojamiento", alojamiento);
         return "zona-2";
     }
 
     @GetMapping("/zona3")
     public String zona3(Model model) {
-        model.addAttribute("alojamiento", alojamientoService.listAllGranMendoza());
+        List<Alojamiento> alojamiento = alojamientoService.listAllGranMendoza();
+        
+        Comparator<Alojamiento> compareEstrellas = (Alojamiento a1, Alojamiento a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
+        
+        alojamiento.sort(compareEstrellas);
+        model.addAttribute("alojamiento", alojamiento);
         return "zona-3";
     }
 
     @GetMapping("/zona4")
     public String zona4(Model model) {
-        model.addAttribute("alojamiento", alojamientoService.listAllZonaSur());
+        List<Alojamiento> alojamiento = alojamientoService.listAllGranMendoza();
+        
+        Comparator<Alojamiento> compareEstrellas = (Alojamiento a1, Alojamiento a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
+        
+        alojamiento.sort(compareEstrellas);
+        model.addAttribute("alojamiento", alojamiento);
         return "zona-4";
     }
 
     @GetMapping("/zona5")
     public String zona5(Model model) {
-        model.addAttribute("alojamiento", alojamientoService.listAllZonaEste());
+        List<Alojamiento> alojamiento = alojamientoService.listAllGranMendoza();
+        
+        Comparator<Alojamiento> compareEstrellas = (Alojamiento a1, Alojamiento a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
+        
+        alojamiento.sort(compareEstrellas);
+        model.addAttribute("alojamiento", alojamiento);
         return "zona-5";
     }
 

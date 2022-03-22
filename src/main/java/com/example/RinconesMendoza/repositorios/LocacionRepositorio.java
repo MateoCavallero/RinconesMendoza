@@ -13,4 +13,5 @@ public interface LocacionRepositorio extends JpaRepository<Locacion, String>  {
     
     @Query("SELECT l FROM Locacion l WHERE l.nombre LIKE :q")
     List<Locacion> findAllByQ(@Param("q") String q);
+    
 }

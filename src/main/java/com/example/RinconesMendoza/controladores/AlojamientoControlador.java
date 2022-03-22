@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -78,8 +79,12 @@ public class AlojamientoControlador {
     }
 
     @GetMapping("/list")
-    public String listAlojamiento(Model model) {
-        model.addAttribute("alojamiento", alojamientoServis.listAll());
+    public String listAlojamiento(Model model, @RequestParam(required = false) String q) {
+        if (q != null) {
+            model.addAttribute("alojamiento", alojamientoServis.findAllByQ(q));
+        }else{
+            model.addAttribute("alojamiento", alojamientoServis.listAll());
+        }
         return "alojamiento-list";
     }
 

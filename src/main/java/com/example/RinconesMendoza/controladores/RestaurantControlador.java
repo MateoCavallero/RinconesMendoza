@@ -78,8 +78,12 @@ public class RestaurantControlador {
     }
 
     @GetMapping("/list")
-    public String listRestaurant(Model model) {
-        model.addAttribute("restaurant", restoService.listAll());
+    public String listRestaurant(Model model, @RequestParam(required = false) String q) {
+        if (q != null) {
+            model.addAttribute("restaurant", restoService.findAllByQ(q));
+        }else{
+            model.addAttribute("restaurant", restoService.listAll());
+        }
         return "restaurant-list";
     }
 

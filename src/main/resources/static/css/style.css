@@ -82,6 +82,9 @@ a {
   text-transform: uppercase;
 }
 
+.text-zona{
+  text-shadow: 2px 2px 6px #292828ce;
+}
 .actividades {
   background-color: rgb(3, 68, 68);
 }
@@ -149,13 +152,10 @@ footer a:hover {
   border-color: #ffa400;
 }
 
-a:hover {
-  color: #740128;
+h4 {
+  color: #292828;
 }
 
-.crearboton a {
-  color: #ffffff;
-}
-.crearboton a:hover {
-  color: #000000;
+a:hover h4 {
+  color: #740128;
 }

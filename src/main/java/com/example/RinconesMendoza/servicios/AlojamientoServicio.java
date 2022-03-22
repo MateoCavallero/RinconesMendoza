@@ -1,4 +1,3 @@
-
 package com.example.RinconesMendoza.servicios;
 
 import com.example.RinconesMendoza.entidades.Alojamiento;
@@ -12,56 +11,59 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AlojamientoServicio {
-    
+
     @Autowired
     private AlojamientoRepositorio alojamientoRepo;
-    
+
     @Transactional
-    public void crearAlojamiento(Alojamiento alojamiento) throws WebException{
+    public void crearAlojamiento(Alojamiento alojamiento) throws WebException {
         validacion(alojamiento);
         System.out.println(alojamiento.getRangoDePrecios());
         alojamientoRepo.save(alojamiento);
     }
-    
-    public List<Alojamiento> listAll(){
+
+    public List<Alojamiento> listAll() {
         return alojamientoRepo.findAll();
     }
-    
-    public Optional<Alojamiento> findById(String id){
+
+    public List<Alojamiento> findAllByQ(String q) {
+        return alojamientoRepo.findAllByQ("%"+q+"%");
+    }
+
+    public Optional<Alojamiento> findById(String id) {
         return alojamientoRepo.findById(id);
     }
-    
-    public List<Alojamiento> listAllUco(){
+
+    public List<Alojamiento> listAllUco() {
         return alojamientoRepo.findAllUco();
     }
-    
-    public List<Alojamiento> listAllGranMendoza(){
+
+    public List<Alojamiento> listAllGranMendoza() {
         return alojamientoRepo.findAllGranMendoza();
     }
-    
-    public List<Alojamiento> listAllZonaEste(){
+
+    public List<Alojamiento> listAllZonaEste() {
         return alojamientoRepo.findAllZonaEste();
     }
-    
-    public List<Alojamiento> listAllZonaSur(){
+
+    public List<Alojamiento> listAllZonaSur() {
         return alojamientoRepo.findAllZonaSur();
     }
-    
-    public List<Alojamiento> listAllMontana(){
+
+    public List<Alojamiento> listAllMontana() {
         return alojamientoRepo.findAllAltaMontana();
     }
-    
-    
+
     @Transactional
-    public void deletefinById(String id){
-         Optional<Alojamiento> optional = alojamientoRepo.findById(id);
-        
+    public void deletefinById(String id) {
+        Optional<Alojamiento> optional = alojamientoRepo.findById(id);
+
         if (optional.isPresent()) {
             Alojamiento alojamiento = optional.get();
             alojamientoRepo.delete(alojamiento);
         }
     }
-    
+
     private void validacion(Alojamiento alojamiento) throws WebException {
         if (alojamiento.getNombre() == null || alojamiento.getNombre().isEmpty()) {
             throw new WebException("El nombre no puede ser nulo");
@@ -69,12 +71,12 @@ public class AlojamientoServicio {
         if (alojamiento.getDomicilio() == null || alojamiento.getDomicilio().isEmpty()) {
             throw new WebException("El domicilio no puede ser vacío");
         }
-        if (alojamiento.getTelefono() == null ||alojamiento.getTelefono().isEmpty() ||alojamiento.getTelefono().length() < 10) {
+        if (alojamiento.getTelefono() == null || alojamiento.getTelefono().isEmpty() || alojamiento.getTelefono().length() < 10) {
             throw new WebException("El Telefono no puede ser nulo o menor a 10 caracteres y debe contener solo numeros");
         }
         if (alojamiento.getWeb() == null || alojamiento.getWeb().isEmpty()) {
             throw new WebException("La direccion web no puede estar vacía");
         }
-       
+
     }
 }
