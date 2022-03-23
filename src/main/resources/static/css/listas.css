@@ -106,6 +106,7 @@
   height:220px;
   border-radius: 10%;
   overflow:hidden;
+  margin-top: 30px;
 }
 .list-container img{
   width:150%;

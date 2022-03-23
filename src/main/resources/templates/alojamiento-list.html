@@ -58,9 +58,8 @@
                                         <section>
                                             <div class="place">
                                                 <div class="row">
-
-                                                    <div class="col">
-                                                        <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
+                                                    <div class="list-container imag">
+                                                        <img th:src="@{'../images/locacion/' + ${c.foto}}">
                                                     </div>
                                                     <div class="col">
                                                         <h1 class="titub" th:text="${c.nombre}"></h1>
