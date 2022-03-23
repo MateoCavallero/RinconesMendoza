@@ -35,14 +35,15 @@
                                     <p th:text="${c.menuCeliaco} ? 'Menu celiaco: Si' : 'Menu celiaco No'"></p>
                                     <!--Inicio Estrellas-->
                                     <div class="estrellas">
-                                        <h4 th:if="${c.estrellas gt 1 AND c.estrellas lt 2}">★</h4>
-                                        <h4 th:if="${c.estrellas eq 1}">★</h4>
-                                        <h4 th:if="${c.estrellas gt 2 AND c.estrellas lt 3}">★★</h4>
-                                        <h4 th:if="${c.estrellas eq 2}">★★</h4>
-                                        <h4 th:if="${c.estrellas gt 3 AND c.estrellas lt 4}">★★★</h4>
-                                        <h4 th:if="${c.estrellas eq 3}">★★★</h4>
-                                        <h4 th:if="${c.estrellas gt 4 AND c.estrellas lt 5}">★★★★</h4>
-                                        <h4 th:if="${c.estrellas eq 4}">★★★★</h4>
+                                        <h4 th:if="${c.estrellas eq 0}">✰✰✰✰✰</h4>
+                                        <h4 th:if="${c.estrellas gt 1 AND c.estrellas lt 2}">★✰✰✰✰</h4>
+                                        <h4 th:if="${c.estrellas eq 1}">★✰✰✰✰</h4>
+                                        <h4 th:if="${c.estrellas gt 2 AND c.estrellas lt 3}">★★✰✰✰</h4>
+                                        <h4 th:if="${c.estrellas eq 2}">★★✰✰✰</h4>
+                                        <h4 th:if="${c.estrellas gt 3 AND c.estrellas lt 4}">★★★✰✰</h4>
+                                        <h4 th:if="${c.estrellas eq 3}">★★★✰✰</h4>
+                                        <h4 th:if="${c.estrellas gt 4 AND c.estrellas lt 5}">★★★★✰</h4>
+                                        <h4 th:if="${c.estrellas eq 4}">★★★★✰</h4>
                                         <h4 th:if="${c.estrellas eq 5}">★★★★★</h4>
                                     </div>
                                     <!--Fin Estrellas-->
@@ -62,28 +63,28 @@
             </tr>
         </tbody>
     </table>
-    <table>
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <!--<img src="..." class="img-fluid rounded-start" alt="...">-->
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <tr th:each="p : ${comentarios}">
-                            <div class="col-md-4">
-                                <img th:src="@{'../images/locacion/' + ${p.usuario.foto}}"
-                                    class="img-fluid rounded-start" width="20%">
-                            </div>
-                            <h5 class="card-text" th:text="${p.usuario.nombre}"> </h5>
-                            <p class="card-text" th:text="${p.opinion}"> </p>
-                            <p class="card-text" th:text="${p.puntuacion}"> </p>
-                        </tr>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </table>
+    <div class="divtabla">
+        <table class="tablacoment" th:each="p : ${comentarios}">
+            <tbody>
+                <tr>
+                    <td class="colcomuno">
+                        <img class="comentimag" th:src="@{'../images/locacion/' + ${p.usuario.foto}}"></img>
+                    </td>
+                    <td class="colcomdos">
+                        <h4 th:text="${p.usuario.nombre}"></h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="colcomuno">
+                        <h6 th:text="'Puntuación: ' + ${p.puntuacion}"></h6>
+                    </td>
+                    <td class="colcomdos">
+                        <h6 th:text="${p.opinion}"></h6>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <!--****** Actividades ******-->
     <section th:replace="/fragments/actividades :: actividades"></section>
     <!--****** Footer ******-->

@@ -43,14 +43,15 @@
 
                                     <!--Inicio Estrellas-->
                                     <div class="estrellas">
-                                        <h4 th:if="${c.estrellas gt 1 AND c.estrellas lt 2}">★</h4>
-                                        <h4 th:if="${c.estrellas eq 1}">★</h4>
-                                        <h4 th:if="${c.estrellas gt 2 AND c.estrellas lt 3}">★★</h4>
-                                        <h4 th:if="${c.estrellas eq 2}">★★</h4>
-                                        <h4 th:if="${c.estrellas gt 3 AND c.estrellas lt 4}">★★★</h4>
-                                        <h4 th:if="${c.estrellas eq 3}">★★★</h4>
-                                        <h4 th:if="${c.estrellas gt 4 AND c.estrellas lt 5}">★★★★</h4>
-                                        <h4 th:if="${c.estrellas eq 4}">★★★★</h4>
+                                        <h4 th:if="${c.estrellas eq 0}">✰✰✰✰✰</h4>
+                                        <h4 th:if="${c.estrellas gt 1 AND c.estrellas lt 2}">★✰✰✰✰</h4>
+                                        <h4 th:if="${c.estrellas eq 1}">★✰✰✰✰</h4>
+                                        <h4 th:if="${c.estrellas gt 2 AND c.estrellas lt 3}">★★✰✰✰</h4>
+                                        <h4 th:if="${c.estrellas eq 2}">★★✰✰✰</h4>
+                                        <h4 th:if="${c.estrellas gt 3 AND c.estrellas lt 4}">★★★✰✰</h4>
+                                        <h4 th:if="${c.estrellas eq 3}">★★★✰✰</h4>
+                                        <h4 th:if="${c.estrellas gt 4 AND c.estrellas lt 5}">★★★★✰</h4>
+                                        <h4 th:if="${c.estrellas eq 4}">★★★★✰</h4>
                                         <h4 th:if="${c.estrellas eq 5}">★★★★★</h4>
                                     </div>
                                     <!--Fin Estrellas-->
@@ -75,6 +76,7 @@
                 <tr>
                     <td class="colcomuno">
                         <img class="comentimag" th:src="@{'../images/locacion/' + ${p.usuario.foto}}"></img>
+                 
                     </td>
                     <td class="colcomdos">
                         <h4 th:text="${p.usuario.nombre}"></h4>
