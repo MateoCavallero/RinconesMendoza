@@ -101,3 +101,13 @@
   background-color: #ffa400;
   border-color: #ffa400;
 }
+.list-container{
+  width:330px;
+  height:220px;
+  border-radius: 10%;
+  overflow:hidden;
+}
+.list-container img{
+  width:150%;
+  height:auto
+}
