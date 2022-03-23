@@ -56,8 +56,8 @@ a {
 }*/
 
 .row {
-  margin-top: 1%;
-  margin-bottom: 2%;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
 }
 
 .img-fluid {
@@ -85,14 +85,23 @@ a {
 .text-zona {
   text-shadow: 2px 2px 6px #292828ce;
   text-align: left;
-}
-.actividades {
-  background-color: rgb(3, 68, 68);
+  padding-top: 0.5em;
 }
 
-/*.textos {
-    padding-top: 120px;
-    padding-bottom: 120px;
+.text-zona2 h2 {
+  font-size: 40px;
+  color: #292828ce;
+  padding-top: 0.5em;
+}
+
+.text-zona2 p {
+  font-size: 30px;
+  color: #292828ce;
+  text-shadow: 2px 2px 6px #29282891;
+}
+
+.actividades {
+  background-color: rgb(3, 68, 68);
 }
 
 /* Banner Secundario */
@@ -108,37 +117,6 @@ a {
   padding: 150px;
 }
 
-/*Pie de pagina*/
-footer {
-  background-color: #222;
-  padding: 3rem;
-  color: white;
-}
-
-footer section {
-  float: right;
-}
-
-footer p {
-  margin: 0;
-}
-/*Aca le estamos cambiando el color a nuestro link*/
-footer a {
-  /*con el transition estamos dandole una animacion mas suave al link */
-  transition: color 0.3s ease;
-  color: white;
-  text-decoration: none;
-}
-/*aca le estamos dando la transicion*/
-
-.footer-link-list {
-  display: flex;
-  align-items: center;
-}
-
-.footer-link-list > * + * {
-  margin-left: 20px;
-}
 .nuevoton {
   color: #fff;
   background-color: #740128;

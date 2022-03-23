@@ -1,7 +1,27 @@
+footer {
+  background-color: #222;
+  padding: 2rem;
+}
+
+footer a {
+  transition: color 0.3s ease;
+  color: #ffffff !important;
+  text-decoration: none;
+}
 .footerclass p {
   color: white;
 }
 
-.footerclass a {
-  color: #ffffff !important;
+.footer-link-list {
+  display: flex;
+  align-items: center;
+  float: right;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-link-list > * + * {
+  margin-left: 20px;
 }

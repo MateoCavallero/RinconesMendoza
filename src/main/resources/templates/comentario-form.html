@@ -11,11 +11,11 @@
         <div class=" carousel-lista banner-form ">
             <div class="carousel-item active">
                 <div class="banner">
-                    <h1 class="titulo-banner-form">¿QUE TE PARECIÓ ESTE LUGAR?</h1>
+                    <h1 class="titulo-banner-form titulo-coment">¿QUE TE PARECIÓ ESTE LUGAR?</h1>
                 </div>
             </div>
         </div>
-
+        
         <div class="container">
             <div class="card ms-auto">
                 <div class="card-body">
@@ -23,19 +23,20 @@
                         <input hidden th:field="*{id}"> </input>
                         <input hidden th:field="*{locacion}"> </input>
                         <div class="form-floating">
-                            <textarea th:field="*{opinion}" class="form-control" placeholder="Dejá tu comentario aquí..."
-                                id="floatingTextarea2" style="height: 100px" maxlength="600"></textarea>
+                            <textarea th:field="*{opinion}" class="form-control"
+                                placeholder="Dejá tu comentario aquí..." id="floatingTextarea2" style="height: 100px"
+                                maxlength="600"></textarea>
                             <label for="floatingTextarea2"></label>
                         </div>
 
                         <div>
                             <label>Puntuación</label>
                             <select th:field="*{puntuacion}">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                                <option value="1">1 Estrella</option>
+                                <option value="2">2 Estrellas</option>
+                                <option value="3">3 Estrellas</option>
+                                <option value="4">4 Estrellas</option>
+                                <option value="5">5 Estrellas</option>
                             </select>
                         </div>
 

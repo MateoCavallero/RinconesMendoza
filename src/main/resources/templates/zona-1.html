@@ -45,54 +45,50 @@
 
     <section th:replace="/fragments/actividades :: actividades"></section>
 
-    <div class="descripcion titulo-Act ">
+    <div class="descripcion titulo-Act">
         <h3 class="titulo-3">
             Ultimas recomendaciones en la zona
         </h3>
     </div>
+
     <div class="container-ultimos">
-
-        <div class="container-ultimos">
-
-        <div class="container-ultimos">
-            <div class="list">
-                <table class="tabla-ultimas table-striped">
-                    <tbody class="tabla">
-                        <tr>
-                            <td th:each=" c, iterador : ${alojamiento} " th:if="${iterador.index} <= 1">
-                                <div class="col">
-                                    <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
-                                    <h1 class="titub titubzona" th:text="${c.nombre}"></h1>
-                                </div>
-                                <div class="vermaszona">
-                                    <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
-                                        class="nuevoton btn btn-primary">Ver Más</a>
-                                </div>
-                            </td>
-                    </tbody>
-                </table>
-                <table class="tabla-ultimas table-striped">
-                    <tbody class="tabla">
-                        <tr>
-                            <td th:each=" r, iterador : ${restaurant} " th:if="${iterador.index} <= 1">
-                                <div class="col">
-                                    <img class="imag" th:src="@{'../images/locacion/' + ${r.foto}}">
-                                    <h1 class="titub titubzona" th:text="${r.nombre}"></h1>
-                                </div>
-                                <div class="vermaszona">
-                                    <a th:href="@{/restaurant/restaurant}+'?id='+${r.id}"
-                                        class="nuevoton btn btn-primary nuevoton">Ver Más</a>
-                                </div>
-                            </td>
-                    </tbody>
-                </table>
-            </div>
+        <div class="list">
+            <table class="tabla-ultimas table-striped">
+                <tbody class="tabla">
+                    <tr>
+                        <td th:each=" c, iterador : ${alojamiento} " th:if="${iterador.index} <= 1">
+                            <div class="col">
+                                <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
+                                <h1 class="titub titubzona" th:text="${c.nombre}"></h1>
+                            </div>
+                            <div class="vermaszona">
+                                <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
+                                    class="nuevoton btn btn-primary">Ver Más</a>
+                            </div>
+                        </td>
+                </tbody>
+            </table>
+            <table class="tabla-ultimas table-striped">
+                <tbody class="tabla">
+                    <tr>
+                        <td th:each=" r, iterador : ${restaurant} " th:if="${iterador.index} <= 1">
+                            <div class="col">
+                                <img class="imag" th:src="@{'../images/locacion/' + ${r.foto}}">
+                                <h1 class="titub titubzona" th:text="${r.nombre}"></h1>
+                            </div>
+                            <div class="vermaszona">
+                                <a th:href="@{/restaurant/restaurant}+'?id='+${r.id}"
+                                    class="nuevoton btn btn-primary nuevoton">Ver Más</a>
+                            </div>
+                        </td>
+                </tbody>
+            </table>
         </div>
     </div>
 
 
-        <!--****** Footer ******-->
-        <footer th:replace="/fragments/footer :: footer"></footer>
+    <!--****** Footer ******-->
+    <footer th:replace="/fragments/footer :: footer"></footer>
 </body>
 
 </html>

@@ -38,7 +38,7 @@
             <div class="card-body">
                 <form class="row g-3" th:action="@{/restaurant/list}" method="GET">
                     <div class="col">
-                        <input type="text" style="width: 100%;" name="q" placeholder="Buscar...">
+                        <input type="text" style="width: 100%;" name="q" placeholder="Buscar un local gastronómico...">
                     </div>
                     <div class="col-2">
                         <button type="submit" class="btn btn-primary nuevoton">Buscar</button>
@@ -89,13 +89,15 @@
                                                     class="boton btn btn-primary nuevoton">Ver Más</a>
                                             </div>
                                         </div>
-
                                     </div>
                                 </section>
                             </div>
                         </tr>
                     </tbody>
-                    <p th:if="${restaurant.isEmpty}">No hay alojamientos para mostrar</p>
+                    <p th:if="${restaurant.isEmpty}">Lo sentimos! No encontramos lo que buscas, ingresá
+                        otra palabra para la búsqueda. Si el local gastronómico no se encuentra en nuestro sitio, podes
+                        cargarlo y recomendarlo a otros
+                        usuarios!</p>
                 </table>
             </div>
         </div>

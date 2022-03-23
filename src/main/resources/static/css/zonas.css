@@ -87,15 +87,13 @@
 
 .descripcion {
   background-color: #777772;
-  padding: 100px 30px;
+  padding: 20px 30px;
 }
 
 .titulo-Act {
   text-align: center;
   font-weight: 600;
   letter-spacing: 2px;
-  margin: 0px auto 0;
-  padding: 30px 0px;
 }
 
 .titulo-2 {
@@ -111,6 +109,7 @@
   font-size: 4rem;
   color: #ffffff;
   font-weight: 600;
+  padding: 10px 0px;
 }
 
 .list {
@@ -129,13 +128,23 @@
 
 .container-ultimos {
   background-color: #dddddd;
-  min-height: 520px;
+  min-height: 300px;
 }
+
 .titubzona {
   color: #212121;
   text-align: center;
+  padding: 0.3em;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: rgb(0 0 0 / 0%);
+}
+
+.col {
+  margin: 25px 5px 5px 10px;
+}
+
+imag {
+  align-items: center;
 }
