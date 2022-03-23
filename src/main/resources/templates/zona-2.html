@@ -1,147 +1,92 @@
 <!DOCTYPE html>
 
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="/fragments/head :: head"></head>
+    <body>
+        <!--****** Navbar ******-->
+        <header th:replace="/fragments/navbar :: navbar"></header>
 
-<head th:replace="/fragments/head :: head"></head>
-
-<body>
-    <!--****** Navbar ******-->
-    <header th:replace="/fragments/navbar :: navbar"></header>
-
-
-
-    <!--****** Banner Principal ******-->
-    <div id=" carouselExampleSlidesOnly" class="carousel-slide-2" data-bs-ride="carousel">
-        <div class=" carousel-uco">
-            <div class="carousel-item active">
-                <div class="banner">
-                    <h1 class="titulo-banner-zona">Precordillera y Alta Montaña</h1>
+        <!--****** Banner Principal ******-->
+        <div id=" carouselExampleSlidesOnly" class="carousel-slide-2" data-bs-ride="carousel">
+            <div class=" carousel-uco">
+                <div class="carousel-item active">
+                    <div class="banner">
+                        <h1 class="titulo-banner-zona">Precordillera y Alta Montaña</h1>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-
-    <div class="descripcion">
-        <div class="container">
-            <p class="escrito-descripcion"> Con una gran variedad de paisajes, actividades y servicios; la zona de
-                <strong>Precordillera y Alta Montaña</strong> brinda a sus visitantes la posibilidad de conocer lugares
-                emblemáticos con
-                gran valor histórico como la <strong>cordillera de los Andes, el Cerro Aconcagua, el Puente del Inca, el
-                    Parque
-                    Provincial Aconcagua o el monumento Cristo Redentor</strong> que marca los límites entre Argentina y
-                Chile; entre
-                tantos otros atractivos de esta zona privilegiada con aguas termales, manantiales, arroyos y rios.<br>
-                Las actividades protagonistas de esta zona son el trekking, rafting, canopy y las cabalgatas, sin
-                olvidar los deportes de invierno que pueden desarrollarse en el <strong>centro de esquí Los
-                    Penitentes,</strong> que
-                alcanza mayor protagonismo durante el periodo invernal y durante el resto del año funciona como sitio de
-                esparcimiento.
-            </p>
+        <div class="descripcion">
+            <div class="container">
+                <p class="escrito-descripcion"> Con una gran variedad de paisajes, actividades y servicios; la zona de
+                    <strong>Precordillera y Alta Montaña</strong> brinda a sus visitantes la posibilidad de conocer lugares
+                    emblemáticos con
+                    gran valor histórico como la <strong>cordillera de los Andes, el Cerro Aconcagua, el Puente del Inca, el
+                        Parque
+                        Provincial Aconcagua o el monumento Cristo Redentor</strong> que marca los límites entre Argentina y
+                    Chile; entre
+                    tantos otros atractivos de esta zona privilegiada con aguas termales, manantiales, arroyos y rios.<br>
+                    Las actividades protagonistas de esta zona son el trekking, rafting, canopy y las cabalgatas, sin
+                    olvidar los deportes de invierno que pueden desarrollarse en el <strong>centro de esquí Los
+                        Penitentes,</strong> que
+                    alcanza mayor protagonismo durante el periodo invernal y durante el resto del año funciona como sitio de
+                    esparcimiento.
+                </p>
+            </div>
         </div>
-    </div>
 
-    <!--****** Actividades ******-->
+        <!--****** Actividades ******-->
 
-    <section th:replace="/fragments/actividades :: actividades"></section>
+        <section th:replace="/fragments/actividades :: actividades"></section>
 
 
-    <div class="descripcion titulo-Act ">
-        <h3 class="titulo-3">
-            Ultimas recomendaciones en la zona
-        </h3>
-    </div>
-    <div class="container-ultimos">
-        <div class="list">
-            <table class="table table-dark table-striped">
-                <tbody class="tabla">
-                    <tr th:each=" c, iterador : ${alojamiento} " th:if="${iterador.index} <= 1">
-                        <div class="tabla espacios" id="secwrapper">
-                            <section>
-                                <div class="place">
-                                    <div class="row">
-                                        <div class="col">
-                                            <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
-                                        </div>
-                                        <div class="col">
-                                            <h1 class="titub" th:text="${c.nombre}"></h1>
-                                            <!--<p th:text="'Zona: ' + ${c.zona.nombre}"></p>-->
-                                            <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
-                                            <p th:text="'Teléfono: ' + ${c.telefono}"></p>
-                                            <p th:text="'Web: ' + ${c.web}"></p>
-                                            <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
-                                            <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
-                                            <div class="list">
-                                                <table class="table table-dark table-striped">
-                                                    <tbody class="tabla">
-                                                        <tr th:each=" c, iterador : ${alojamiento} "
-                                                            th:if="${iterador.index} <= 1">
-                                                            <div class="tabla espacios" id="secwrapper">
-                                                                <section>
-                                                                    <div class="place">
-                                                                        <div class="row">
-                                                                            <div class="col">
-                                                                                <img class="imag"
-                                                                                    th:src="@{'../images/locacion/' + ${c.foto}}">
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <h1 class="titub" th:text="${c.nombre}">
-                                                                                </h1>
-                                                                                <!--<p th:text="'Zona: ' + ${c.zona.nombre}"></p>-->
-                                                                                <p
-                                                                                    th:text="'Domicilio: ' + ${c.domicilio}">
-                                                                                </p>
-                                                                                <p
-                                                                                    th:text="'Teléfono: ' + ${c.telefono}">
-                                                                                </p>
-                                                                                <p th:text="'Web: ' + ${c.web}"></p>
-                                                                                <p
-                                                                                    th:text="'Rango de precios: ' + ${c.rangoDePrecios}">
-                                                                                </p>
-                                                                                <p
-                                                                                    th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}">
-                                                                                </p>
+        <div class="descripcion titulo-Act ">
+            <h3 class="titulo-3">
+                Ultimas recomendaciones en la zona
+            </h3>
+        </div>
 
-                                                                            </div>
+        <div class="container-ultimos">
 
-                                                                            <div class="col">
-                                                                                <h1 class="titub"></h1>
-                                                                                <p
-                                                                                    th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'">
-                                                                                </p>
-                                                                                <p
-                                                                                    th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'">
-                                                                                </p>
-                                                                                <p
-                                                                                    th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'">
-                                                                                </p>
-                                                                                <p
-                                                                                    th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'">
-                                                                                </p>
-                                                                                <p
-                                                                                    th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'">
-                                                                                </p>
-                                                                            </div>
-                                                                            <div class="vermas">
-                                                                                <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
-                                                                                    class="boton btn btn-primary nuevoton">Ver
-                                                                                    Más</a>
-                                                                            </div>
-                                                                        </div>
+            <div class="container-ultimos">
+                <div class="list">
+                    <table class="tabla-ultimas table-striped">
+                        <tbody class="tabla">
+                            <tr>
+                                <td th:each=" c, iterador : ${alojamiento} " th:if="${iterador.index} <= 1">
+                                    <div class="col">
+                                        <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
+                                        <h1 class="titub titubzona" th:text="${c.nombre}"></h1>
+                                    </div>
+                                    <div class="vermaszona">
+                                        <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
+                                           class="nuevoton btn btn-primary">Ver Más</a>
+                                    </div>
+                                </td>
+                        </tbody>
+                    </table>
+                    <table class="tabla-ultimas table-striped">
+                        <tbody class="tabla">
+                            <tr>
+                                <td th:each=" r, iterador : ${restaurant} " th:if="${iterador.index} <= 1">
+                                    <div class="col">
+                                        <img class="imag" th:src="@{'../images/locacion/' + ${r.foto}}">
+                                        <h1 class="titub titubzona" th:text="${r.nombre}"></h1>
+                                    </div>
+                                    <div class="vermaszona">
+                                        <a th:href="@{/restaurant/restaurant}+'?id='+${r.id}"
+                                           class="nuevoton btn btn-primary nuevoton">Ver Más</a>
+                                    </div>
+                                </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-                                                                    </div>
-                                                                </section>
-                                                            </div>
-                                                        </tr>
-                                                    </tbody>
-                                                    <p th:if="${alojamiento.isEmpty}">No hay alojamientos para mostrar
-                                                    </p>
-                                                </table>
-                                            </div>
-                                        </div>
+        <!--****** Footer ******-->
+        <footer th:replace="/fragments/footer :: footer"></footer>
 
-                                        <!--****** Footer ******-->
-                                        <footer th:replace="/fragments/footer :: footer"></footer>
-</body>
-
+    </body>
 </html>

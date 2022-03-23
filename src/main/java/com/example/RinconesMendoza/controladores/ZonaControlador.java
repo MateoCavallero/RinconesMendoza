@@ -121,10 +121,10 @@ public class ZonaControlador {
         List<Alojamiento> alojamiento = alojamientoService.listAllGranMendoza();
         List<Restaurant> restaurant = restaurantService.listAllGranMendoza();
 
-//        Comparator<Locacion> compareEstrellas = (Locacion a1, Locacion a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
-//
-//        alojamiento.sort(compareEstrellas);
-//        restaurant.sort(compareEstrellas);
+        Comparator<Locacion> compareEstrellas = (Locacion a1, Locacion a2) -> a2.getEstrellas().compareTo(a1.getEstrellas());
+
+        alojamiento.sort(compareEstrellas);
+        restaurant.sort(compareEstrellas);
 
         modelalojamiento.addAttribute("alojamiento", alojamiento);
         modelrestaurant.addAttribute("restaurant", restaurant);

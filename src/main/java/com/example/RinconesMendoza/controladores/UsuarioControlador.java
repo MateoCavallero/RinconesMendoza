@@ -27,12 +27,13 @@ public class UsuarioControlador {
 
     @Autowired
     private UsuarioServicio usuarioService;
-    
+
     @Autowired
     private MailServicio mailService;
 
     @GetMapping("/form")
     public String crearUsuario(Model model, @RequestParam(required = false) String id) {
+
         if (id != null) {
             Optional<Usuario> optional = usuarioService.findAllByQ(id);
             if (optional.isPresent()) {
@@ -45,12 +46,12 @@ public class UsuarioControlador {
         }
         return "redirect:/usuario/form";
     }
-    
+
     @PostMapping("/save")
     public String saveUsuario(Model model, RedirectAttributes redirect, @ModelAttribute Usuario usuario, @RequestParam("file") MultipartFile imagen, @RequestParam String password2) throws Exception {
         try {
             try {
-                if (!imagen.isEmpty()){
+                if (!imagen.isEmpty()) {
                     Path directorioImagenes = Paths.get(".//src/main/resources/static/images/locacion/");
                     String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
                     byte[] bytesImg = imagen.getBytes();
@@ -62,7 +63,7 @@ public class UsuarioControlador {
                 System.out.println(e);
             }
             usuarioService.save(usuario, password2);
-            mailService.enviarMail(usuario.getEmail(),"Bienvenido a Rincones Mendoza","Agradecemos que te hayas unido a nuestra plataforma y comiences a formar parte de esta hermosa familia de turistas para dejar tus recomendaciones, comentarios y puntuaciones :)");
+            mailService.enviarMail(usuario.getEmail(), "Bienvenido a Rincones Mendoza", "Agradecemos que te hayas unido a nuestra plataforma y comiences a formar parte de esta hermosa familia de turistas para dejar tus recomendaciones, comentarios y puntuaciones :)");
             redirect.addFlashAttribute("success", "Usuario guardado con exito");
             return "redirect:/login";
         } catch (WebException e) {
