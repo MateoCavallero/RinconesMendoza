@@ -51,7 +51,6 @@ a {
   align-items: center;
 }
 
-
 /*.banner-secundario{
   background-color: ;
 }*/
@@ -85,6 +84,7 @@ a {
 
 .text-zona {
   text-shadow: 2px 2px 6px #292828ce;
+  text-align: left;
 }
 .actividades {
   background-color: rgb(3, 68, 68);
