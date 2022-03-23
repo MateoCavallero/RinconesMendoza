@@ -70,13 +70,17 @@
             </tr>
         </tbody>
     </table>
+
+    <!--****** Comentarios ******-->
     <div class="divtabla">
         <table class="tablacoment" th:each="p : ${comentarios}">
             <tbody>
                 <tr>
                     <td class="colcomuno">
-                        <img class="comentimag" th:src="@{'../images/locacion/' + ${p.usuario.foto}}"></img>
-                 
+
+                        <div class="img-container">
+                            <img th:src="@{'../images/locacion/' + ${p.usuario.foto}}">
+                        </div>
                     </td>
                     <td class="colcomdos">
                         <h4 th:text="${p.usuario.nombre}"></h4>
@@ -84,7 +88,16 @@
                 </tr>
                 <tr>
                     <td class="colcomuno">
-                        <h6 th:text="'Puntuación: ' + ${p.puntuacion}"></h6>
+                        <!--Inicio Estrellas-->
+                        <div class="estrellas">
+                            <h4 th:if="${p.puntuacion eq 0}">✰✰✰✰✰</h4>
+                            <h4 th:if="${p.puntuacion eq 1}">★✰✰✰✰</h4>
+                            <h4 th:if="${p.puntuacion eq 2}">★★✰✰✰</h4>
+                            <h4 th:if="${p.puntuacion eq 3}">★★★✰✰</h4>
+                            <h4 th:if="${p.puntuacion eq 4}">★★★★✰</h4>
+                            <h4 th:if="${p.puntuacion eq 5}">★★★★★</h4>
+                        </div>
+                        <!--Fin Estrellas-->
                     </td>
                     <td class="colcomdos">
                         <h6 th:text="${p.opinion}"></h6>
@@ -93,7 +106,7 @@
             </tbody>
         </table>
     </div>
-
+    <!--****** Comentarios ******-->
 
     <!--****** Actividades ******-->
     <section th:replace="/fragments/actividades :: actividades"></section>

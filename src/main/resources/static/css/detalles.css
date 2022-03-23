@@ -65,3 +65,13 @@
 
   color: #ffa400;
 }
+.img-container{
+  width:75px;
+  height:75px;
+  border-radius: 100%;
+  overflow:hidden;
+}
+.img-container img{
+  width:100%;
+  height:auto
+}
