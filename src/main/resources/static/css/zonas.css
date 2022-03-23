@@ -81,6 +81,7 @@
 @media (min-width: 1441px) {
   .escrito-descripcion {
     font-size: 1.5rem;
+    text-align: justify;
   }
 }
 
@@ -119,7 +120,6 @@
 }
 
 .mapa {
-
   display: inline;
 }
 
@@ -131,9 +131,9 @@
   background-color: #dddddd;
   min-height: 520px;
 }
-.titubzona{
-    color: #212121;
-    text-align: center;
+.titubzona {
+  color: #212121;
+  text-align: center;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {

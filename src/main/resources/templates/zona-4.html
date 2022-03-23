@@ -22,40 +22,24 @@
     <div class="descripcion">
         <div class="container">
             <p class="escrito-descripcion">
-                Los departamentos de <strong>San Rafael, General Alvear y Malargüe</strong> reflejan los contrastes de la naturaleza y el
-                bagaje cultural, industrial e histórico, y cargan a esta zona de memorias de aguerridos pehuenches,
-                leyendas milenarias, esforzados crianceros y mineros, incansables agricultores y hacedores del vino, a
-                los que hoy se suman calificados científicos.<br>
-                <strong>San Rafael</strong> y sus bellos escenarios naturales como los ríos Diamante y Atuel, sus complejos
-                hidroeléctricos y diques embalses de <strong>Los Reyunos, Agua del Toro o el fabuloso Cañón del Atuel,</strong> enmarcado
-                por los espejos de agua del <strong>Nihuil y Valle Grande,</strong> son los escenarios propicios para disfrutar de la
+                <strong>San Rafael</strong> y sus bellos escenarios naturales como los ríos Diamante y Atuel, sus
+                complejos
+                hidroeléctricos enmarcado
+                por los espejos de agua del <strong>Nihuil y Valle Grande,</strong> son los escenarios propicios para
+                disfrutar de la
                 aventura a pleno practicando rafting, kayak, canotaje, windsurf, mountain bike, pesca, navegación y
-                ecoturismo. El <strong>Sosneado y el Volcán Overo </strong>son sitios para la aventura o el esquí salvaje o de travesía.
-                <strong>General Alvear</strong> es una transición exquisita entre el oasis cuyano y el paisaje pampeano. Balnearios y
-                campings permiten una especial recreación con sus clubes en torno a sus ríos. <strong>La Laguna El Trapal</strong> es un
-                refugio de la naturaleza donde una rica avifauna puebla sus aguas y costas.<br>
-                <strong>Mesetas de lava y volcanes, cavernas y cañones</strong> definen el marco ideal para el desarrollo del turismo de
-                naturaleza. La historia de la tierra se expone a cada paso en diferentes y coloridos mantos de rocas,
-                yacimientos ricos en fósiles que delatan un pasado de vida marina o el perezoso paso de dinosaurios.<br>
-                Inmensas reservas de fauna y flora con los emblemáticos flamencos y cisnes de cuello negro de la <strong>Laguna
-                de Llancanelo</strong> y las manadas de guanacos de <strong>La Payunia</strong> permiten que la naturaleza se aprecie en su
+                ecoturismo. El <strong>Sosneado y el Volcán Overo </strong>son sitios para la aventura o el esquí
+                salvaje o de travesía. Balnearios y
+                campings permiten una especial recreación con sus clubes en torno a sus ríos.
+                <strong>Mesetas de lava y volcanes, cavernas y cañones</strong> definen el marco ideal para el
+                desarrollo del turismo de
+                naturaleza.
+                Inmensas reservas de fauna y flora con los emblemáticos flamencos y cisnes de cuello negro de la
+                <strong>Laguna
+                    de Llancanelo</strong> y las manadas de guanacos de <strong>La Payunia</strong> permiten que la
+                naturaleza se aprecie en su
                 totalidad.<br>
-                Extrañas oquedades plenas de estalactitas y estalagmitas en la <strong>Caverna de las Brujas,</strong> geoformas en
-                dolinas en el Pozo de las Ánimas, el entorno de Laguna de la <strong>Niña Encantada</strong> y la escultura natural de
-                los <strong>Castillos de Pincheira</strong> son reflejo de los caprichos de la naturaleza.<br>
-                Las fuentes minerales termales del <strong>Valle de Los Molles – Lahuen-Có </strong>con su tradicional hotel termal
-                invitan al relax en un entorno montañés.<br>
-                La nieve juega un rol excepcional por la calidad de las pistas y servicios, con todas las opciones para
-                los deportes blancos y el esparcimiento que ofrece el Centro de esquí internacional <strong>Las Leñas,</strong> enmarcado
-                entre montañas, vegas y lagunas.<br>
-                El turismo científico tiene su máxima expresión en <strong>Malargüe,</strong> con el <strong>Centro de Rayos Cósmicos Pierre
-                Auger y un moderno Planetario,</strong> situados en las inmediaciones del <strong>Parque del Ayer.</strong><br>
-                La <strong>ruta de los dinosaurios</strong> se encuentra en yacimientos milenarios que muestran pisadas fósiles de estos
-                grandiosos exponentes de la era secundaria.<br>
-                Entre las festividades típicas se destacan la <strong>Fiesta Nacional del Chivo y Provincial del Cordero</strong> que se
-                realiza en Malargüe en el mes de enero, son 3 días de música, comidas típicas y vinos mendocinos. <strong>Fiesta
-                Nacional de la Ganadería de Zonas Áridas</strong> en General Alvear durante el mes de mayo, son 5 días de
-                festejos folclóricos, destreza criolla, comidas típicas, bailes, fogones, entre otras actividades.
+
             </p>
         </div>
     </div>
@@ -63,64 +47,58 @@
 
     <section th:replace="/fragments/actividades :: actividades"></section>
 
-    
+
     <div class="descripcion titulo-Act ">
         <h3 class="titulo-3">
             Ultimas recomendaciones en la zona
         </h3>
     </div>
     <div class="container-ultimos">
-        <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d107233.26923315505!2d-68.8348864643991!3d-32.870669976286685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1szona%20sur%20mendoza!5e0!3m2!1ses-419!2scl!4v1647472021690!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
         <div class="list">
-            
-            <div class="list">
-                <table class="table table-dark table-striped">
-                    <tbody class="tabla">
-                        <tr th:each=" c,iterador : ${alojamiento} " th:if="${iterador.index} <= 1">
-                    <div class="tabla espacios" id="secwrapper">
-                        <section>
-                            <div class="place">
-                                <div class="row">
-                                    <div class="col">
-                                        <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
-                                    </div>
-                                    <div class="col">
-                                        <h1 class="titub" th:text="${c.nombre}"></h1>
-                                        <!--<p th:text="'Zona: ' + ${c.zona.nombre}"></p>-->
-                                        <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
-                                        <p th:text="'Teléfono: ' + ${c.telefono}"></p>
-                                        <p th:text="'Web: ' + ${c.web}"></p>
-                                        <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
-                                        <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
+            <table class="table table-dark table-striped">
+                <tbody class="tabla">
+                    <tr th:each=" c,iterador : ${alojamiento} " th:if="${iterador.index} <= 1">
+                        <div class="tabla espacios" id="secwrapper">
+                            <section>
+                                <div class="place">
+                                    <div class="row">
+                                        <div class="col">
+                                            <img class="imag" th:src="@{'../images/locacion/' + ${c.foto}}">
+                                        </div>
+                                        <div class="col">
+                                            <h1 class="titub" th:text="${c.nombre}"></h1>
+                                            <!--<p th:text="'Zona: ' + ${c.zona.nombre}"></p>-->
+                                            <p th:text="'Domicilio: ' + ${c.domicilio}"></p>
+                                            <p th:text="'Teléfono: ' + ${c.telefono}"></p>
+                                            <p th:text="'Web: ' + ${c.web}"></p>
+                                            <p th:text="'Rango de precios: ' + ${c.rangoDePrecios}"></p>
+                                            <p th:text="'Tipo Alojamiento: ' + ${c.TipoAlojamiento}"></p>
 
+                                        </div>
+
+                                        <div class="col">
+                                            <h1 class="titub"></h1>
+                                            <p th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'"></p>
+                                            <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
+                                            <p
+                                                th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'">
+                                            </p>
+                                            <p th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'"></p>
+                                            <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
+                                        </div>
+                                        <div class="vermas">
+                                            <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
+                                                class="boton btn btn-primary">Ver Más</a>
+                                        </div>
                                     </div>
 
-                                    <div class="col">
-                                        <h1 class="titub"></h1>
-                                        <p th:text="${c.aireAcondicionado} ? 'A/C: Si' : 'A/C: No'"></p>
-                                        <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
-                                        <p
-                                            th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'">
-                                        </p>
-                                        <p th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'"></p>
-                                        <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
-                                    </div>
-                                    <div class="vermas">
-                                        <a th:href="@{/alojamiento/alojamiento}+'?id='+${c.id}"
-                                           class="boton btn btn-primary">Ver Más</a>
-                                    </div>
                                 </div>
-
-                            </div>
-                        </section>
-                    </div>
+                            </section>
+                        </div>
                     </tr>
-                    </tbody>
-                    <p th:if="${alojamiento.isEmpty}">No hay alojamientos para mostrar</p>
-                </table>
-            </div>
+                </tbody>
+                <p th:if="${alojamiento.isEmpty}">No hay alojamientos para mostrar</p>
+            </table>
         </div>
     </div>
 
