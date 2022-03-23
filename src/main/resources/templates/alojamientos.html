@@ -37,9 +37,24 @@
                                     <p th:text="${c.wifi} ? 'WiFi: Si' : 'WiFi: No'"></p>
                                     <p th:text="${c.estacionamiento} ? 'Estacionamiento: Si' : 'Estacionamiento: No'">
                                     </p>
+
                                     <p th:text="${c.desayuno} ? 'Desayuno: Si' : 'Desayuno: No'"></p>
                                     <p th:text="${c.pileta} ? 'Pileta: Si' : 'Pileta: No'"></p>
-                                    <p th:text="'Estrellas: ' + ${c.estrellas}"></p>
+
+                                    <!--Inicio Estrellas-->
+                                    <div class="estrellas">
+                                        <h4 th:if="${c.estrellas gt 1 AND c.estrellas lt 2}">★</h4>
+                                        <h4 th:if="${c.estrellas eq 1}">★</h4>
+                                        <h4 th:if="${c.estrellas gt 2 AND c.estrellas lt 3}">★★</h4>
+                                        <h4 th:if="${c.estrellas eq 2}">★★</h4>
+                                        <h4 th:if="${c.estrellas gt 3 AND c.estrellas lt 4}">★★★</h4>
+                                        <h4 th:if="${c.estrellas eq 3}">★★★</h4>
+                                        <h4 th:if="${c.estrellas gt 4 AND c.estrellas lt 5}">★★★★</h4>
+                                        <h4 th:if="${c.estrellas eq 4}">★★★★</h4>
+                                        <h4 th:if="${c.estrellas eq 5}">★★★★★</h4>
+                                    </div>
+                                    <!--Fin Estrellas-->
+
                                 </div>
                                 <div class="crearcomment">
                                     <div class="crearcomment" sec:authorize="isAuthenticated">

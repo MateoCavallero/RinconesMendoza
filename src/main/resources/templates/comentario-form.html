@@ -7,19 +7,25 @@
     <body>
         <nav th:replace="/fragments/navbar :: navbar"></nav>
 
+
+        <div class=" carousel-lista banner-form ">
+            <div class="carousel-item active">
+                <div class="banner">
+                    <h1 class="titulo-banner-form">¿QUE TE PARECIÓ ESTE LUGAR?</h1>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="card ms-auto">
-                <div class="card-header d-flex">
-                    <h1>Crear Comentario</h1>
-                </div>
                 <div class="card-body">
                     <form th:action="@{/comentario/save}" method="POST" th:object="${comentario}" class="col-6 mx-auto">
                         <input hidden th:field="*{id}"> </input>
                         <input hidden th:field="*{locacion}"> </input>
                         <div class="form-floating">
-                            <textarea th:field="*{opinion}" class="form-control" placeholder="Leave a comment here"
+                            <textarea th:field="*{opinion}" class="form-control" placeholder="Dejá tu comentario aquí..."
                                 id="floatingTextarea2" style="height: 100px" maxlength="600"></textarea>
-                            <label for="floatingTextarea2">Comentarios</label>
+                            <label for="floatingTextarea2"></label>
                         </div>
 
                         <div>
@@ -34,7 +40,7 @@
                         </div>
 
                         <div style="text-align: center" class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-primary nuevoton">Guardar</button>
+                            <button type="submit" class="btn btn-primary nuevoton">Enviar Comentario</button>
                         </div>
                 </div>
             </div>

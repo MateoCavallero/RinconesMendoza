@@ -51,6 +51,7 @@ a {
   align-items: center;
 }
 
+
 /*.banner-secundario{
   background-color: ;
 }*/
@@ -82,7 +83,7 @@ a {
   text-transform: uppercase;
 }
 
-.text-zona{
+.text-zona {
   text-shadow: 2px 2px 6px #292828ce;
 }
 .actividades {
@@ -129,9 +130,6 @@ footer a {
   text-decoration: none;
 }
 /*aca le estamos dando la transicion*/
-footer a:hover {
-  color: #740128;
-}
 
 .footer-link-list {
   display: flex;
@@ -158,4 +156,8 @@ h4 {
 
 a:hover h4 {
   color: #740128;
+}
+
+.card-options {
+  color: #292828;
 }

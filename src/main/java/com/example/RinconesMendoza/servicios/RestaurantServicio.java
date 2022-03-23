@@ -18,7 +18,8 @@ public class RestaurantServicio {
     @Transactional
     public void crearRestaurant(Restaurant restaurant) throws WebException {
         validacion(restaurant);
-        System.out.println(restaurant.getRangoDePrecios());
+        restaurant.setEstrellas(0.0);
+        
         restaurantRepo.save(restaurant);
     }
 
