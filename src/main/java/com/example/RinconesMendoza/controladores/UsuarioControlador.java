@@ -38,12 +38,12 @@ public class UsuarioControlador {
             if (optional.isPresent()) {
                 model.addAttribute("usuarios", optional.get());
             } else {
-                return "redirect:/usuario/list";
+                return "redirect:/login";
             }
         } else {
             model.addAttribute("usuario", new Usuario());
         }
-        return "usuario-form";
+        return "redirect:/usuario/form";
     }
     
     @PostMapping("/save")
